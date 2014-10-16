@@ -7,6 +7,7 @@
 
 	\section{Zielbestimmung}
 		\subsection{Musskriterien}
+			
 			\begin{itemize}
 			\item[-]	Verschiedene Benutzergruppen 
 			\item[-]	Benutzer anlegen
@@ -73,7 +74,7 @@
 	
 	\subsection{Use Case Analyse}
 	
-	\begin{table}[ht]
+	\begin{table}[ht!]
 	\begin{tabular}{ll}
 	 \textbf{Use Case ID} & 1 \\
  	 \textbf{Elementarer Geschäftsprozess} & /F10/ Veranstaltung planen \\ 
@@ -90,7 +91,7 @@
 	\label{tab:usecase_1}
 	\end{table}
 	
-		\begin{table}[ht]
+		\begin{table}[ht!]
 		\begin{tabular}{ll}
 		 \textbf{Use Case ID} & 2 \\
 	 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Template erstellen \\ 
@@ -106,7 +107,7 @@
 		\end{table}
 	
 	
-			\begin{table}[ht]
+			\begin{table}[ht!]
 			\begin{tabular}{ll}
 			 \textbf{Use Case ID} & 3 \\
 		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Bewerten \\ 
@@ -124,7 +125,7 @@
 			\label{tab:usecase_3}
 			\end{table}
 			
-			\begin{table}[ht]
+			\begin{table}[ht!]
 			\begin{tabular}{ll}
 			 \textbf{Use Case ID} & 4 \\
 		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Einsehen \\ 
@@ -140,7 +141,7 @@
 			\label{tab:usecase_4}
 			\end{table}
 			
-			\begin{table}[ht]
+			\begin{table}[ht!]
 			\begin{tabular}{ll}
 			 \textbf{Use Case ID} & 5 \\
 		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Teilnehmer anlegen \\ 
@@ -155,6 +156,8 @@
 			\end{tabular} 
 			\label{tab:usecase_5}
 			\end{table}
+
+						
 		\clearpage
 		\subsection{Use Cases in grafischer Darstellung}
 		
@@ -355,37 +358,29 @@
 	
 	
 	\section{Produktdaten}
-	\begin{itemize}
-	\item[/D10/] - Studenteninformation
-		\item[/D11/] - Kursteilnahmen
-		\item[/D12/] - Zugeteilte Prüfer
-		\item[/D13/] - Leistungen
-		\item[/D14/] - Matrikelnummer
-		\item[/D15/]  - Name, Vorname
-	\item[/D20/] - Prüfer
-		\item[/D21/] -  Kurse
-		\item[/D22/] - ID
-		\item[/D23/] - Name, Vorname
-	\item[/D30/] - Dozenten
-		\item[/D31/] - ID
-		\item[/D32/] - Name, Vorname
-		\item[/D33/] - erstellte Templates
-	\item[/D40/] - Veranstaltungen
-		\item[/D41/] - Templates für die Bewertungen
-		\item[/D42/] - Statistiken über die Leistungen über die Jahre
-	\item[/D50/] - Notenkonvertierung
-		\item[/D51/] - ID
-		\item[/D52/] - Name
-		\item[/D53/] - Parameter
-	\end{itemize}
+	
+		Die Größe der einzelnen Datenpunkte richtet sich variabel nach der letztendlichen Größe des Anwendungssystems. Die praktische Obergrenze wird durch die Hardware bzw. Datenbank festgelegt. 
+	
+	\begin{description}[\setlabelphantom{xxxxxx}]
+	\item[/D10/] Benutzer \{Benutzer\_id, Benutzerart(Rechte) , Personendaten, Veranstaltungen\}\\ (Max. 100000) 
+	\item[/D20/] Veranstaltung \{Veranstaltungs\_id, Bewertungsschema(S$_2$G), Bewertungstemplate, Prüfer, Stundenten, Score, Note, Status\_Bewertung\, Beschreibung\} \\ (Max. 100000)
+	\item[/D30/] GUI-Daten (mehrere verschiedene Ansichten) \\
+	Genauere Spezifikation erfolgt im zweiten Teil des Projekts im 4. Semester
+	\item[/D40/] Datenarchiv {AlleDaten}
+	
+	\end{description}
 	
 	\section{Produktleistungen}
-	\begin{itemize}
-	\item[-]	Die Anwendung (Prototyp) ist nicht zeit- oder  rechenkritisch.
-	\item[-]	Die steigenden Benutzerzahlen die zur gleichen Zeit auf das System zugreifen, sollen jedoch keine signifikanten Einflüsse auf die Antwortzeiten des Systems haben. 
-	\item[-]	Die Zugriffe von außerhalb, wie z.B. über WWW sind in dem Prototypen nicht vorgesehen.
-	\item[-]	Zu speichernde Daten, werden serialisiert gespeichert. (Für eine spätere Implementierung ist der \item[-]	Einsatz einer Datenbank möglich, jedoch für die funktionelle Prototypisierung nicht sofort notwendig.)
-	\end{itemize}
+	
+	\begin{description}[\setlabelphantom{xxxxxxx}]
+	\item[/L10/] Die Antwortzeiten der Anwendung sollen so gering wie möglich gehalten werden.
+	\item[/L20/] 	Die steigenden Benutzerzahlen die zur gleichen Zeit auf das System zugreifen, sollen jedoch keine signifikanten Einflüsse auf die Antwortzeiten des Systems haben.
+	\item[/L30/]	Benutzerfreundliche UX soll implementiert werden.
+	\item[/L40/]	Anbindung an bereits vorhandene Datenbanken soll in Zukunft möglich sein (wird im Prototypen zunächst nicht implementiert)
+	\item[/L50/] 	Die Abfragen und die Einsicht der Daten von Außerhalb (WWW) ist entsprechend der Benutzerberechtigung möglich. (wird im Prototypen zu einem späteren Zeitpunkt realisiert)
+	\item[/L60/] 	Datenbeständigkeit soll garantiert werden.
+	\end{description}
+
 
 	
 	\section{Qualitätsanforderungen}
@@ -395,32 +390,32 @@
 		\begin{tabular}{|c|c|c|c|c|}
 		\hline Produktqualität & sehr gut & gut & normal & nicht relevant \\ 
 		\hline \multicolumn{5}{|c|}{Funktionalität}   \\ 
-		\hline Angemessenheit &  & \checkmark &  &  \\ 
+		\hline Angemessenheit &  &  & \checkmark &  \\ 
 		\hline Richtigkeit &  & \checkmark  &  &  \\ 
 		\hline Interoperabilität &  &\checkmark   &  &  \\ 
 		\hline Ordnungsmäßigkeit &  &\checkmark   &  &  \\ 
-		\hline Sicherheit &  &\checkmark   &  &  \\ 
+		\hline Sicherheit &  &  & \checkmark  &  \\ 
 		\hline \multicolumn{5}{|c|}{Zuverlässigkeit}   \\ 
-		\hline Reife &  &\checkmark   &  &  \\ 
+		\hline Reife &  &   & \checkmark &  \\ 
 		\hline Fehlertoleranz &  \checkmark &  &  &  \\ 
 		\hline Wiederherstellbarkeit & \checkmark  &  &  &  \\ 
 		\hline \multicolumn{5}{|c|}{Benutzbarkeit}  \\ 
-		\hline Verständlichkeit &  &\checkmark   &  &  \\ 
-		\hline Erlernbarkeit &  & \checkmark  &  &  \\ 
-		\hline Bedienbarkeit &  & \checkmark  &  &  \\ 
+		\hline Verständlichkeit &  &  & \checkmark  &  \\ 
+		\hline Erlernbarkeit &  &   &  &\checkmark  \\ 
+		\hline Bedienbarkeit &  &   & \checkmark &  \\ 
 		\hline \multicolumn{5}{|c|}{Effizienz} \\ 
 		\hline Zeitverhalten &  &  &\checkmark   &  \\ 
 		\hline Verbrauchsverhalten &  &  &\checkmark   &  \\ 
 		\hline \multicolumn{5}{|c|}{Änderbarkeit} \\ 
-		\hline Analysierbarkeit &  & \checkmark  &  &  \\ 
+		\hline Analysierbarkeit &  &   & \checkmark &  \\ 
 		\hline Modifizierbarkeit &  & \checkmark  &  &  \\ 
 		\hline Stabilität & \checkmark  &  &  &  \\ 
-		\hline Prüfbarkeit & \checkmark  &  &  &  \\ 
+		\hline Prüfbarkeit &   &  &\checkmark  &  \\ 
 		\hline \multicolumn{5}{|c|}{Übertragbarkeit}  \\ 
 		\hline Anpassbarkeit & \checkmark  &  &  &  \\ 
-		\hline Installierbarkeit & \checkmark  &  &  &  \\ 
+		\hline Installierbarkeit &  &  &  \checkmark &  \\ 
 		\hline Konformität	 &  &  &\checkmark   &  \\ 
-		\hline Austauschbarkeit &  &  & \checkmark  &  \\ 
+		\hline Austauschbarkeit &  &  &   & \checkmark \\ 
 		\hline 
 		\end{tabular} 
 	\label{tab:quali_anf}
@@ -429,14 +424,16 @@
 	
 	\section{Benutzeroberfläche}
 	
-	Die Benutzeroberfläche entspricht den modernen Ansprüchen der Web-Anwendungen und wird mit entsprechend Google-Designrichtlinien erstellt. UI/UX werden an den Zielgruppen getestet. Die intuitive Bedienung ist eine Voraussetzung.
+	Die Benutzeroberfläche entspricht den modernen Ansprüchen der Web-Anwendungen und wird mit entsprechend Google-Designrichtlinien erstellt. Die intuitive Bedienung soll das Leitmotiv der Entwicklung werden.
+	
+	Die genauere Spezifikation der grafischen Benutzeroberfläche wird zu einem späteren Zeitpunkt des Projektes definiert. 
 	
 	\begin{table}[ht]
 	\caption{Benutzergruppen und Rechteverteilung}
 	\begin{tabular}{|c|c|c|c|c|}
 	\hline Benutzergruppe & Lesen & Schreiben & Ändern & Systemanpassungen \\ 
 	\hline Administrator & \checkmark & \checkmark & \checkmark & \checkmark \\ 
-	\hline Verwalter & \checkmark & \checkmark & \checkmark &  \\ 
+	\hline Verwaltung & \checkmark & \checkmark & \checkmark &  \\ 
 	\hline Prüfer & \checkmark & \checkmark &  &  \\ 
 	\hline Student & \checkmark &  &  &  \\ 
 	\hline 
@@ -447,27 +444,38 @@
 	
 	\section{Nichtfunktionale Anforderungen}
 	Die Anforderungen entsprechen den Richtlinien der jeweiligen Instanz und werden durch den Administrator einmalig eingestellt.
-	Sicherheitsanforderungen entsprechen den modernen Sicherheitsstandard
+	
+	Sicherheitsanforderungen entsprechen den modernen Sicherheitsstandard.
+	
+	
 	
 	\section{Technische Produktumgebung}
 	Die technische Landschaft besteht aus einem Server und einem Web-Server, welcher die Anfragen der webbasierten Clients entgegennimmt. 
 		\subsection{Software}
-		Wird spezifiziert 
+		Server-Betriebssystem: UNIX
+		Clientsysteme: Browser
+		Web-Server: Apache (bei Bedarf)
+		
 		\subsection{Hardware}
 		Sind für dieses Projekt nicht relevant. (prinzipiell ein Leistungsstarker Server )
 		\subsection{Orgware}
 		Kundenmanagementsystem
 		\subsection{Produkt-Schnittstellen}
-		Web-Schnittstelle.
+		
+		Web-Schnittstelle
+		
+		
 	\section{Spezielle Anforderungen an die Entwicklungs-Umgebung}
 		\subsection{Software}
-		Git Versionsverwaltung, Issue Tracking System, IDE for JAVA Development
+		Git Versionsverwaltung, Issue Tracking System - YouTrack, IDE für JAVA Development
+		
 		\subsection{Hardware}
-		Laptop, Standalone PC
+		Laptop, Standalone PC (Server, Client)
 		\subsection{Orgware}
 		XP (extreme proramming und agile development)	
 		\subsection{Entwicklungs-Schnittstellen}
 		WEB-Schnittstelle
+		
 	\section{Gliederung in Teilprodukte}
 	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung.
 	Veranstaltungskonfigurator beschränkt sich hierbei auf einen minimalen Funktionsumfang um die mögliche Arbeitsweise deutlich zu machen. 
@@ -478,7 +486,7 @@
 		
 	
 	\section{Ergänzungen}
-	Wird angepasst	
+		
 	
 	
  \begin{appendix}
