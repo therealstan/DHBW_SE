@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  16 OCT 2014 14:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  16 OCT 2014 15:27
 entering extended mode
 **Pflichtenheft.tex
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.tex
@@ -1883,25 +1883,25 @@ Overfull \hbox (25.97519pt too wide) in paragraph at lines 144--157
 
 [5
 
-] [6] <./img/use_case.pdf, id=217, 434.37282pt x 618.81187pt>
+] [6] <./img/use_case.pdf, id=217, 598.39557pt x 657.8979pt>
 File: ./img/use_case.pdf Graphic file (type pdf)
 
 <use ./img/use_case.pdf>
 Package pdftex.def Info: ./img/use_case.pdf used on input line 163.
-(pdftex.def)             Requested size: 426.79141pt x 608.04614pt.
+(pdftex.def)             Requested size: 426.79141pt x 469.23898pt.
 
 <./img/ablauf_1.pdf, id=218, 508.14844pt x 715.92468pt>
 File: ./img/ablauf_1.pdf Graphic file (type pdf)
 
 <use ./img/ablauf_1.pdf>
-Package pdftex.def Info: ./img/ablauf_1.pdf used on input line 170.
+Package pdftex.def Info: ./img/ablauf_1.pdf used on input line 172.
 (pdftex.def)             Requested size: 426.79141pt x 601.31801pt.
 
 <./img/ablauf_2.pdf, id=219, 278.54062pt x 612.03656pt>
 File: ./img/ablauf_2.pdf Graphic file (type pdf)
 
 <use ./img/ablauf_2.pdf>
-Package pdftex.def Info: ./img/ablauf_2.pdf used on input line 177.
+Package pdftex.def Info: ./img/ablauf_2.pdf used on input line 179.
 (pdftex.def)             Requested size: 256.07744pt x 562.68823pt.
  [7
 
@@ -1909,37 +1909,37 @@ Package pdftex.def Info: ./img/ablauf_2.pdf used on input line 177.
 [8 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/ablauf_1.pdf>
 ] [9 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/ablauf_2.pd
 f>]
-Overfull \hbox (50.01404pt too wide) in paragraph at lines 186--210
+Overfull \hbox (50.01404pt too wide) in paragraph at lines 188--212
 [][]
  []
 
 
-Overfull \hbox (34.5325pt too wide) in paragraph at lines 213--234
+Overfull \hbox (34.5325pt too wide) in paragraph at lines 215--236
 [][]
  []
 
 
-Overfull \hbox (27.28291pt too wide) in paragraph at lines 237--250
+Overfull \hbox (27.28291pt too wide) in paragraph at lines 239--252
 [][]
  []
 
 
-Overfull \hbox (27.60223pt too wide) in paragraph at lines 277--296
+Overfull \hbox (27.60223pt too wide) in paragraph at lines 279--298
 [][]
  []
 
 
-Overfull \hbox (32.46143pt too wide) in paragraph at lines 299--315
+Overfull \hbox (32.46143pt too wide) in paragraph at lines 301--317
 [][]
  []
 
 
-Overfull \hbox (32.46143pt too wide) in paragraph at lines 319--333
+Overfull \hbox (32.46143pt too wide) in paragraph at lines 321--335
 [][]
  []
 
 
-Overfull \hbox (36.24455pt too wide) in paragraph at lines 336--350
+Overfull \hbox (36.24455pt too wide) in paragraph at lines 338--352
 [][]
  []
 
@@ -1968,30 +1968,30 @@ Overfull \hbox (36.24455pt too wide) in paragraph at lines 336--350
 ] [23
 
 ]
-<./files/Aufwand.pdf, id=350, 635.69496pt x 899.01869pt>
+<./files/Aufwand.pdf, id=332, 635.69496pt x 899.01869pt>
 File: ./files/Aufwand.pdf Graphic file (type pdf)
 
 <use ./files/Aufwand.pdf>
-Package pdftex.def Info: ./files/Aufwand.pdf used on input line 498.
+Package pdftex.def Info: ./files/Aufwand.pdf used on input line 500.
 (pdftex.def)             Requested size: 384.10966pt x 543.21524pt.
 
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 48.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 505.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 507.
 [24
 
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/files/Aufwand.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 505.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 507.
 
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 505.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 505.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 507.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 507.
 Package rerunfilecheck Info: File `Pflichtenheft.out' has not changed.
 (rerunfilecheck)             Checksum: 2B9277A5C8E85212678C68BB2AB22D37;2110.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 505.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 507.
  ) 
 Here is how much of TeX's memory you used:
  28588 strings out of 493921
@@ -2016,9 +2016,9 @@ ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Pflichtenheft.pdf (24 pages, 657746 bytes).
+Output written on Pflichtenheft.pdf (24 pages, 1985378 bytes).
 PDF statistics:
- 795 PDF objects out of 1000 (max. 8388607)
+ 777 PDF objects out of 1000 (max. 8388607)
  78 named destinations out of 1000 (max. 500000)
  305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
