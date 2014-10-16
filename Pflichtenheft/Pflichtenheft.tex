@@ -16,7 +16,7 @@
 			\item[-]	Dozenten weisen einer Veranstaltung Bewertungsschema zu
 			\item[-]	Ein Template kann zu einer Veranstaltung erstellt werden.
 			\item[-]	Veranstaltungen des Typs (Gruppenarbeit, Einzelarbeit) können erstellt werden.
-			\item[-]	Die Festlegung eines Grundscore (Gruppe, einzeln) lässt sich in zwei Skalenbereiche beliebig teilen ($H_2$)
+			\item[-]	Die Festlegung eines Grundscore (Gruppe, einzeln) lässt sich in zwei skalierbare \newline Bereiche beliebig teilen ($H_2$)
 			\item[-]	Score Refining Faktoren können in einem Template frei eingestellt werden (Items) ($R_2S$)
 			\item[-]	Skalierbarkeit des Bewertungssystems von Bewertung der Gruppe zu Einzelperson und umgekehrt.
 			\item[-]	Zuweisung von beliebig gruppierten Studenten zu einer \item[-]	Veranstaltung durch Dozent oder Prüfer.				
@@ -32,7 +32,7 @@
 		\subsection{Abgrenzungskriterien}
 		\begin{itemize}
 		\item[-]	Bewertungssystem bewertet nur die Veranstaltungen die einer Art bestanden/nicht bestanden Logik unterliegen. Anschließend erfolgt eine konfigurierbare Punkte-Notenkonvertierung.
-		\item[-]	Jede erstellte Veranstaltung beinhaltet genau ein Bewertungsschema und führt somit zu einer Note. Die Kombi-nierbarkeit von verschiedenen Einzelnoten ist nicht möglich.
+		\item[-]	Jede erstellte Veranstaltung beinhaltet genau ein Bewertungsschema und führt somit zu einer Note. Die Kombinierbarkeit von verschiedenen Einzelnoten ist nicht möglich.
 		\end{itemize}
 		
 	\section{Produkteinsatz}
@@ -76,12 +76,12 @@
 	\begin{table}[ht]
 	\begin{tabular}{ll}
 	 \textbf{Use Case ID} & 1 \\
- 	 \textbf{Elemntarer Geschäftsprozess} & /F10/ Veranstaltung planen \\ 
+ 	 \textbf{Elementarer Geschäftsprozess} & /F10/ Veranstaltung planen \\ 
 	 \textbf{Ziel des Use Cases} & Darstellung des  Prozesses einer    \\
 	 & Veranstaltungsplanung\\ 
 	 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
 	 \textbf{Vorbedingung} & Dozent ist angemeldet \\ 
-	 \textbf{Nachebdingung Erfolg} & Veranstaltung ist angelegt \\ 
+	 \textbf{Nachbedingung Erfolg} & Veranstaltung ist angelegt \\ 
 	 & Template ist erstellt\\
 	 \textbf{Beteiligte Nutzer:} & Dozent \\ 
      \textbf{Auslösendes Ereignis:} & Dozent möchte Veranstaltung planen \\ 
@@ -93,11 +93,11 @@
 		\begin{table}[ht]
 		\begin{tabular}{ll}
 		 \textbf{Use Case ID} & 2 \\
-	 	 \textbf{Elemntarer Geschäftsprozess} & /F20/ Template erstellen \\ 
+	 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Template erstellen \\ 
 		 \textbf{Ziel des Use Cases} & Templates für die Veranstaltungen können \\& angelegt werden   \\
 		 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
 		 \textbf{Vorbedingung} & Dozent ist angemeldet \\ 
-		 \textbf{Nachebdingung Erfolg} & Template ist erstellt \\ 
+		 \textbf{Nachbedingung Erfolg} & Template ist erstellt \\ 
 		 \textbf{Beteiligte Nutzer:} & Dozent \\ 
 	     \textbf{Auslösendes Ereignis:} & Dozent möchte Template erstellen \\ 
 		 
@@ -109,12 +109,12 @@
 			\begin{table}[ht]
 			\begin{tabular}{ll}
 			 \textbf{Use Case ID} & 3 \\
-		 	 \textbf{Elemntarer Geschäftsprozess} & /F20/ Bewerten \\ 
+		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Bewerten \\ 
 			 \textbf{Ziel des Use Cases} & Prüfer bewertet  \\
 			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
 			 \textbf{Vorbedingung} & Veranstaltung existiert \\
 			  					   & Studenten/Gruppen existieren \\ 
-			 \textbf{Nachebdingung Erfolg} & Teilbewertung liegt vor \\
+			 \textbf{Nachbedingung Erfolg} & Teilbewertung liegt vor \\
 			 							   & Bewertung ist abgeschlossen\\
 			 							    
 			 \textbf{Beteiligte Nutzer:} & Prüfer \\ 
@@ -127,11 +127,11 @@
 			\begin{table}[ht]
 			\begin{tabular}{ll}
 			 \textbf{Use Case ID} & 4 \\
-		 	 \textbf{Elemntarer Geschäftsprozess} & /F20/ Einsehen \\ 
+		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Einsehen \\ 
 			 \textbf{Ziel des Use Cases} & Studenten sehen ihre Noten ein  \\
 			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
 			 \textbf{Vorbedingung} & Bewertung liegt bereits vor \\
-			 \textbf{Nachebdingung Erfolg} & Student sieht die Note\\
+			 \textbf{Nachbedingung Erfolg} & Student sieht die Note\\
 			 			    
 			 \textbf{Beteiligte Nutzer:} & Student \\ 
 		     \textbf{Auslösendes Ereignis:} & Student will seine Note sehen\\ 
@@ -143,11 +143,11 @@
 			\begin{table}[ht]
 			\begin{tabular}{ll}
 			 \textbf{Use Case ID} & 5 \\
-		 	 \textbf{Elemntarer Geschäftsprozess} & /F20/ Teilnehmer anlegen \\ 
-			 \textbf{Ziel des Use Cases} & Prüfer oder Dozent konfigurieren \\& die Tilnehmer einer Veranstaltung  \\
+		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Teilnehmer anlegen \\ 
+			 \textbf{Ziel des Use Cases} & Prüfer oder Dozent konfigurieren \\& die Teilnehmer einer Veranstaltung  \\
 			 \textbf{Umgebende Systemgrenze} & Planung Prüfung \\ 
 			 \textbf{Vorbedingung} & Veranstaltung ist konfiguriert \\
-			 \textbf{Nachebdingung Erfolg} & Veranstaltung ist freigegeben\\
+			 \textbf{Nachbedingung Erfolg} & Veranstaltung ist freigegeben\\
 			 			    
 			 \textbf{Beteiligte Nutzer:} & Prüfer,Dozent \\ 
 		     \textbf{Auslösendes Ereignis:} & Studenten sollen einer Veranstaltung hinzugefügt werden\\ 
@@ -161,7 +161,7 @@
 	\begin{figure}[th!]
 	\centering
 	\includegraphics[width=\textwidth]{./img/use_case}
-	\caption{Darstellung des Gesamtsystem anhand der ausgearbeiteten Use-Cases}
+	\caption{Darstellung des Gesamtsystems anhand der ausgearbeiteten Use-Cases}
 	\label{fig:use_case}
 	\end{figure}
 	
@@ -182,7 +182,7 @@
 	\end{figure}
 
 	\section{Produktfunktionen}
-	Im folgenden sind die Produktfunktionen aus den Ablaufdiagrammen Dokumentiert. Diese Produktfunktionen werden im Laufe der Entwicklung angepasst und bekommen eine Erweiterung ihren Umfangs.
+	Im folgenden sind die Produktfunktionen aus den Ablaufdiagrammen dokumentiert. Diese werden im Laufe der Entwicklung angepasst und in ihrem Umfang erweitert.
 	
 	\begin{table}[ht]
 	\begin{tabular}{ll}
@@ -201,7 +201,7 @@
 		 \textbf{Beschreibung} &  1. Dozent konfiguriert das Template\\ 
 		 & 2. Dozent befüllt(prüft) die Parameter des Bewertungsschemas\\
 		 & 3. Dozent kann Prüfer einer Veranstaltung zuteilen zuteilen \\
-		 & 4. Dozent kann Studenten/Gruppen der  Varanstaltung zuweisen\\
+		 & 4. Dozent kann Studenten/Gruppen der  Veranstaltung zuweisen\\
 		  \textbf{Erweiterung} &  \\ 
 		 \textbf{Alternativen} & 1. Neues Template anlegen \\
 		 & 2. Neue Studenten anlegen\\
@@ -261,7 +261,7 @@
 				 & 2. Veranstaltung ist angelegt\\
 				 & 3. Gruppen/Student ist einer Veranstaltung zugewiesen\\
 				 & 4. Prüfer ist einer Veranstaltung zugewiesen\\
-				 \textbf{Nachbedingung Erfolg} & Ein Student/Gruppe wurde Bewertet\\
+				 \textbf{Nachbedingung Erfolg} & Ein Student/Gruppe wurde bewertet\\
 				 & Teilbewertung/vollständige Bewertung ist abgeschlossen\\ 
 				 \textbf{Akteure} & Dozent \\ 
 				 & Prüfer\\
@@ -429,7 +429,7 @@
 	
 	\section{Benutzeroberfläche}
 	
-	Die Benutzeroberfläche entspricht den modernen Ansprüchen der Web-Anwendungen und wird mit entsprechend Google-Designrichtlinien erstellt. UI/UX werden an den Zielgruppen getestet. Die intuitive Bedienung ist eine Vo-raussetzung.
+	Die Benutzeroberfläche entspricht den modernen Ansprüchen der Web-Anwendungen und wird mit entsprechend Google-Designrichtlinien erstellt. UI/UX werden an den Zielgruppen getestet. Die intuitive Bedienung ist eine Voraussetzung.
 	
 	\begin{table}[ht]
 	\caption{Benutzergruppen und Rechteverteilung}
@@ -446,11 +446,11 @@
 	
 	
 	\section{Nichtfunktionale Anforderungen}
-	Die Anforderungen entsprechen den Richtlinien der jeweiligen Instanz und werden durch den Administrator ein-malig eingestellt.
+	Die Anforderungen entsprechen den Richtlinien der jeweiligen Instanz und werden durch den Administrator einmalig eingestellt.
 	Sicherheitsanforderungen entsprechen den modernen Sicherheitsstandard
 	
 	\section{Technische Produktumgebung}
-	Die technische Landschaft besteht aus einem Server und einem Web-Server, welcher die Anfragen der webba-sierten Clients entgegennimmt. 
+	Die technische Landschaft besteht aus einem Server und einem Web-Server, welcher die Anfragen der webbasierten Clients entgegennimmt. 
 		\subsection{Software}
 		Wird spezifiziert 
 		\subsection{Hardware}
@@ -470,10 +470,10 @@
 		WEB-Schnittstelle
 	\section{Gliederung in Teilprodukte}
 	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung.
-	Veranstaltungskonfigurator beschränkt sich hierbei auf einen minimalen Funktionsumfang um die mögliche Ar-beitsweise deutlich zu machen. 
-	Konfigurieren bedeutet in diesem Zusammenhang die Notenumrechnung mit Parametern zu belegen und zwi-schen unterschiedlichen Bewertungsschemata auswählen zu können. 
+	Veranstaltungskonfigurator beschränkt sich hierbei auf einen minimalen Funktionsumfang um die mögliche Arbeitsweise deutlich zu machen. 
+	Konfigurieren bedeutet in diesem Zusammenhang die Notenumrechnung mit Parametern zu belegen und zwischen unterschiedlichen Bewertungsschemata auswählen zu können. 
 	Des Weiteren lassen sich zu einer Veranstaltung einzeln gewichtete Bewertungskritierien hinzufügen. 
-	Das Bewertungssystem beinhaltet eine vom Dozent vordefinierte Maske, in die der Prüfer die Ergebnisse der Ver-anstaltung eintragen kann. Anhand der Ergebnisse wird dann eine Note für diese Veranstaltung errechnet.
+	Das Bewertungssystem beinhaltet eine vom Dozent vordefinierte Maske, in die der Prüfer die Ergebnisse der Veranstaltung eintragen kann. Anhand der Ergebnisse wird dann eine Note für diese Veranstaltung errechnet.
 	Über ein Modul zum Einsehen der Bewertung, können zum einen Dozent und Prüfer die eingegeben Ergebnisse überprüfen, zum anderen die Studenten ihr Abschneiden bei der jeweiligen Veranstaltung überprüfen.
 		
 	
@@ -483,18 +483,12 @@
 	
  \begin{appendix}
   \section{Begriffsdefinitionen}
-	\begin{description}[\setlabelphantom{xxxxxxxxxxxxxx}]
-		\item[Dozent] text
-		\item[Item]
-		\item[H$_2$]
-		\item[R$_2$S]
-		\item[S$_2$G]
-		\item[Sekretariat]
-		\item[Student] da what
-		\item[Template]
-		\item[Veranstaltung]
-		
-	\end{description}. 
+	\begin{tabular}{ll}
+	 \textbf{Dozent} &  ist bla\\ 
+	 \textbf{ Item}	 &  \\ 
+	  
+	 
+	\end{tabular} 
   \section{Abkürzungen}
   \section{Modelle}
   \section{Qualitätsmerkmale}
