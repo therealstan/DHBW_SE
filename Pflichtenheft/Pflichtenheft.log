@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  16 OCT 2014 15:27
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  16 OCT 2014 15:47
 entering extended mode
 **Pflichtenheft.tex
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.tex
@@ -1466,7 +1466,11 @@ File: tikzlibraryfit.code.tex 2008/06/21 v2.10 (rcs-revision 1.3)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\koma-script\tocstyle.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\expdlist\expdlist.sty"
+Document Substyle `EXPDLIST'. Released 22.09.1999 (V 2.4)
+English Documentation  22.09.99
+\listpartsep=\skip68
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\koma-script\tocstyle.sty"
 Package: tocstyle 2009/11/09 v0.2d-alpha LaTeX2e KOMA-Script package (versatile
  toc styles)
 
@@ -1972,35 +1976,35 @@ Overfull \hbox (36.24455pt too wide) in paragraph at lines 338--352
 File: ./files/Aufwand.pdf Graphic file (type pdf)
 
 <use ./files/Aufwand.pdf>
-Package pdftex.def Info: ./files/Aufwand.pdf used on input line 500.
+Package pdftex.def Info: ./files/Aufwand.pdf used on input line 506.
 (pdftex.def)             Requested size: 384.10966pt x 543.21524pt.
 
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 48.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 507.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 513.
 [24
 
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/files/Aufwand.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 507.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 513.
 
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 507.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 507.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 513.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 513.
 Package rerunfilecheck Info: File `Pflichtenheft.out' has not changed.
 (rerunfilecheck)             Checksum: 2B9277A5C8E85212678C68BB2AB22D37;2110.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 507.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 513.
  ) 
 Here is how much of TeX's memory you used:
- 28588 strings out of 493921
- 533855 string characters out of 3144863
+ 28616 strings out of 493921
+ 534374 string characters out of 3144863
  609514 words of memory out of 3000000
- 31304 multiletter control sequences out of 15000+200000
+ 31328 multiletter control sequences out of 15000+200000
  19380 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 58i,11n,65p,444b,788s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 58i,11n,65p,444b,792s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
 600\ecbi1095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
 knappen\ec\dpi600\ecbx1095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fon
@@ -2016,9 +2020,9 @@ ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Pflichtenheft.pdf (24 pages, 1985378 bytes).
+Output written on Pflichtenheft.pdf (24 pages, 1986388 bytes).
 PDF statistics:
- 777 PDF objects out of 1000 (max. 8388607)
+ 780 PDF objects out of 1000 (max. 8388607)
  78 named destinations out of 1000 (max. 500000)
  305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
