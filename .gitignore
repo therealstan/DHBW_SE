@@ -1,2 +1,6 @@
 ~$lichtenheft.docx
 *.tmp
+Pflichtenheft.pdf
+*.gz
+*.out
+Pflichtenheft/Pflichtenheft.log
