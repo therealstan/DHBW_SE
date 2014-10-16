@@ -69,6 +69,27 @@
 		
 	\section{Produktübersicht}
 	
+	Das Produkt wird durch folgende Use Cases definiert. Die Anforderung an die Funktionalität ensteht aus der Auswertung der Akteur/Produkt- und Akteur/Akteur-Beziehungen.
+	
+	\subsection{Use Case Analyse}
+	
+	\begin{table}[ht]
+	\begin{tabular}{ll}
+	 \textbf{Use Case ID} & 1 \\
+ 	 \textbf{Elemntarer Geschäftsprozess} & /F10/ Veranstaltung planen \\ 
+	 \textbf{Ziel des Use Cases} & Darstellung des  Prozesses einer    \\
+	 & Veranstaltungsplanung\\ 
+	 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
+	 \textbf{Vorbedingung} & Dozent ist angemeldet \\ 
+	 \textbf{Nachebdingung Erfolg} & Veranstaltung ist angelegt \\ 
+	 & Template ist erstellt\\
+	 \textbf{Beteiligte Nutzer:} & Dozent \\ 
+     \textbf{Auslösendes Ereignis:} & Dozent möchte Veranstaltung planen \\ 
+	 
+	\end{tabular} 
+	\label{tab:usecase_x}
+	\end{table}
+	
 	\begin{figure}[th!]
 	\centering
 	\includegraphics[width=\textwidth]{./img/use_case}
@@ -91,34 +112,176 @@
 	\end{figure}
 
 	\section{Produktfunktionen}
-	\begin{itemize}
-	\item[/F10/]   -  Planung einer Bewertungsroutine für eine Veranstaltung. Dies ist nur für die Benutzergruppe „Dozent“ möglich.  Die Planung erfolgt derart, dass zunächst ein Template für die Veranstaltung konfiguriert wird. Ein ferti-ges Template kann nun auf die angelegten Studentengruppen angewandt werden. 
-		
-			\item[/F11/] - Template für Gruppenprojekt erstellen.
-			\item[/F12/] - Template für Einzelprojekt erstellen.
-			\item[/F13/] - Refining Kriterien für Aufgabentypus festlegen.	
-			\item[/F14/] - Anlegen von Konvertierungsprofilen. 
-		\item[/W11/] - Das Template kann abgewandelt werden (z.B. klonen eines Templates, editieren etc.)
-			\item[/W12/] - Das Bewertungssystem kann Profile verwalten. 
-			\item[/W13/] - Standardisierung der Bewertungen
+	Im folgenden sind die Produktfunktionen aus den Ablaufdiagrammen Dokumentiert. Diese Produktfunktionen werden im Laufe der Entwicklung angepasst und bekommen eine Erweiterung ihren Umfangs.
+	
+	\begin{table}[ht]
+	\begin{tabular}{ll}
+		\multicolumn{2}{l}{/\textbf{\textit{F10}}/}\\\hline
+		 \textbf{Geschäftsprozess} & Veranstaltung planen \\ 
+		 \textbf{Kategorie} & primär \\ 
+		 \textbf{Vorbedingung} & Dozent ist angemeldet\\
+		 & ein Template liegt vor \\ 
+		  	& Bewertungsschema liegt vor\\
+		 	& Prüfer liegen vor\\
+		 \textbf{Nachbedingung Erfolg} & Eine Veranstaltung ist angelegt  \\ 
+		 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
+		 \textbf{Nachbedingung Fehlschlag} &  \\ 
+		 \textbf{Akteure} & Dozent \\ 
+		 \textbf{Auslösendes Ereignis} & Dozent legt eine Veranstaltung an  \\ 
+		 \textbf{Beschreibung} &  1. Dozent konfiguriert das Template\\ 
+		 & 2. Dozent befüllt(prüft) die Parameter des Bewertungsschemas\\
+		 & 3. Dozent kann Prüfer einer Veranstaltung zuteilen zuteilen \\
+		 & 4. Dozent kann Studenten/Gruppen der  Varanstaltung zuweisen\\
+		  \textbf{Erweiterung} &  \\ 
+		 \textbf{Alternativen} & 1. Neues Template anlegen \\
+		 & 2. Neue Studenten anlegen\\
+		 & 3. Neue Prüfer Anlegen \\
+		 & 4. Neues Bewertungsschema anlegen
+		 \end{tabular} 
+	\label{tab:F10}
+	\end{table}
+	
+		\begin{table}[ht]
+		\begin{tabular}{ll}
+			\multicolumn{2}{l}{/\textbf{\textit{F20}}/}\\\hline
+			 \textbf{Geschäftsprozess} & Template erstellen \\ 
+			 \textbf{Kategorie} & primär \\ 
+			 \textbf{Vorbedingung} & Dozent ist angemeldet\\
+			 & ein Bewertungsschema liegt vor \\ 
+
+			 \textbf{Nachbedingung Erfolg} & Template ist
+			  zur Veranstaltungsplanung freigegeben  \\ 
+			 \textbf{Nachbedingung Fehlschlag} &  \\ 
+			 \textbf{Akteure} & Dozent \\ 
+			 \textbf{Auslösendes Ereignis} & Dozent legt ein Template an \\
+			 & Bei Veranstaltungserstellung wurde kein Template gefunden\\
+			 & Bei Veranstaltungserstellung wird ein neues Template erstellt\\
+			 \textbf{Beschreibung} & 1. Die Art der Prüfung wird spezifiziert \\
+			 & 2. Items hinzufügen\\
+			 & 3. Bewertungsschema hinzufügen\\
+			  \textbf{Erweiterung} & 1. Templates refactoring \\ 
+			 \textbf{Alternativen} & 1. Neues Bewertungsschema erstellen anlegen \\  			
+			 \end{tabular} 
+		\label{tab:F20}
+		\end{table}
+	
+		\begin{table}[ht]
+		\begin{tabular}{ll}
+			\multicolumn{2}{l}{/\textbf{\textit{F30}}/}\\\hline
+			 \textbf{Geschäftsprozess} & Bewertungsschema festlegen \\ 
+			 \textbf{Kategorie} & primär \\ 
+			 \textbf{Vorbedingung} & 1. Dozent ist angemeldet  \\ 
+			 \textbf{Nachbedingung Erfolg} & Ein Bewertungsschema steht zur Verfügung\\ 
+			 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
+			 \textbf{Akteure} & Dozent \\ 
+			 \textbf{Auslösendes Ereignis} & Dozent legt ein Bewertungsschema an  \\ 
+			 \textbf{Beschreibung} &  1. Umrechnungsformel festlegen\\
+			 & 2. Parameter anpassen
+			 \end{tabular} 
+		\label{tab:F30}
+		\end{table}
+	
+	
+			\begin{table}[ht]
+			\begin{tabular}{ll}
+				\multicolumn{2}{l}{/\textbf{\textit{F40}}/}\\\hline
+				 \textbf{Geschäftsprozess} & Bewerten \\ 
+				 \textbf{Kategorie} & primär \\ 
+				 \textbf{Vorbedingung} & 1. Dozent/Prüfer ist angemeldet  \\ 
+				 & 2. Veranstaltung ist angelegt\\
+				 & 3. Gruppen/Student ist einer Veranstaltung zugewiesen\\
+				 & 4. Prüfer ist einer Veranstaltung zugewiesen\\
+				 \textbf{Nachbedingung Erfolg} & Ein Student/Gruppe wurde Bewertet\\
+				 & Teilbewertung/vollständige Bewertung ist abgeschlossen\\ 
+				 \textbf{Akteure} & Dozent \\ 
+				 & Prüfer\\
+				 \textbf{Auslösendes Ereignis} & Prüfer will bewerten \\ 
+				 \textbf{Beschreibung} &  1. Prüfer wählt Veranstaltung aus\\
+				 & Prüfer wählt Student/Gruppe zur Bewertung aus\\
+				 & Bewertungen/Teilbewertungen eintragen\\
+				 & Bewertung abschließen\\
 			
-		\item[/F20/] - verwalten von Studenten
-			\item[/F22/] - Anlegen von Kurs + Teilnehmer (Gruppe 1.Art)
-			\item[/F21/] - Gruppierung von Studenten zur Teamaufgabe (Gruppe 2.Art)
-			\item[/F23/] - Anlegen eines  Studenten
-		
-		\item[/F30/] - verwalten von Prüfer
-			\item[/F31/] - Anlegen von Prüfer
-			\item[/F32/] - Zuweisung eines Prüfers zu einem Template, Kurs, Student
-		
-		\item[/F40/] - Ein Prüfer pflegt die Punkte pro Student/Gruppe für eine Veranstaltung in das Bewertungssystem ein. Er arbeitet mit einem durch das Template definierten Bewertungskatalog.
-			\item[/F41/] - Rate eintragen
+				 \end{tabular} 
+			\label{tab:F40}
+			\end{table}
 			
-		\item[/F50/] - Studenten können Noten einsehen
-			\item[/W51/] - Studenten können die Notenentstehung in jeder Einzelheit nachvollziehen (Transparenz)
-			\item[/W51/] - Studenten sehen, wie sie im Bezug zum Kurs (anderen Kursen) abgeschnitten haben
-		\item[/W60/] - Erstellung eines Notenreports für Einzelpersonen und Gruppen
-	\end{itemize}
+\begin{table}[ht]
+	\begin{tabular}{ll}
+		\multicolumn{2}{l}{/\textbf{\textit{F50}}/}\\\hline
+		 \textbf{Geschäftsprozess} & Bewertung abschließen\\ 
+		 \textbf{Kategorie} & primär \\ 
+		 \textbf{Vorbedingung} & Bewertungen einer Veranstaltung in allen Items liegen vor\\
+		 & Bewertungen für einen Student/Gruppe sind komplett\\
+		 & Prüfer ist angemeldet \\ 
+		 \textbf{Nachbedingung Erfolg} & Dozent erfährt, dass die Endnote der Veranstaltung vorliegt  \\ 
+		 & Prüfer verliert das Recht zu editieren, nur noch sehen\\
+		 & Nur Dozent ist berechtigt zu ändern\\
+		 \textbf{Nachbedingung Fehlschlag} &  Die Bewertung steht weiter aus\\
+		 & Bestätigung für den Abschluss trotz der \\
+		 & unvollständigen Daten wird erfragt\\ 
+		 \textbf{Akteure} & Dozent \\ 
+		 & Prüfer\\
+		 \textbf{Auslösendes Ereignis} & Prüfer schließt die Bewertung ab \\ 
+		 \textbf{Alternativen} & 1. Bewertung vervollständigen \\
+		 \end{tabular} 
+	\label{tab:F50}
+	\end{table}		
+			
+	\begin{table}[ht]
+		\begin{tabular}{ll}
+			\multicolumn{2}{l}{/\textbf{\textit{F60}}/}\\\hline
+			 \textbf{Geschäftsprozess} & Kurs anlegen\\ 
+			 \textbf{Kategorie} & primär \\ 
+			 \textbf{Vorbedingung} & 1. Dozent ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
+			  & Studenten liegen vor\\
+			 \textbf{Nachbedingung Erfolg} & Kurs ist angelegt\\
+			 \textbf{Nachbedingung Fehlschlag} & -\\
+			 \textbf{Akteure} & Dozent \\ 
+			 \textbf{Auslösendes Ereignis} & Dozent legt einen Kurs an\\ 
+			 \textbf{Beschreibung} &  1. Kurs erstellen\\
+			 & 2. Studenten hinzufügen\\
+			 & 3. Kurs erstellen\\
+			 \textbf{Alternativen} & 1. Studenten anlegen \\
+			 \end{tabular} 
+		\label{tab:F60}
+		\end{table}
+		
+		
+			\begin{table}[ht]
+				\begin{tabular}{ll}
+					\multicolumn{2}{l}{/\textbf{\textit{F70}}/}\\\hline
+					 \textbf{Geschäftsprozess} & Studenten anlegen\\ 
+					 \textbf{Kategorie} & primär \\ 
+					 \textbf{Vorbedingung} & 1. Dozent ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
+					 \textbf{Nachbedingung Erfolg} & Ein Student ist angelegt\\
+					 & Student kann einem Kurs/Gruppe hinzugefügt werden\\
+					 \textbf{Nachbedingung Fehlschlag} & -\\
+					 \textbf{Akteure} & Dozent \\ 
+					 \textbf{Auslösendes Ereignis} & Dozent legt Studenten an\\ 
+					 \textbf{Beschreibung} &  1. Studentenregisterkarte erstellen\\
+					 & 2. Daten befüllen\\
+				 \end{tabular} 
+				\label{tab:F70}
+				\end{table}	
+			
+			\begin{table}[ht]
+				\begin{tabular}{ll}
+					\multicolumn{2}{l}{/\textbf{\textit{F80}}/}\\\hline
+					 \textbf{Geschäftsprozess} & Bewertung einsehen\\ 
+					 \textbf{Kategorie} & primär \\ 
+					 \textbf{Vorbedingung} & 1. Student ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
+					 &2. Bewertung liegt vor\\
+					 \textbf{Nachbedingung Erfolg} & 1. Student sieht seine Noten\\
+					  \textbf{Nachbedingung Fehlschlag} & Benachrichtigung\\
+					 \textbf{Akteure} & Student \\ 
+					 \textbf{Auslösendes Ereignis} & Student will seine Noten einsehen\\ 
+					 \textbf{Beschreibung} &  1. Student meldet sich an\\
+					 & 2. Student sieht seine Noten\\
+				 \end{tabular} 
+				\label{tab:F80}
+				\end{table}	
+
+
 	
 	
 	\section{Produktdaten}
@@ -250,6 +413,12 @@
 	
  \begin{appendix}
   \section{Begriffsdefinitionen}
+	\begin{tabular}{ll}
+	 \textbf{Dozent} &  ist bla\\ 
+	 \textbf{ Item}	 &  \\ 
+	  
+	 
+	\end{tabular} 
   \section{Abkürzungen}
   \section{Modelle}
   \section{Qualitätsmerkmale}
