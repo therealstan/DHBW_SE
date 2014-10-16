@@ -1,0 +1,268 @@
+\input{doc/header.tex}
+
+\begin{document}
+	\input{doc/title.tex}
+	\tableofcontents
+	\newpage
+
+	\section{Zielbestimmung}
+		\subsection{Musskriterien}
+			\begin{itemize}
+			\item[-]	Verschiedene Benutzergruppen 
+			\item[-]	Benutzer anlegen
+			\item[-]	Rechtehierarchien
+			\item[-]	Studenten können ihre Noten in dem System einsehen.
+			\item[-]	Notenkonvertierungsprofile erstellen und verwalten
+			\item[-]	Dozenten weisen einer Veranstaltung Bewertungsschema zu
+			\item[-]	Ein Template kann zu einer Veranstaltung erstellt werden.
+			\item[-]	Veranstaltungen des Typs (Gruppenarbeit, Einzelarbeit) können erstellt werden.
+			\item[-]	Die Festlegung eines Grundscore (Gruppe, einzeln) lässt sich in zwei Skalenbereiche beliebig teilen ($H_2$)
+			\item[-]	Score Refining Faktoren können in einem Template frei eingestellt werden (Items) ($R_2S$)
+			\item[-]	Skalierbarkeit des Bewertungssystems von Bewertung der Gruppe zu Einzelperson und umgekehrt.
+			\item[-]	Zuweisung von beliebig gruppierten Studenten zu einer \item[-]	Veranstaltung durch Dozent oder Prüfer.				
+			\end{itemize}
+
+			
+		\subsection{Wunschkriterien}
+		\begin{itemize}
+		\item[-]	Alle Zwischenbewertungen die zur Note führen werden dem Studenten angezeigt.
+		\item[-]	Profilverwaltung um standardisierte Bewertungen erzeugen zu können.
+		\end{itemize}
+		
+		\subsection{Abgrenzungskriterien}
+		\begin{itemize}
+		\item[-]	Bewertungssystem bewertet nur die Veranstaltungen die einer Art bestanden/nicht bestanden Logik unterliegen. Anschließend erfolgt eine konfigurierbare Punkte-Notenkonvertierung.
+		\item[-]	Jede erstellte Veranstaltung beinhaltet genau ein Bewertungsschema und führt somit zu einer Note. Die Kombi-nierbarkeit von verschiedenen Einzelnoten ist nicht möglich.
+		\end{itemize}
+		
+	\section{Produkteinsatz}
+	
+		
+		\subsection{Anwendungsbereiche}
+		\begin{itemize}
+		\item[-]	Planung einer Veranstaltung mit anstehenden Prüfungsleistungen für Lehrveranstaltungsplaner
+		\item[-]	Errechnung einer Note durch den Prüfer anhand festgelegter Kriterien.
+		\item[-]	Einsicht der Noten durch Studenten, sowie die Leistungsübersicht für die Dozenten und Prüfer.
+		\end{itemize}
+		
+		
+		\subsection{Zielgruppen}
+		\begin{itemize}
+		\item[-]	Lehrveranstaltungsplaner
+		\item[-]	Prüfer
+		\item[-]	Studenten
+		\end{itemize}
+
+		\subsection{Betriebsbedingungen}
+		\begin{itemize}
+		\item[-]	Das System soll nur einmal angelegt werden und autark funktionieren.
+		\item[-]	Klar definierte Benutzergruppen und Rechte
+		\item[-]	Datenbankschnittstelle für Benutzerverwaltung
+		\item[-]	Datenbank-Umgebung für die Speicherung der Daten
+		\item[-]	Archivierung der Daten (Datensicherheit wegen Einsehbarkeit der Daten)
+		\item[-]	Zugriff von außen sowohl als Lesen, als auch als Edit möglich. 
+		\end{itemize}
+
+		
+		
+		
+		
+	\section{Produktübersicht}
+	
+	\begin{figure}[th!]
+	\centering
+	\includegraphics[width=\textwidth]{./img/use_case}
+	\caption{Darstellung des Gesamtsystem anhand der ausgearbeiteten Use-Cases}
+	\label{fig:use_case}
+	\end{figure}
+	
+	\begin{figure}[th!]
+	\centering
+	\includegraphics[width=\textwidth]{./img/ablauf_1}
+	\caption{Prozessdiagramm für Geschäftsprozess Veranstaltungserstellung}
+	\label{fig:process1}
+	\end{figure}
+		
+	\begin{figure}[th!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./img/ablauf_2}
+	\caption{Ablaufdiagramm für den Geschäftsprozess Bewertung}
+	\label{fig:process2}
+	\end{figure}
+
+	\section{Produktfunktionen}
+	\begin{itemize}
+	\item[/F10/]   -  Planung einer Bewertungsroutine für eine Veranstaltung. Dies ist nur für die Benutzergruppe „Dozent“ möglich.  Die Planung erfolgt derart, dass zunächst ein Template für die Veranstaltung konfiguriert wird. Ein ferti-ges Template kann nun auf die angelegten Studentengruppen angewandt werden. 
+		
+			\item[/F11/] - Template für Gruppenprojekt erstellen.
+			\item[/F12/] - Template für Einzelprojekt erstellen.
+			\item[/F13/] - Refining Kriterien für Aufgabentypus festlegen.	
+			\item[/F14/] - Anlegen von Konvertierungsprofilen. 
+		\item[/W11/] - Das Template kann abgewandelt werden (z.B. klonen eines Templates, editieren etc.)
+			\item[/W12/] - Das Bewertungssystem kann Profile verwalten. 
+			\item[/W13/] - Standardisierung der Bewertungen
+			
+		\item[/F20/] - verwalten von Studenten
+			\item[/F22/] - Anlegen von Kurs + Teilnehmer (Gruppe 1.Art)
+			\item[/F21/] - Gruppierung von Studenten zur Teamaufgabe (Gruppe 2.Art)
+			\item[/F23/] - Anlegen eines  Studenten
+		
+		\item[/F30/] - verwalten von Prüfer
+			\item[/F31/] - Anlegen von Prüfer
+			\item[/F32/] - Zuweisung eines Prüfers zu einem Template, Kurs, Student
+		
+		\item[/F40/] - Ein Prüfer pflegt die Punkte pro Student/Gruppe für eine Veranstaltung in das Bewertungssystem ein. Er arbeitet mit einem durch das Template definierten Bewertungskatalog.
+			\item[/F41/] - Rate eintragen
+			
+		\item[/F50/] - Studenten können Noten einsehen
+			\item[/W51/] - Studenten können die Notenentstehung in jeder Einzelheit nachvollziehen (Transparenz)
+			\item[/W51/] - Studenten sehen, wie sie im Bezug zum Kurs (anderen Kursen) abgeschnitten haben
+		\item[/W60/] - Erstellung eines Notenreports für Einzelpersonen und Gruppen
+	\end{itemize}
+	
+	
+	\section{Produktdaten}
+	\begin{itemize}
+	\item[/D10/] - Studenteninformation
+		\item[/D11/] - Kursteilnahmen
+		\item[/D12/] - Zugeteilte Prüfer
+		\item[/D13/] - Leistungen
+		\item[/D14/] - Matrikelnummer
+		\item[/D15/]  - Name, Vorname
+	\item[/D20/] - Prüfer
+		\item[/D21/] -  Kurse
+		\item[/D22/] - ID
+		\item[/D23/] - Name, Vorname
+	\item[/D30/] - Dozenten
+		\item[/D31/] - ID
+		\item[/D32/] - Name, Vorname
+		\item[/D33/] - erstellte Templates
+	\item[/D40/] - Veranstaltungen
+		\item[/D41/] - Templates für die Bewertungen
+		\item[/D42/] - Statistiken über die Leistungen über die Jahre
+	\item[/D50/] - Notenkonvertierung
+		\item[/D51/] - ID
+		\item[/D52/] - Name
+		\item[/D53/] - Parameter
+	\end{itemize}
+	
+	\section{Produktleistungen}
+	\begin{itemize}
+	\item[-]	Die Anwendung (Prototyp) ist nicht zeit- oder  rechenkritisch.
+	\item[-]	Die steigenden Benutzerzahlen die zur gleichen Zeit auf das System zugreifen, sollen jedoch keine signifikanten Einflüsse auf die Antwortzeiten des Systems haben. 
+	\item[-]	Die Zugriffe von außerhalb, wie z.B. über WWW sind in dem Prototypen nicht vorgesehen.
+	\item[-]	Zu speichernde Daten, werden serialisiert gespeichert. (Für eine spätere Implementierung ist der \item[-]	Einsatz einer Datenbank möglich, jedoch für die funktionelle Prototypisierung nicht sofort notwendig.)
+	\end{itemize}
+
+	
+	\section{Qualitätsanforderungen}
+	\begin{table}[ht]
+	\caption{Qualitätsmerkmale nach DIN ISO 9126 – siehe Anhang A in T3-4}
+	\centering
+		\begin{tabular}{|c|c|c|c|c|}
+		\hline Produktqualität & sehr gut & gut & normal & nicht relevant \\ 
+		\hline \multicolumn{5}{|c|}{Funktionalität}   \\ 
+		\hline Angemessenheit &  & \checkmark &  &  \\ 
+		\hline Richtigkeit &  & \checkmark  &  &  \\ 
+		\hline Interoperabilität &  &\checkmark   &  &  \\ 
+		\hline Ordnungsmäßigkeit &  &\checkmark   &  &  \\ 
+		\hline Sicherheit &  &\checkmark   &  &  \\ 
+		\hline \multicolumn{5}{|c|}{Zuverlässigkeit}   \\ 
+		\hline Reife &  &\checkmark   &  &  \\ 
+		\hline Fehlertoleranz &  \checkmark &  &  &  \\ 
+		\hline Wiederherstellbarkeit & \checkmark  &  &  &  \\ 
+		\hline \multicolumn{5}{|c|}{Benutzbarkeit}  \\ 
+		\hline Verständlichkeit &  &\checkmark   &  &  \\ 
+		\hline Erlernbarkeit &  & \checkmark  &  &  \\ 
+		\hline Bedienbarkeit &  & \checkmark  &  &  \\ 
+		\hline \multicolumn{5}{|c|}{Effizienz} \\ 
+		\hline Zeitverhalten &  &  &\checkmark   &  \\ 
+		\hline Verbrauchsverhalten &  &  &\checkmark   &  \\ 
+		\hline \multicolumn{5}{|c|}{Änderbarkeit} \\ 
+		\hline Analysierbarkeit &  & \checkmark  &  &  \\ 
+		\hline Modifizierbarkeit &  & \checkmark  &  &  \\ 
+		\hline Stabilität & \checkmark  &  &  &  \\ 
+		\hline Prüfbarkeit & \checkmark  &  &  &  \\ 
+		\hline \multicolumn{5}{|c|}{Übertragbarkeit}  \\ 
+		\hline Anpassbarkeit & \checkmark  &  &  &  \\ 
+		\hline Installierbarkeit & \checkmark  &  &  &  \\ 
+		\hline Konformität	 &  &  &\checkmark   &  \\ 
+		\hline Austauschbarkeit &  &  & \checkmark  &  \\ 
+		\hline 
+		\end{tabular} 
+	\label{tab:quali_anf}
+	\end{table}
+
+	
+	\section{Benutzeroberfläche}
+	
+	Die Benutzeroberfläche entspricht den modernen Ansprüchen der Web-Anwendungen und wird mit entsprechend Google-Designrichtlinien erstellt. UI/UX werden an den Zielgruppen getestet. Die intuitive Bedienung ist eine Vo-raussetzung.
+	
+	\begin{table}[ht]
+	\caption{Benutzergruppen und Rechteverteilung}
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline Benutzergruppe & Lesen & Schreiben & Ändern & Systemanpassungen \\ 
+	\hline Administrator & \checkmark & \checkmark & \checkmark & \checkmark \\ 
+	\hline Verwalter & \checkmark & \checkmark & \checkmark &  \\ 
+	\hline Prüfer & \checkmark & \checkmark &  &  \\ 
+	\hline Student & \checkmark &  &  &  \\ 
+	\hline 
+	\end{tabular} 
+	\label{tab:usergroup}
+	\end{table}
+	
+	
+	\section{Nichtfunktionale Anforderungen}
+	Die Anforderungen entsprechen den Richtlinien der jeweiligen Instanz und werden durch den Administrator ein-malig eingestellt.
+	Sicherheitsanforderungen entsprechen den modernen Sicherheitsstandard
+	
+	\section{Technische Produktumgebung}
+	Die technische Landschaft besteht aus einem Server und einem Web-Server, welcher die Anfragen der webba-sierten Clients entgegennimmt. 
+		\subsection{Software}
+		Wird spezifiziert 
+		\subsection{Hardware}
+		Sind für dieses Projekt nicht relevant. (prinzipiell ein Leistungsstarker Server )
+		\subsection{Orgware}
+		Kundenmanagementsystem
+		\subsection{Produkt-Schnittstellen}
+		Web-Schnittstelle.
+	\section{Spezielle Anforderungen an die Entwicklungs-Umgebung}
+		\subsection{Software}
+		Git Versionsverwaltung, Issue Tracking System, IDE for JAVA Development
+		\subsection{Hardware}
+		Laptop, Standalone PC
+		\subsection{Orgware}
+		XP (extreme proramming und agile development)	
+		\subsection{Entwicklungs-Schnittstellen}
+		WEB-Schnittstelle
+	\section{Gliederung in Teilprodukte}
+	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung.
+	Veranstaltungskonfigurator beschränkt sich hierbei auf einen minimalen Funktionsumfang um die mögliche Ar-beitsweise deutlich zu machen. 
+	Konfigurieren bedeutet in diesem Zusammenhang die Notenumrechnung mit Parametern zu belegen und zwi-schen unterschiedlichen Bewertungsschemata auswählen zu können. 
+	Des Weiteren lassen sich zu einer Veranstaltung einzeln gewichtete Bewertungskritierien hinzufügen. 
+	Das Bewertungssystem beinhaltet eine vom Dozent vordefinierte Maske, in die der Prüfer die Ergebnisse der Ver-anstaltung eintragen kann. Anhand der Ergebnisse wird dann eine Note für diese Veranstaltung errechnet.
+	Über ein Modul zum Einsehen der Bewertung, können zum einen Dozent und Prüfer die eingegeben Ergebnisse überprüfen, zum anderen die Studenten ihr Abschneiden bei der jeweiligen Veranstaltung überprüfen.
+		
+	
+	\section{Ergänzungen}
+	Wird angepasst	
+	
+	
+ \begin{appendix}
+  \section{Begriffsdefinitionen}
+  \section{Abkürzungen}
+  \section{Modelle}
+  \section{Qualitätsmerkmale}
+  \clearpage
+  \section{Aufwandsabschätzung}
+  
+  	\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./files/Aufwand}
+	\label{fig:Aufwand}
+	\end{figure}
+
+  \end{appendix}
+
+			  
+\end{document}

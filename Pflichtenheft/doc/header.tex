@@ -1,0 +1,110 @@
+\documentclass[]{scrartcl}
+
+\usepackage[sort, square]{natbib}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+% sichert die richtige Darstellung der deutschen Sprache
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% % % % % % % %
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage{colortbl}
+\usepackage{extarrows}
+
+\newcommand\abb[1]{\textbf{\underline{#1}}}
+% Startet neue Seite pro \section{} Befehl
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+% % % % % % % %
+
+\usepackage{pgf}
+\usepackage{color}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{LimeGreen}{HTML}{9EFD38}
+\usepackage{cancel}
+\usepackage{url}
+\usepackage{epstopdf}
+\sisetup{ output-decimal-marker = {,}} % Decimalzahlen sind durch Komma getrennt
+
+% Ein Caption für ein Listing wird definiert
+\usepackage{caption}
+\usepackage{listings}
+
+\DeclareCaptionFont{white}{ \color{white} }
+\DeclareCaptionFormat{listing}{
+	\colorbox[cmyk]{0.43, 0.35, 0.35,0.01 }{
+		\parbox{\textwidth}{\hspace{15pt}#1#2#3}
+	}
+}
+\captionsetup[lstlisting]{ format=listing, labelfont=white, textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize} }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\geometry{outer=30mm,
+inner=30mm,
+top=20mm,
+bottom=30mm}
+
+\newcommand\grad{^{\circ}}
+% 
+%
+% Unterstreichen und Umrahmen der Formeln in align-Umgebung
+\newcommand\ul[2][]{%Befehl zum Unterstreichen von #2 mit eventueller Größenabstimmung mit #1 
+ \underline{#2\vphantom{#1}}}%wenn #1 angegeben, wird Tiefe der Linie angepaßt 
+
+\newcommand\ulalign[2]{\ul[#2]{#1}&\ul[#1]{\;=#2}}%einfaches Unterstreichen einer align-Gl. mit &= 
+\newcommand\dulalign[2]{\underline{\ul[#2]{#1}}&\underline{\ul[#1]{\;=#2}}}%doppeltes Unterstreichen einer align-Gl. mit &= 
+
+
+\usepackage{tikz} 
+\usetikzlibrary{fit} 
+
+\newcommand\raalign[2]{%Umrahmen einer align-Gl. mit &= 
+   \tikz[overlay,every node/.style={inner sep=0pt,outer sep=0pt}]% 
+      \node[anchor=base west](g){\phantom{$\displaystyle #1\null=\null#2$}}% 
+         node[draw=gray!70!black,fill=gray!20,fit=(g),inner sep=5pt]{};% 
+   #1&=#2} 
+  
+% 
+%
+% 
+
+
+\usepackage{listings} % Quellcode im Text
+\lstset{language=JAVA, % Programmiersprache
+		tabsize=1, 	  % Länge des Tab Zeichens
+        basicstyle=\ttfamily\color{mygray}\small, % style des Codes
+        keywordstyle=\ttfamily\color{blue},
+        identifierstyle=\color{mygray},
+        commentstyle=\color{red},
+        stringstyle=\ttfamily\color{black},
+        showstringspaces=false,
+        numbers=left, 
+        numberstyle=\tiny, 
+        stepnumber=1, 
+        numbersep=5pt,
+        breaklines=true,
+        literate=%   
+            {Ö}{{\"O}}1
+            {Ä}{{\"A}}1
+            {Ü}{{\"U}}1
+            {ß}{{\ss}}1
+            {ü}{{\"u}}1
+            {ä}{{\"a}}1
+            {ö}{{\"o}}1
+            {~}{{\textasciitilde}}1}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+\usepackage[tocflat]{tocstyle}   
+\usetocstyle{allwithdot}
