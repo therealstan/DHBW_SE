@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  16 OCT 2014 13:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  16 OCT 2014 14:22
 entering extended mode
 **Pflichtenheft.tex
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.tex
@@ -1694,6 +1694,13 @@ text indent calculated (toc, 2): 24.80185pt
 number indent calculated (toc, 2): 18.09325pt
 text noindent (toc, 2): 24.80185pt
 number noindent (toc, 2): 0.0pt
+number indent by \l@... (toc, 2):  16.33182pt
+text indent by \l@... (toc, 2):  25.04214pt
+number indent by parent (toc, 2):  18.09325pt
+text indent calculated (toc, 2): 24.80185pt
+number indent calculated (toc, 2): 18.09325pt
+text noindent (toc, 2): 24.80185pt
+number noindent (toc, 2): 0.0pt
 number indent by \l@... (toc, 1):  0.0pt
 text indent by \l@... (toc, 1):  16.33182pt
 number indent by parent (toc, 1):  0.0pt
@@ -1869,71 +1876,76 @@ Overfull \hbox (65.29605pt too wide) in paragraph at lines 34--35
 
 ] [4
 
-] <./img/use_case.pdf, id=198, 434.37282pt x 618.81187pt>
+]
+Overfull \hbox (25.97519pt too wide) in paragraph at lines 144--157
+[][]
+ []
+
+[5
+
+] [6] <./img/use_case.pdf, id=217, 434.37282pt x 618.81187pt>
 File: ./img/use_case.pdf Graphic file (type pdf)
 
 <use ./img/use_case.pdf>
-Package pdftex.def Info: ./img/use_case.pdf used on input line 95.
+Package pdftex.def Info: ./img/use_case.pdf used on input line 163.
 (pdftex.def)             Requested size: 426.79141pt x 608.04614pt.
 
-<./img/ablauf_1.pdf, id=199, 508.14844pt x 715.92468pt>
+<./img/ablauf_1.pdf, id=218, 508.14844pt x 715.92468pt>
 File: ./img/ablauf_1.pdf Graphic file (type pdf)
 
 <use ./img/ablauf_1.pdf>
-Package pdftex.def Info: ./img/ablauf_1.pdf used on input line 102.
+Package pdftex.def Info: ./img/ablauf_1.pdf used on input line 170.
 (pdftex.def)             Requested size: 426.79141pt x 601.31801pt.
 
-<./img/ablauf_2.pdf, id=200, 278.54062pt x 612.03656pt>
+<./img/ablauf_2.pdf, id=219, 278.54062pt x 612.03656pt>
 File: ./img/ablauf_2.pdf Graphic file (type pdf)
 
 <use ./img/ablauf_2.pdf>
-Package pdftex.def Info: ./img/ablauf_2.pdf used on input line 109.
+Package pdftex.def Info: ./img/ablauf_2.pdf used on input line 177.
 (pdftex.def)             Requested size: 256.07744pt x 562.68823pt.
- [5
+ [7
 
-] [6 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/use_case.pd
-f>] [7 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/ablauf_1.
-pdf>] [8 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/ablauf_
-2.pdf>]
-Overfull \hbox (50.01404pt too wide) in paragraph at lines 118--142
+ <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/use_case.pdf>] 
+[8 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/ablauf_1.pdf>
+] [9 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/ablauf_2.pd
+f>]
+Overfull \hbox (50.01404pt too wide) in paragraph at lines 186--210
 [][]
  []
 
 
-Overfull \hbox (34.5325pt too wide) in paragraph at lines 145--166
+Overfull \hbox (34.5325pt too wide) in paragraph at lines 213--234
 [][]
  []
 
 
-Overfull \hbox (27.28291pt too wide) in paragraph at lines 169--182
+Overfull \hbox (27.28291pt too wide) in paragraph at lines 237--250
 [][]
  []
 
 
-Overfull \hbox (27.60223pt too wide) in paragraph at lines 209--228
+Overfull \hbox (27.60223pt too wide) in paragraph at lines 277--296
 [][]
  []
 
 
-Overfull \hbox (32.46143pt too wide) in paragraph at lines 231--247
+Overfull \hbox (32.46143pt too wide) in paragraph at lines 299--315
 [][]
  []
 
 
-Overfull \hbox (32.46143pt too wide) in paragraph at lines 251--265
+Overfull \hbox (32.46143pt too wide) in paragraph at lines 319--333
 [][]
  []
 
 
-Overfull \hbox (36.24455pt too wide) in paragraph at lines 268--282
+Overfull \hbox (36.24455pt too wide) in paragraph at lines 336--350
 [][]
  []
 
-[9
+[10
 
-] [10] [11] [12
-
-] [13
+] [11] [12] [13
 
 ] [14
 
@@ -1953,37 +1965,39 @@ Overfull \hbox (36.24455pt too wide) in paragraph at lines 268--282
 
 ] [22
 
+] [23
+
 ]
-<./files/Aufwand.pdf, id=337, 635.69496pt x 899.01869pt>
+<./files/Aufwand.pdf, id=350, 635.69496pt x 899.01869pt>
 File: ./files/Aufwand.pdf Graphic file (type pdf)
 
 <use ./files/Aufwand.pdf>
-Package pdftex.def Info: ./files/Aufwand.pdf used on input line 430.
+Package pdftex.def Info: ./files/Aufwand.pdf used on input line 498.
 (pdftex.def)             Requested size: 384.10966pt x 543.21524pt.
 
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 48.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 437.
-[23
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 505.
+[24
 
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/files/Aufwand.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 437.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 505.
 
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 437.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 437.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 505.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 505.
 Package rerunfilecheck Info: File `Pflichtenheft.out' has not changed.
-(rerunfilecheck)             Checksum: 1D1D450486AB88378BDDFA682E90EE7C;2024.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 437.
+(rerunfilecheck)             Checksum: 2B9277A5C8E85212678C68BB2AB22D37;2110.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 505.
  ) 
 Here is how much of TeX's memory you used:
- 28577 strings out of 493921
- 533694 string characters out of 3144863
+ 28588 strings out of 493921
+ 533855 string characters out of 3144863
  609514 words of memory out of 3000000
- 31299 multiletter control sequences out of 15000+200000
+ 31304 multiletter control sequences out of 15000+200000
  19380 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  58i,11n,65p,444b,788s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2002,9 +2016,9 @@ ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Pflichtenheft.pdf (23 pages, 654360 bytes).
+Output written on Pflichtenheft.pdf (24 pages, 657746 bytes).
 PDF statistics:
- 778 PDF objects out of 1000 (max. 8388607)
- 72 named destinations out of 1000 (max. 500000)
- 297 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 795 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
