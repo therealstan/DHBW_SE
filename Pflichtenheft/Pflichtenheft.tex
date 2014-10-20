@@ -362,11 +362,11 @@
 		Die Größe der einzelnen Datenpunkte richtet sich variabel nach der letztendlichen Größe des Anwendungssystems. Die praktische Obergrenze wird durch die Hardware bzw. Datenbank festgelegt. 
 	
 	\begin{description}[\setlabelphantom{xxxxxx}]
-	\item[/D10/] Benutzer \{Benutzer\_id, Benutzerart(Rechte) , Personendaten, Veranstaltungen\}\\ (Max. 100000) 
+	\item[/D10/] Benutzer \{Benutzer\_id, Benutzertyp(Rechte) , Personendaten, Veranstaltungen\}\\ (Max. 100000) 
 	\item[/D20/] Veranstaltung \{Veranstaltungs\_id, Bewertungsschema(S$_2$G), Bewertungstemplate, Prüfer, Stundenten, Score, Note, Status\_Bewertung\, Beschreibung\} \\ (Max. 100000)
 	\item[/D30/] GUI-Daten (mehrere verschiedene Ansichten) \\
 	Genauere Spezifikation erfolgt im zweiten Teil des Projekts im 4. Semester
-	\item[/D40/] Datenarchiv {AlleDaten}
+	\item[/D40/] Datenarchiv {Alle Daten}
 	
 	\end{description}
 	
@@ -374,7 +374,7 @@
 	
 	\begin{description}[\setlabelphantom{xxxxxxx}]
 	\item[/L10/] Die Antwortzeiten der Anwendung sollen so gering wie möglich gehalten werden.
-	\item[/L20/] 	Die steigenden Benutzerzahlen die zur gleichen Zeit auf das System zugreifen, sollen jedoch keine signifikanten Einflüsse auf die Antwortzeiten des Systems haben.
+	\item[/L20/] 	Die steigenden Benutzerzahlen die zur gleichen Zeit auf das System zugreifen, sollen keine signifikanten Einflüsse auf die Antwortzeiten des Systems haben.
 	\item[/L30/]	Benutzerfreundliche UX soll implementiert werden.
 	\item[/L40/]	Anbindung an bereits vorhandene Datenbanken soll in Zukunft möglich sein (wird im Prototypen zunächst nicht implementiert)
 	\item[/L50/] 	Die Abfragen und die Einsicht der Daten von Außerhalb (WWW) ist entsprechend der Benutzerberechtigung möglich. (wird im Prototypen zu einem späteren Zeitpunkt realisiert)
@@ -483,12 +483,12 @@
 		WEB-Schnittstelle
 		
 	\section{Gliederung in Teilprodukte}
-	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung.
-	Veranstaltungskonfigurator beschränkt sich hierbei auf einen minimalen Funktionsumfang um die mögliche Arbeitsweise deutlich zu machen. 
-	Konfigurieren bedeutet in diesem Zusammenhang die Notenumrechnung mit Parametern zu belegen und zwischen unterschiedlichen Bewertungsschemata auswählen zu können. 
-	Des Weiteren lassen sich zu einer Veranstaltung einzeln gewichtete Bewertungskritierien hinzufügen. 
+	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung.\\
+	Veranstaltungskonfigurator beschränkt sich hierbei auf einen minimalen Funktionsumfang um die mögliche Arbeitsweise deutlich zu machen.\\ 
+	Konfigurieren bedeutet in diesem Zusammenhang die Notenumrechnung mit Parametern zu belegen und zwischen unterschiedlichen Bewertungsschemata auswählen zu können.\\ 
+	Des Weiteren lassen sich zu einer Veranstaltung einzeln gewichtete Bewertungskriterien hinzufügen.\\ 
 	Das Bewertungssystem beinhaltet eine vom Dozent vordefinierte Maske, in die der Prüfer die Ergebnisse der Veranstaltung eintragen kann. Anhand der Ergebnisse wird dann eine Note für diese Veranstaltung errechnet.
-	Über ein Modul zum Einsehen der Bewertung, können zum einen Dozent und Prüfer die eingegeben Ergebnisse überprüfen, zum anderen die Studenten ihr Abschneiden bei der jeweiligen Veranstaltung überprüfen.
+	Über ein Modul zum Einsehen der Bewertung, können zum einen Dozent und Prüfer die eingegeben Ergebnisse überprüfen, zum anderen die Studenten ihr Abschneiden bei der jeweiligen Veranstaltung ansehen.
 		
 	
 	\section{Ergänzungen}
@@ -499,18 +499,18 @@
   \section{Begriffsdefinitionen}
 	\begin{description}[\setlabelphantom{Notenkonvertierungsprofil}]
 	\item[Benutzergruppen] Mögliche Benutzer werden mit verschiedenen Rechten und Bedienszenarien versehen.
-	\item[Student] Eine Benutzergruppe mit stark eingeschränkten Zugrifssrechten. Kann nur die vom Dozent freigegebenen Informationen sehen.
-	\item[Dozent] Eine Benutzergruppe mit umfassenden Rechten. Kann Templates, Veranstaltungen und Benutzergruppen verwalten.
-	\item[Prüfer] Ein Benutzer mit Rechten zur Dateneingabe. Kann nichts an einer Veranstaltung ändern.
-	\item[Sekretariat] Benutzergruppe welche die Rechte zur Datenverwaltung besitzt (kein Löschrecht).
-	\item[Administrator] Eine Benutzergruppe, welche die systemnahe Anpassungen durchführen darf.
+	\item[Student] Eine Benutzergruppe mit stark eingeschränkten Zugriffsrechten. Kann nur die vom Dozent freigegebenen Informationen sehen.
+	\item[Dozent] Eine Benutzergruppe mit umfassenden Rechten. Kann Templates, Veranstaltungen und Benutzergruppen erstellen und verwalten.
+	\item[Prüfer] Ein Benutzer mit Rechten zur Dateneingabe. Kann nichts an einer Veranstaltung ändern. Muss sich an die vom Dozent vorgegeben Muster halten.
+	\item[Sekretariat] Benutzergruppe, welche die Rechte zur Datenverwaltung besitzt (kein Löschrecht).
+	\item[Administrator] Eine Benutzergruppe mit der Berechtigung zur systemnahen Anpassungen.
 	\item[Veranstaltung] Template + Bewertungsschema + angepasste Items + Studenten/Gruppen + Kurs + Prüfer . Eine Veranstaltung umfasst die obengenannte Bausteine und wird vom Dozenten freigegeben. 
-	\item[Template] Ein Template ist eine beliebige Anzahl von Items und evtl. ein oder mehrere zugewiesene Bewertunsschemata. Ein Template darf leer sein. Somit werden komplett neue Veranstaltungen planbar.
+	\item[Template] Ein Template enthält eine beliebige Anzahl von Items und evtl. ein oder mehrere zugewiesene Bewertungsschemata. Ein Template darf leer sein. Somit werden komplett neue Veranstaltungen planbar.
 	\item[Item] Ein Bewertungskriterium, welches entweder fest oder variabel angelegt werden kann. Diese Kriterien können für eine Veranstaltung angepasst werden.
-	\item[Notenkonvertierungsprofil] Dies ist eine Umrechnungsformel, welche eine Vorschrift bildet, wie der Score in eine Note umgerechnet werden soll. Das konkrete Profil kann für die Veranstaltung durch Eingangsparameter angepasst werden.
-	\item[Score] Punkte welche einen Basis für die Notenbildung darstellen.
+	\item[{\parbox[t]{0.2\linewidth}{Notenkonvertierungsprofil \\ (S$_2$G)}}] {\parbox[t]{\linewidth}{ Dies ist eine Umrechnungsformel, die sich aus der Skala, wie der Score in eine Note umgerechnet werden soll, bestimmt. Das konkrete Profil kann für eine Veranstaltung durch Eingangsparameter angepasst werden.}}
+	\item[Score] Punkte die eine Basis für die Notenbildung darstellen.
 	\item[Grundscore (H$_2$)]  Zweistufige hollistische Bewertung. Diese zwei Bereiche sind frei einstellbar.
-	\item[Score Refining (S$_2$R)]  Ein Schema zur Aufbereitung des Grundscore durch die Faktoren (refining). Diese Faktoren werden von Dozenzenten vordefiniert.
+	\item[Score Refining (S$_2$R)]  Ein Schema zur Aufbereitung des Grundscore durch Faktoren (refining). Die Faktoren werden vom Dozenten vordefiniert.
 	
 	 
 	\end{description}
