@@ -443,6 +443,12 @@
 	
 	
 	\section{Nichtfunktionale Anforderungen}
+	
+	\begin{description}[\setlabelphantom{/QEZ00/}]
+	\item[/Q10/] Das System muss die Rollen, wie in der Tabelle~
+	
+	\end{description} 
+	
 	Die Anforderungen entsprechen den Richtlinien der jeweiligen Instanz und werden durch den Administrator einmalig eingestellt.
 	
 	Sicherheitsanforderungen entsprechen den modernen Sicherheitsstandard.
@@ -491,15 +497,30 @@
 	
  \begin{appendix}
   \section{Begriffsdefinitionen}
-	\begin{description}[\setlabelphantom{xxxxxxxxx}]
-	\item[bla] dddd
-	\item[text] fff
+	\begin{description}[\setlabelphantom{Notenkonvertierungsprofil}]
+	\item[Benutzergruppen] Mögliche Benutzer werden mit verschiedenen Rechten und Bedienszenarien versehen.
+	\item[Student] Eine Benutzergruppe mit stark eingeschränkten Zugrifssrechten. Kann nur die vom Dozent freigegebenen Informationen sehen.
+	\item[Dozent] Eine Benutzergruppe mit umfassenden Rechten. Kann Templates, Veranstaltungen und Benutzergruppen verwalten.
+	\item[Prüfer] Ein Benutzer mit Rechten zur Dateneingabe. Kann nichts an einer Veranstaltung ändern.
+	\item[Sekretariat] Benutzergruppe welche die Rechte zur Datenverwaltung besitzt (kein Löschrecht).
+	\item[Administrator] Eine Benutzergruppe, welche die systemnahe Anpassungen durchführen darf.
+	\item[Veranstaltung] Template + Bewertungsschema + angepasste Items + Studenten/Gruppen + Kurs + Prüfer . Eine Veranstaltung umfasst die obengenannte Bausteine und wird vom Dozenten freigegeben. 
+	\item[Template] Ein Template ist eine beliebige Anzahl von Items und evtl. ein oder mehrere zugewiesene Bewertunsschemata. Ein Template darf leer sein. Somit werden komplett neue Veranstaltungen planbar.
+	\item[Item] Ein Bewertungskriterium, welches entweder fest oder variabel angelegt werden kann. Diese Kriterien können für eine Veranstaltung angepasst werden.
+	\item[Notenkonvertierungsprofil] Dies ist eine Umrechnungsformel, welche eine Vorschrift bildet, wie der Score in eine Note umgerechnet werden soll. Das konkrete Profil kann für die Veranstaltung durch Eingangsparameter angepasst werden.
+	\item[Score] Punkte welche einen Basis für die Notenbildung darstellen.
+	\item[Grundscore (H$_2$)]  Zweistufige hollistische Bewertung. Diese zwei Bereiche sind frei einstellbar.
+	\item[Score Refining (S$_2$R)]  Ein Schema zur Aufbereitung des Grundscore durch die Faktoren (refining). Diese Faktoren werden von Dozenzenten vordefiniert.
+	
+	 
 	\end{description}
   \section{Abkürzungen}
   \section{Modelle}
   \section{Qualitätsmerkmale}
   \clearpage
   \section{Aufwandsabschätzung}
+  
+  
   
   	\begin{figure}[ht]
 	\centering
