@@ -1,0 +1,539 @@
+\input{doc/header.tex}
+
+\begin{document}
+	\input{doc/title.tex}
+	\tableofcontents
+	\newpage
+
+	\section{Zielbestimmung}
+
+
+		\subsection{Musskriterien1}			
+
+Benutzergruppen 
+			\item[-]	Benutzer anlegen
+			\item[-]	Rechtehierarchien
+			\item[-]	Studenten können ihre Noten in dem System einsehen.
+			\item[-]	Notenkonvertierungsprofile erstellen und verwalten
+			\item[-]	Dozenten weisen einer Veranstaltung Bewertungsschema zu
+			\item[-]	Ein Template kann zu einer Veranstaltung erstellt werden.
+			\item[-]	Veranstaltungen des Typs (Gruppenarbeit, Einzelarbeit) können erstellt werden.
+			\item[-]	Die Festlegung eines Grundscore (Gruppe, einzeln) lässt sich in zwei skalierbare \newline Bereiche beliebig teilen ($H_2$)
+			\item[-]	Score Refining Faktoren können in einem Template frei eingestellt werden (Items) ($R_2S$)
+			\item[-]	Skalierbarkeit des Bewertungssystems von Bewertung der Gruppe zu Einzelperson und umgekehrt.
+			\item[-]	Zuweisung von beliebig gruppierten Studenten zu einer \item[-]	Veranstaltung durch Dozent oder Prüfer.				
+			\end{itemize}
+
+			
+		\subsection{Wunschkriterien}
+		\begin{itemize}
+		\item[-]	Alle Zwischenbewertungen die zur Note führen werden dem Studenten angezeigt.
+		\item[-]	Profilverwaltung um standardisierte Bewertungen erzeugen zu können.
+		\end{itemize}
+		
+		\subsection{Abgrenzungskriterien}
+		\begin{itemize}
+		\item[-]	Bewertungssystem bewertet nur die Veranstaltungen die einer Art bestanden/nicht bestanden Logik unterliegen. Anschließend erfolgt eine konfigurierbare Punkte-Notenkonvertierung.
+		\item[-]	Jede erstellte Veranstaltung beinhaltet genau ein Bewertungsschema und führt somit zu einer Note. Die Kombinierbarkeit von verschiedenen Einzelnoten ist nicht möglich.
+		\end{itemize}
+		
+	\section{Produkteinsatz}
+	
+		
+		\subsection{Anwendungsbereiche}
+		\begin{itemize}
+		\item[-]	Planung einer Veranstaltung mit anstehenden Prüfungsleistungen für Lehrveranstaltungsplaner
+		\item[-]	Errechnung einer Note durch den Prüfer anhand festgelegter Kriterien.
+		\item[-]	Einsicht der Noten durch Studenten, sowie die Leistungsübersicht für die Dozenten und Prüfer.
+		\end{itemize}
+		
+		
+		\subsection{Zielgruppen}
+		\begin{itemize}
+		\item[-]	Lehrveranstaltungsplaner
+		\item[-]	Prüfer
+		\item[-]	Studenten
+		\end{itemize}
+
+		\subsection{Betriebsbedingungen}
+		\begin{itemize}
+		\item[-]	Das System soll nur einmal angelegt werden und autark funktionieren.
+		\item[-]	Klar definierte Benutzergruppen und Rechte
+		\item[-]	Datenbankschnittstelle für die Benutzerverwaltung
+		\item[-]	Datenbank-Umgebung für die Speicherung der Daten
+		\item[-]	Archivierung der Daten (Datensicherheit wegen Einsehbarkeit der Daten)
+		\item[-]	Zugriff von außen sowohl als Lesen, als auch als Edit möglich. 
+		\end{itemize}
+
+		
+		
+		
+		
+	\section{Produktübersicht}
+	
+	Das Produkt wird durch folgende Use Cases definiert. Die Anforderung an die Funktionalität ensteht aus der Auswertung der Akteur/Produkt- und Akteur/Akteur-Beziehungen.
+	
+	\subsection{Use Case Analyse}
+	
+	\begin{table}[ht!]
+	\begin{tabular}{ll}
+	 \textbf{Use Case ID} & 1 \\
+ 	 \textbf{Elementarer Geschäftsprozess} & /F10/ Veranstaltung planen \\ 
+	 \textbf{Ziel des Use Cases} & Darstellung des  Prozesses einer    \\
+	 & Veranstaltungsplanung\\ 
+	 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
+	 \textbf{Vorbedingung} & Dozent ist angemeldet \\ 
+	 \textbf{Nachbedingung Erfolg} & Veranstaltung ist angelegt \\ 
+	 & Template ist erstellt\\
+	 \textbf{Beteiligte Nutzer:} & Dozent \\ 
+     \textbf{Auslösendes Ereignis:} & Dozent möchte Veranstaltung planen \\ 
+	 
+	\end{tabular} 
+	\label{tab:usecase_1}
+	\end{table}
+	
+		\begin{table}[ht!]
+		\begin{tabular}{ll}
+		 \textbf{Use Case ID} & 2 \\
+	 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Template erstellen \\ 
+		 \textbf{Ziel des Use Cases} & Templates für die Veranstaltungen können \\& angelegt werden   \\
+		 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
+		 \textbf{Vorbedingung} & Dozent ist angemeldet \\ 
+		 \textbf{Nachbedingung Erfolg} & Template ist erstellt \\ 
+		 \textbf{Beteiligte Nutzer:} & Dozent \\ 
+	     \textbf{Auslösendes Ereignis:} & Dozent möchte Template erstellen \\ 
+		 
+		\end{tabular} 
+		\label{tab:usecase_2}
+		\end{table}
+	
+	
+			\begin{table}[ht!]
+			\begin{tabular}{ll}
+			 \textbf{Use Case ID} & 3 \\
+		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Bewerten \\ 
+			 \textbf{Ziel des Use Cases} & Prüfer bewertet  \\
+			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
+			 \textbf{Vorbedingung} & Veranstaltung existiert \\
+			  					   & Studenten/Gruppen existieren \\ 
+			 \textbf{Nachbedingung Erfolg} & Teilbewertung liegt vor \\
+			 							   & Bewertung ist abgeschlossen\\
+			 							    
+			 \textbf{Beteiligte Nutzer:} & Prüfer \\ 
+		     \textbf{Auslösendes Ereignis:} & Prüfer will Gruppe/Student bewerten \\ 
+			 
+			\end{tabular} 
+			\label{tab:usecase_3}
+			\end{table}
+			
+			\begin{table}[ht!]
+			\begin{tabular}{ll}
+			 \textbf{Use Case ID} & 4 \\
+		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Einsehen \\ 
+			 \textbf{Ziel des Use Cases} & Studenten sehen ihre Noten ein  \\
+			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
+			 \textbf{Vorbedingung} & Bewertung liegt bereits vor \\
+			 \textbf{Nachbedingung Erfolg} & Student sieht die Note\\
+			 			    
+			 \textbf{Beteiligte Nutzer:} & Student \\ 
+		     \textbf{Auslösendes Ereignis:} & Student will seine Note sehen\\ 
+			 
+			\end{tabular} 
+			\label{tab:usecase_4}
+			\end{table}
+			
+			\begin{table}[ht!]
+			\begin{tabular}{ll}
+			 \textbf{Use Case ID} & 5 \\
+		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Teilnehmer anlegen \\ 
+			 \textbf{Ziel des Use Cases} & Prüfer oder Dozent konfigurieren \\& die Teilnehmer einer Veranstaltung  \\
+			 \textbf{Umgebende Systemgrenze} & Planung Prüfung \\ 
+			 \textbf{Vorbedingung} & Veranstaltung ist konfiguriert \\
+			 \textbf{Nachbedingung Erfolg} & Veranstaltung ist freigegeben\\
+			 			    
+			 \textbf{Beteiligte Nutzer:} & Prüfer,Dozent \\ 
+		     \textbf{Auslösendes Ereignis:} & Studenten sollen einer Veranstaltung hinzugefügt werden\\ 
+			 
+			\end{tabular} 
+			\label{tab:usecase_5}
+			\end{table}
+
+						
+		\clearpage
+		\subsection{Use Cases in grafischer Darstellung}
+		
+	\begin{figure}[th!]
+	\centering
+	\includegraphics[width=\textwidth]{./img/use_case}
+	\caption{Darstellung des Gesamtsystems anhand der ausgearbeiteten Use-Cases}
+	\label{fig:use_case}
+	\end{figure}
+	
+
+	
+	\begin{figure}[th!]
+	\centering
+	\includegraphics[width=\textwidth]{./img/ablauf_1}
+	\caption{Prozessdiagramm für Geschäftsprozess Veranstaltungserstellung}
+	\label{fig:process1}
+	\end{figure}
+		
+	\begin{figure}[th!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./img/ablauf_2}
+	\caption{Ablaufdiagramm für den Geschäftsprozess Bewertung}
+	\label{fig:process2}
+	\end{figure}
+
+	\section{Produktfunktionen}
+	Im folgenden sind die Produktfunktionen aus den Ablaufdiagrammen dokumentiert. Diese werden im Laufe der Entwicklung angepasst und in ihrem Umfang erweitert.
+	
+	\begin{table}[ht]
+	\begin{tabular}{ll}
+		\multicolumn{2}{l}{/\textbf{\textit{F10}}/}\\\hline
+		 \textbf{Geschäftsprozess} & Veranstaltung planen \\ 
+		 \textbf{Kategorie} & primär \\ 
+		 \textbf{Vorbedingung} & Dozent ist angemeldet\\
+		 & ein Template liegt vor \\ 
+		  	& Bewertungsschema liegt vor\\
+		 	& Prüfer liegen vor\\
+		 \textbf{Nachbedingung Erfolg} & Eine Veranstaltung ist angelegt  \\ 
+		 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
+		 \textbf{Nachbedingung Fehlschlag} &  \\ 
+		 \textbf{Akteure} & Dozent \\ 
+		 \textbf{Auslösendes Ereignis} & Dozent legt eine Veranstaltung an  \\ 
+		 \textbf{Beschreibung} &  1. Dozent konfiguriert das Template\\ 
+		 & 2. Dozent befüllt(prüft) die Parameter des Bewertungsschemas\\
+		 & 3. Dozent kann Prüfer einer Veranstaltung zuteilen zuteilen \\
+		 & 4. Dozent kann Studenten/Gruppen der  Veranstaltung zuweisen\\
+		  \textbf{Erweiterung} &  \\ 
+		 \textbf{Alternativen} & 1. Neues Template anlegen \\
+		 & 2. Neue Studenten anlegen\\
+		 & 3. Neue Prüfer Anlegen \\
+		 & 4. Neues Bewertungsschema anlegen
+		 \end{tabular} 
+	\label{tab:F10}
+	\end{table}
+	
+		\begin{table}[ht]
+		\begin{tabular}{ll}
+			\multicolumn{2}{l}{/\textbf{\textit{F20}}/}\\\hline
+			 \textbf{Geschäftsprozess} & Template erstellen \\ 
+			 \textbf{Kategorie} & primär \\ 
+			 \textbf{Vorbedingung} & Dozent ist angemeldet\\
+			 & ein Bewertungsschema liegt vor \\ 
+
+			 \textbf{Nachbedingung Erfolg} & Template ist
+			  zur Veranstaltungsplanung freigegeben  \\ 
+			 \textbf{Nachbedingung Fehlschlag} &  \\ 
+			 \textbf{Akteure} & Dozent \\ 
+			 \textbf{Auslösendes Ereignis} & Dozent legt ein Template an \\
+			 & Bei Veranstaltungserstellung wurde kein Template gefunden\\
+			 & Bei Veranstaltungserstellung wird ein neues Template erstellt\\
+			 \textbf{Beschreibung} & 1. Die Art der Prüfung wird spezifiziert \\
+			 & 2. Items hinzufügen\\
+			 & 3. Bewertungsschema hinzufügen\\
+			  \textbf{Erweiterung} & 1. Templates refactoring \\ 
+			 \textbf{Alternativen} & 1. Neues Bewertungsschema erstellen anlegen \\  			
+			 \end{tabular} 
+		\label{tab:F20}
+		\end{table}
+	
+		\begin{table}[ht]
+		\begin{tabular}{ll}
+			\multicolumn{2}{l}{/\textbf{\textit{F30}}/}\\\hline
+			 \textbf{Geschäftsprozess} & Bewertungsschema festlegen \\ 
+			 \textbf{Kategorie} & primär \\ 
+			 \textbf{Vorbedingung} & 1. Dozent ist angemeldet  \\ 
+			 \textbf{Nachbedingung Erfolg} & Ein Bewertungsschema steht zur Verfügung\\ 
+			 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
+			 \textbf{Akteure} & Dozent \\ 
+			 \textbf{Auslösendes Ereignis} & Dozent legt ein Bewertungsschema an  \\ 
+			 \textbf{Beschreibung} &  1. Umrechnungsformel festlegen\\
+			 & 2. Parameter anpassen
+			 \end{tabular} 
+		\label{tab:F30}
+		\end{table}
+	
+	
+			\begin{table}[ht]
+			\begin{tabular}{ll}
+				\multicolumn{2}{l}{/\textbf{\textit{F40}}/}\\\hline
+				 \textbf{Geschäftsprozess} & Bewerten \\ 
+				 \textbf{Kategorie} & primär \\ 
+				 \textbf{Vorbedingung} & 1. Dozent/Prüfer ist angemeldet  \\ 
+				 & 2. Veranstaltung ist angelegt\\
+				 & 3. Gruppen/Student ist einer Veranstaltung zugewiesen\\
+				 & 4. Prüfer ist einer Veranstaltung zugewiesen\\
+				 \textbf{Nachbedingung Erfolg} & Ein Student/Gruppe wurde bewertet\\
+				 & Teilbewertung/vollständige Bewertung ist abgeschlossen\\ 
+				 \textbf{Akteure} & Dozent \\ 
+				 & Prüfer\\
+				 \textbf{Auslösendes Ereignis} & Prüfer will bewerten \\ 
+				 \textbf{Beschreibung} &  1. Prüfer wählt Veranstaltung aus\\
+				 & Prüfer wählt Student/Gruppe zur Bewertung aus\\
+				 & Bewertungen/Teilbewertungen eintragen\\
+				 & Bewertung abschließen\\
+			
+				 \end{tabular} 
+			\label{tab:F40}
+			\end{table}
+			
+\begin{table}[ht]
+	\begin{tabular}{ll}
+		\multicolumn{2}{l}{/\textbf{\textit{F50}}/}\\\hline
+		 \textbf{Geschäftsprozess} & Bewertung abschließen\\ 
+		 \textbf{Kategorie} & primär \\ 
+		 \textbf{Vorbedingung} & Bewertungen einer Veranstaltung in allen Items liegen vor\\
+		 & Bewertungen für einen Student/Gruppe sind komplett\\
+		 & Prüfer ist angemeldet \\ 
+		 \textbf{Nachbedingung Erfolg} & Dozent erfährt, dass die Endnote der Veranstaltung vorliegt  \\ 
+		 & Prüfer verliert das Recht zu editieren, nur noch sehen\\
+		 & Nur Dozent ist berechtigt zu ändern\\
+		 \textbf{Nachbedingung Fehlschlag} &  Die Bewertung steht weiter aus\\
+		 & Bestätigung für den Abschluss trotz der \\
+		 & unvollständigen Daten wird erfragt\\ 
+		 \textbf{Akteure} & Dozent \\ 
+		 & Prüfer\\
+		 \textbf{Auslösendes Ereignis} & Prüfer schließt die Bewertung ab \\ 
+		 \textbf{Alternativen} & 1. Bewertung vervollständigen \\
+		 \end{tabular} 
+	\label{tab:F50}
+	\end{table}		
+			
+	\begin{table}[ht]
+		\begin{tabular}{ll}
+			\multicolumn{2}{l}{/\textbf{\textit{F60}}/}\\\hline
+			 \textbf{Geschäftsprozess} & Kurs anlegen\\ 
+			 \textbf{Kategorie} & primär \\ 
+			 \textbf{Vorbedingung} & 1. Dozent ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
+			  & Studenten liegen vor\\
+			 \textbf{Nachbedingung Erfolg} & Kurs ist angelegt\\
+			 \textbf{Nachbedingung Fehlschlag} & -\\
+			 \textbf{Akteure} & Dozent \\ 
+			 \textbf{Auslösendes Ereignis} & Dozent legt einen Kurs an\\ 
+			 \textbf{Beschreibung} &  1. Kurs erstellen\\
+			 & 2. Studenten hinzufügen\\
+			 & 3. Kurs erstellen\\
+			 \textbf{Alternativen} & 1. Studenten anlegen \\
+			 \end{tabular} 
+		\label{tab:F60}
+		\end{table}
+		
+		
+			\begin{table}[ht]
+				\begin{tabular}{ll}
+					\multicolumn{2}{l}{/\textbf{\textit{F70}}/}\\\hline
+					 \textbf{Geschäftsprozess} & Studenten anlegen\\ 
+					 \textbf{Kategorie} & primär \\ 
+					 \textbf{Vorbedingung} & 1. Dozent ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
+					 \textbf{Nachbedingung Erfolg} & Ein Student ist angelegt\\
+					 & Student kann einem Kurs/Gruppe hinzugefügt werden\\
+					 \textbf{Nachbedingung Fehlschlag} & -\\
+					 \textbf{Akteure} & Dozent \\ 
+					 \textbf{Auslösendes Ereignis} & Dozent legt Studenten an\\ 
+					 \textbf{Beschreibung} &  1. Studentenregisterkarte erstellen\\
+					 & 2. Daten befüllen\\
+				 \end{tabular} 
+				\label{tab:F70}
+				\end{table}	
+			
+			\begin{table}[ht]
+				\begin{tabular}{ll}
+					\multicolumn{2}{l}{/\textbf{\textit{F80}}/}\\\hline
+					 \textbf{Geschäftsprozess} & Bewertung einsehen\\ 
+					 \textbf{Kategorie} & primär \\ 
+					 \textbf{Vorbedingung} & 1. Student ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
+					 &2. Bewertung liegt vor\\
+					 \textbf{Nachbedingung Erfolg} & 1. Student sieht seine Noten\\
+					  \textbf{Nachbedingung Fehlschlag} & Benachrichtigung\\
+					 \textbf{Akteure} & Student \\ 
+					 \textbf{Auslösendes Ereignis} & Student will seine Noten einsehen\\ 
+					 \textbf{Beschreibung} &  1. Student meldet sich an\\
+					 & 2. Student sieht seine Noten\\
+				 \end{tabular} 
+				\label{tab:F80}
+				\end{table}	
+
+
+	
+	
+	\section{Produktdaten}
+	
+		Die Größe der einzelnen Datenpunkte richtet sich variabel nach der letztendlichen Größe des Anwendungssystems. Die praktische Obergrenze wird durch die Hardware bzw. Datenbank festgelegt. 
+	
+	\begin{description}[\setlabelphantom{xxxxxx}]
+	\item[/D10/] Benutzer \{Benutzer\_id, Benutzertyp(Rechte) , Personendaten, Veranstaltungen\}\\ (Max. 100000) 
+	\item[/D20/] Veranstaltung \{Veranstaltungs\_id, Bewertungsschema(S$_2$G), Bewertungstemplate, Prüfer, Stundenten, Score, Note, Status\_Bewertung\, Beschreibung\} \\ (Max. 100000)
+	\item[/D30/] GUI-Daten (mehrere verschiedene Ansichten) \\
+	Genauere Spezifikation erfolgt im zweiten Teil des Projekts im 4. Semester
+	\item[/D40/] Datenarchiv {Alle Daten}
+	
+	\end{description}
+	
+	\section{Produktleistungen}
+	
+	\begin{description}[\setlabelphantom{xxxxxxx}]
+	\item[/L10/] Die Antwortzeiten der Anwendung sollen so gering wie möglich gehalten werden.
+	\item[/L20/] 	Die steigenden Benutzerzahlen die zur gleichen Zeit auf das System zugreifen, sollen keine signifikanten Einflüsse auf die Antwortzeiten des Systems haben.
+	\item[/L30/]	Benutzerfreundliche UX soll implementiert werden.
+	\item[/L40/]	Anbindung an bereits vorhandene Datenbanken soll in Zukunft möglich sein (wird im Prototypen zunächst nicht implementiert)
+	\item[/L50/] 	Die Abfragen und die Einsicht der Daten von Außerhalb (WWW) ist entsprechend der Benutzerberechtigung möglich. (wird im Prototypen zu einem späteren Zeitpunkt realisiert)
+	\item[/L60/] 	Datenbeständigkeit soll garantiert werden.
+	\end{description}
+
+
+	
+	\section{Qualitätsanforderungen}
+	\begin{table}[ht]
+	\caption{Qualitätsmerkmale nach DIN ISO 9126 – siehe Anhang A in T3-4}
+	\centering
+		\begin{tabular}{|c|c|c|c|c|}
+		\hline Produktqualität & sehr gut & gut & normal & nicht relevant \\ 
+		\hline \multicolumn{5}{|c|}{Funktionalität}   \\ 
+		\hline Angemessenheit &  &  & \checkmark &  \\ 
+		\hline Richtigkeit &  & \checkmark  &  &  \\ 
+		\hline Interoperabilität &  &\checkmark   &  &  \\ 
+		\hline Ordnungsmäßigkeit &  &\checkmark   &  &  \\ 
+		\hline Sicherheit &  &  & \checkmark  &  \\ 
+		\hline \multicolumn{5}{|c|}{Zuverlässigkeit}   \\ 
+		\hline Reife &  &   & \checkmark &  \\ 
+		\hline Fehlertoleranz &  \checkmark &  &  &  \\ 
+		\hline Wiederherstellbarkeit & \checkmark  &  &  &  \\ 
+		\hline \multicolumn{5}{|c|}{Benutzbarkeit}  \\ 
+		\hline Verständlichkeit &  &  & \checkmark  &  \\ 
+		\hline Erlernbarkeit &  &   &  &\checkmark  \\ 
+		\hline Bedienbarkeit &  &   & \checkmark &  \\ 
+		\hline \multicolumn{5}{|c|}{Effizienz} \\ 
+		\hline Zeitverhalten &  &  &\checkmark   &  \\ 
+		\hline Verbrauchsverhalten &  &  &\checkmark   &  \\ 
+		\hline \multicolumn{5}{|c|}{Änderbarkeit} \\ 
+		\hline Analysierbarkeit &  &   & \checkmark &  \\ 
+		\hline Modifizierbarkeit &  & \checkmark  &  &  \\ 
+		\hline Stabilität & \checkmark  &  &  &  \\ 
+		\hline Prüfbarkeit &   &  &\checkmark  &  \\ 
+		\hline \multicolumn{5}{|c|}{Übertragbarkeit}  \\ 
+		\hline Anpassbarkeit & \checkmark  &  &  &  \\ 
+		\hline Installierbarkeit &  &  &  \checkmark &  \\ 
+		\hline Konformität	 &  &  &\checkmark   &  \\ 
+		\hline Austauschbarkeit &  &  &   & \checkmark \\ 
+		\hline 
+		\end{tabular} 
+	\label{tab:quali_anf}
+	\end{table}
+
+	
+	\section{Benutzeroberfläche}
+	
+	Die Benutzeroberfläche entspricht den modernen Ansprüchen einer Web-Anwendungen und wird mit entsprechend Google-Designrichtlinien erstellt. Die intuitive Bedienung soll das Leitmotiv der Entwicklung werden.\\
+	
+	Die genauere Spezifikation der grafischen Benutzeroberfläche wird zu einem späteren Zeitpunkt des Projektes definiert. 
+	
+	\begin{table}[ht]
+	\caption{Benutzergruppen und Rechteverteilung}
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline Benutzergruppe & Lesen & Schreiben & Ändern & Systemanpassungen \\ 
+	\hline Administrator & \checkmark & \checkmark & \checkmark & \checkmark \\ 
+	\hline Verwaltung & \checkmark & \checkmark & \checkmark &  \\ 
+	\hline Prüfer & \checkmark & \checkmark &  &  \\ 
+	\hline Student & \checkmark &  &  &  \\ 
+	\hline 
+	\end{tabular} 
+	\label{tab:usergroup}
+	\end{table}
+	
+	
+	\section{Nichtfunktionale Anforderungen}
+	
+	\begin{description}[\setlabelphantom{/QEZ00/}]
+	\item[/Q10/] Das System muss die Rollen, wie in der Tabelle~\ref{tab:usergroup} dargestellt, unterscheiden und die Rechteverteilung sicherstellen können.
+	\item[/Q20/] Für die im System gespeicherten Daten muss gewährleistet werden, dass deren Sicherung zuverlässig passiert.
+	\end{description} 
+
+	
+	
+	
+	\section{Technische Produktumgebung}
+	
+	Das System läuft auf einem Server, der die Anfragen der webbasierten Clients entgegennehmen kann.\\
+	Die GUI für den Web-Browser wird erst im nächsten Entwicklungsstadium bereitgestellt.
+	
+		\subsection{Software}
+		Server-Betriebssystem: UNIX\\
+		Server-Umgebung: Jetty\\
+		Clientsysteme: Browser\\
+		Web-Server: Apache (bei Bedarf)
+		
+		\subsection{Hardware}
+		Sind für dieses Projekt nicht relevant. (prinzipiell ein leistungsstarker Server)\\
+		Für den Prototypen ist nur eine eingeschränkte Funktionalität vorgesehen.
+		
+		\subsection{Orgware}
+		
+		Zunächst ist das System nur durch freigegebene Benutzer erreichbar. Zu Demonstrationszwecken ist es Localhost.		
+
+		\subsection{Produkt-Schnittstellen}
+		
+		Web-Schnittstelle, Serverschnittstellen
+		
+	\section{Spezielle Anforderungen an die Entwicklungs-Umgebung}
+		\subsection{Software}
+		Git Versionsverwaltung, Issue Tracking System - YouTrack, IDE für JAVA Development
+		
+		\subsection{Hardware}
+		Laptop, Standalone PC (Server, Client)
+		\subsection{Orgware}
+		XP (extreme proramming und agile development)	
+		\subsection{Entwicklungs-Schnittstellen}
+		WEB-Schnittstelle
+		
+	\section{Gliederung in Teilprodukte}
+	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung.\\
+	Veranstaltungskonfigurator beschränkt sich hierbei auf einen minimalen Funktionsumfang um die mögliche Arbeitsweise deutlich zu machen.\\ 
+	Konfigurieren bedeutet in diesem Zusammenhang die Notenumrechnung mit Parametern zu belegen und zwischen unterschiedlichen Bewertungsschemata auswählen zu können.\\ 
+	Des Weiteren lassen sich zu einer Veranstaltung einzeln gewichtete Bewertungskriterien hinzufügen.\\ 
+	Das Bewertungssystem beinhaltet eine vom Dozent vordefinierte Maske, in die der Prüfer die Ergebnisse der Veranstaltung eintragen kann. Anhand der Ergebnisse wird dann eine Note für diese Veranstaltung errechnet.
+	Über ein Modul zum Einsehen der Bewertung, können zum einen Dozent und Prüfer die eingegeben Ergebnisse überprüfen, zum anderen die Studenten ihr Abschneiden bei der jeweiligen Veranstaltung ansehen.
+		
+	
+	\section{Ergänzungen}
+		
+	
+	
+ \begin{appendix}
+  \section{Begriffsdefinitionen}
+	\begin{description}[\setlabelphantom{Notenkonvertierungsprofilxx}]
+	\item[Benutzergruppen] Mögliche Benutzer werden mit verschiedenen Rechten und Bedienszenarien versehen.
+	\item[Student] Eine Benutzergruppe mit stark eingeschränkten Zugriffsrechten. Kann nur die vom Dozent freigegebenen Informationen sehen.
+	\item[Dozent] Eine Benutzergruppe mit umfassenden Rechten. Kann Templates, Veranstaltungen und Benutzergruppen erstellen und verwalten.
+	\item[Prüfer] Ein Benutzer mit Rechten zur Dateneingabe. Kann nichts an einer Veranstaltung ändern. Muss sich an die vom Dozent vorgegeben Muster halten.
+	\item[Sekretariat] Benutzergruppe, welche die Rechte zur Datenverwaltung besitzt (kein Löschrecht).
+	\item[Administrator] Eine Benutzergruppe mit der Berechtigung zur systemnahen Anpassungen.
+	\item[Veranstaltung] Template + Bewertungsschema + angepasste Items + Studenten/Gruppen + Kurs + Prüfer . Eine Veranstaltung umfasst die obengenannte Bausteine und wird vom Dozenten freigegeben. 
+	\item[Template] Ein Template enthält eine beliebige Anzahl von Items und evtl. ein oder mehrere zugewiesene Bewertungsschemata. Ein Template darf leer sein. Somit werden komplett neue Veranstaltungen planbar.
+	\item[Item] Ein entweder fest oder variabel angelegtes Bewertungskriterium. Diese Kriterien können für eine Veranstaltung angepasst werden.
+	\item[{\parbox[t]{0.2\linewidth}{Notenkonvertierungsprofil \\ (S$_2$G)}}] {\parbox[t]{\linewidth}{ Dies ist eine Umrechnungsformel, die sich aus der Skala, wie der Score in eine Note umgerechnet werden soll, bestimmt. Das konkrete Profil kann für eine Veranstaltung durch Eingangsparameter angepasst werden.}}
+	\item[Score] Punkte die eine Basis für die Notenbildung darstellen.
+	\item[Grundscore (H$_2$)]  Zweistufige hollistische Bewertung. Diese zwei Bereiche sind frei einstellbar.
+	\item[Score Refining (S$_2$R)]  Ein Schema zur Aufbereitung des Grundscore durch Faktoren (refining). Die Faktoren werden vom Dozenten vordefiniert.
+	
+	 
+	\end{description}
+  \section{Abkürzungen}
+  \section{Modelle}
+  \section{Qualitätsmerkmale}
+  \clearpage
+  \section{Aufwandsabschätzung}
+  
+  
+  
+  	\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./files/Aufwand}
+	\label{fig:Aufwand}
+	\end{figure}
+
+  \end{appendix}
+
+			  
+\end{document}
