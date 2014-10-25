@@ -31,5 +31,5 @@
 \contentsline {section}{\numberline {A}Begriffsdefinitionen}{21}{appendix.A}
 \contentsline {section}{\numberline {B}Abk\IeC {\"u}rzungen}{22}{appendix.B}
 \contentsline {section}{\numberline {C}Modelle}{22}{appendix.C}
-\contentsline {section}{\numberline {D}Qualit\IeC {\"a}tsmerkmale}{22}{appendix.D}
-\contentsline {section}{\numberline {E}Aufwandsabsch\IeC {\"a}tzung}{23}{appendix.E}
+\contentsline {section}{\numberline {D}Qualit\IeC {\"a}tsmerkmale}{23}{appendix.D}
+\contentsline {section}{\numberline {E}Aufwandsabsch\IeC {\"a}tzung}{24}{appendix.E}
