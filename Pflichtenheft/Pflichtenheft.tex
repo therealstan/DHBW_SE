@@ -539,14 +539,48 @@
   \section{Abkürzungen}
   \section{Modelle}
   
-  Die Abbildung
+\subsection{Data Flow Diagramm}
+  Die Abbildung~\ref{fig:kontextdiagramm} stellt den groben Datenfluss für die gesamte Anwendung dar:
+ 
+   \begin{figure}[ht]
+ \centering
+ \includegraphics[width=\textwidth]{./img/dfd_context}
+ \caption{Kontextdiagramm der Software}
+ \label{fig:kontextdiagramm}
+ \end{figure}
+ 
   
-  \begin{figure}[ht]
-\centering
-\includegraphics[width=\textwidth]{./img/kontextdiagramm}
-\caption{Kontextdiagramm der Software}
-\label{fig:kontextdiagramm}
-\end{figure}
+ \subsection{Structured Analysis} 
+ 
+ Ausgehend von der Abbildung~\ref{fig:kontextdiagramm} kann die Struktur des Datenflusses folgendermaßen spezifiziert werden.
+ 
+ In der Abbildung~\ref{fig:login} wird der Login-Prozess abgebildet.  
+ 
+    \begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{./img/dfd_login}
+  \caption{Datenfluss bei einem Login Prozess}
+  \label{fig:login}
+  \end{figure}
+  
+  In der Abbildung~\ref{fig:config} ist der Datenfluss bei der Konfigurierung des Templates, eines Kurses oder einer Veranstaltung dargestellt.
+  
+      \begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{./img/dfd_config}
+    \caption{Datenfluss bei einem Konfigurierung-Prozess}
+    \label{fig:config}
+    \end{figure}
+    
+      In der Abbildung~\ref{fig:werten} ist der Datenfluss bei einem Bewertungsvorgang abgebildet.
+      
+      \begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{./img/dfd_werten}
+    \caption{Datenfluss bei einem Bewertungsvorgang}
+    \label{fig:werten}
+    \end{figure}
+    
 
   \section{Qualitätsmerkmale}
   \clearpage

@@ -30,5 +30,7 @@
 \BOOKMARK [1][-]{appendix.A}{Begriffsdefinitionen}{}% 30
 \BOOKMARK [1][-]{appendix.B}{Abk\374rzungen}{}% 31
 \BOOKMARK [1][-]{appendix.C}{Modelle}{}% 32
-\BOOKMARK [1][-]{appendix.D}{Qualit\344tsmerkmale}{}% 33
-\BOOKMARK [1][-]{appendix.E}{Aufwandsabsch\344tzung}{}% 34
+\BOOKMARK [2][-]{subsection.C.1}{Data Flow Diagramm}{appendix.C}% 33
+\BOOKMARK [2][-]{subsection.C.2}{Structured Analysis}{appendix.C}% 34
+\BOOKMARK [1][-]{appendix.D}{Qualit\344tsmerkmale}{}% 35
+\BOOKMARK [1][-]{appendix.E}{Aufwandsabsch\344tzung}{}% 36
