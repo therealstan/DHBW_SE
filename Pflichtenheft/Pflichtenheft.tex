@@ -412,14 +412,14 @@
 	\label{tab:quali_anf}
 	\end{table}
 	
-	\begin{table}[ht]
-		\begin{tabular} [ll]
-			\textbf{Richtigkeit} & Da das System mit persönlichen und sensiblen Daten arbeitet, sollte dieses eine hohe Richtigkeit haben\\
-			\textbf{Fehlertoleranz} & Bei der Berechnung der Noten sollten so wenig Fehler wie möglich auftreten \\
-			\textbf{Wiederherstellbarkeit} & Die Daten des Systems müssen entsprechend der jeweiligen Anforderung der Hochschule über einen längeren Zeitraum einsehbar und wiederherstellbar sein \\
-			\textbf{Modifizierbarkeit} & Die Veranstaltung sollte gut modifizierbar sein, damit der Dozent diese an seine Anforderungen anpassen kann\\
-		\end{tabular}	
-	\end{table}
+
+		\begin{description}[\setlabelphantom{Wiederherstellbarkeit}]
+			\item[Richtigkeit]  Da das System mit persönlichen und sensiblen Daten arbeitet, sollte dieses eine hohe Richtigkeit haben
+			\item[Fehlertoleranz]  Bei der Berechnung der Noten sollten so wenig Fehler wie möglich auftreten 
+			\item[Wiederherstellbarkeit]  Die Daten des Systems müssen entsprechend der jeweiligen Anforderung der Hochschule über einen längeren Zeitraum einsehbar und wiederherstellbar sein 
+			\item[Modifizierbarkeit] Die Veranstaltung sollte gut modifizierbar sein, damit der Dozent diese an seine Anforderungen anpassen kann
+		\end{description}	
+	
 
 	\section{Benutzeroberfläche}
 	
@@ -519,10 +519,12 @@
 	\end{description}
   \section{Abkürzungen}
   \section{Modelle}
+  \subsection{Geschäftsprozesse}
   
-<<<<<<< HEAD
-  	Aus den Use Cases in Abbildung 1 ergeben sich die folgende Geschäftsprozesse.\\
-  	Die Diagramme beschreiben systeminterne Abläufe.\\
+
+  	Aus den Use Cases in Abbildung 1 ergeben sich die folgende Geschäftsprozesse.
+  	
+  	Die Diagramme beschreiben systeminterne Abläufe.
   	
   	\begin{figure}[th!]
   	\centering
@@ -545,7 +547,7 @@
   	\label{fig:process3}
   	\end{figure}
   
-=======
+\clearpage
 \subsection{Data Flow Diagramm}
   Die Abbildung~\ref{fig:kontextdiagramm} stellt den groben Datenfluss für die gesamte Anwendung dar:
  
@@ -556,7 +558,7 @@
  \label{fig:kontextdiagramm}
  \end{figure}
  
->>>>>>> c04956e324020844c8fa54c7f39ab8254edaa99e
+
   
  \subsection{Structured Analysis} 
  
