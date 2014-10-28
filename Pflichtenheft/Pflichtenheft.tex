@@ -18,7 +18,7 @@
 			\item[-]	Dozenten weisen einer Veranstaltung Bewertungsschema zu
 			\item[-]	Ein Template kann zu einer Veranstaltung erstellt werden.
 			\item[-]	Veranstaltungen des Typs (Gruppenarbeit, Einzelarbeit) können erstellt werden.
-			\item[-]	Die Festlegung eines Grundscore (Gruppe, einzeln) lässt sich in zwei skalierbare \newline Bereiche beliebig teilen ($H_2$)
+			\item[-]	Die Festlegung eines Grundscore (Gruppe, Einzeln) lässt sich in zwei skalierbare \newline Bereiche beliebig teilen ($H_2$)
 			\item[-]	Score Refining Faktoren können in einem Template frei eingestellt werden (Items) ($R_2S$)
 			\item[-]	Skalierbarkeit des Bewertungssystems von Bewertung der Gruppe zu Einzelperson und umgekehrt.
 			\item[-]	Zuweisung von beliebig gruppierten Studenten zu einer \item[-]	Veranstaltung durch Dozent oder Prüfer.				
@@ -50,7 +50,7 @@
 		
 		\subsection{Zielgruppen}
 		\begin{itemize}
-		\item[-] \textcolor{red}{Admin}	\textit{bitte Wartung in 2.3}
+		\item[-] 	Admin
 		\item[-]	Dozent
 		\item[-]	Prüfer
 		\item[-]	Studenten
@@ -64,10 +64,10 @@
 		\item[-]	Datenbank-Umgebung für die Speicherung der Daten
 		\item[-]	Archivierung der Daten (Datensicherheit wegen Einsehbarkeit der Daten)
 		\item[-]	Zugriff von außen sowohl als Lesen, als auch als Edit möglich. 
+		\item[-]	Der Administrator kann die Datenbank sichern und die Programmdaten ändern.\\
+					Er hat keine Lese-/Schreibrechte auf die Datenbankinhalte.
 		\end{itemize}
 
-		
-		
 		
 		
 	\section{Produktübersicht}
@@ -172,33 +172,10 @@
 	\end{figure}
 	\newpage
 	
-	Aus den Use Cases in Abbildung 1 ergeben sich die folgende Geschäftsprozesse.\\
-	Die Diagramme beschreiben systeminterne Abläufe.\\
-	
-	\begin{figure}[th!]
-	\centering
-	\includegraphics[width=\textwidth]{./img/EPK_Veranstaltung}
-	\caption{Prozessdiagramm für den Geschäftsprozess Veranstaltungserstellung}
-	\label{fig:process1}
-	\end{figure}
-		
-	\begin{figure}[th!]
-	\centering
-	\includegraphics[width=0.6\textwidth]{./img/EPK_Bewertung}
-	\caption{Ablaufdiagramm für den Geschäftsprozess Bewertung}
-	\label{fig:process2}
-	\end{figure}
-	
-	\begin{figure}[th!]
-	\centering
-	\includegraphics[width=0.6\textwidth]{./img/EPK_Einsehen}
-	\caption{Ablaufdiagramm für den Geschäftsprozess Einsehen der Noten}
-	\label{fig:process2}
-	\end{figure}
-
 	\section{Produktfunktionen}
-	Im folgenden sind die Geschäftsprozesse aus Abb. 2,3,4 dokumentiert.\\
+	Im folgenden sind die Geschäftsprozesse der Anwendung dokumentiert.\\
 	Diese Produktfunktionen werden im Laufe der Entwicklung angepasst und in ihrem Umfang erweitert.
+	Die Geschäftsprozesse finden sich als Diagramme im Anhang (Abb. \ref{fig:process1}, \ref{fig:process2}, \ref{fig:process3})
 	
 		\begin{table}[ht]
 			\begin{tabular}{ll}
@@ -380,7 +357,7 @@
 	\item[/D20/] Veranstaltung \{Veranstaltungs\_id, Bewertungsschema(S$_2$G), Bewertungstemplate, Prüfer, Stundenten, Score, Note, Status\_Bewertung\, Beschreibung\} \\ (Max. 100000)
 	\item[/D30/] GUI-Daten (mehrere verschiedene Ansichten) \\
 	Genauere Spezifikation erfolgt im zweiten Teil des Projekts im 4. Semester
-	\item[/D40/] Datenarchiv {Alle Daten}
+	\item[/D40/] Datenarchiv (Alle Daten)
 	
 	\end{description}
 	
@@ -406,12 +383,12 @@
 		\hline \multicolumn{5}{|c|}{Funktionalität}   \\ 
 		\hline Angemessenheit &  &  & \checkmark &  \\ 
 		\hline Richtigkeit &  & \checkmark  &  &  \\ 
-		\hline Interoperabilität &  &\checkmark   &  &  \\ 
-		\hline Ordnungsmäßigkeit &  &\checkmark   &  &  \\ 
-		\hline Sicherheit &  &  & \checkmark  &  \\ 
+		\hline Interoperabilität &  &  &\checkmark  &  \\ 
+		\hline Ordnungsmäßigkeit &  &  &\checkmark  &  \\ 
+		\hline Sicherheit &  & & \checkmark  &  \\ 
 		\hline \multicolumn{5}{|c|}{Zuverlässigkeit}   \\ 
 		\hline Reife &  &   & \checkmark &  \\ 
-		\hline Fehlertoleranz &  \checkmark &  &  &  \\ 
+		\hline Fehlertoleranz &  &  \checkmark &  &  \\ 
 		\hline Wiederherstellbarkeit & \checkmark  &  &  &  \\ 
 		\hline \multicolumn{5}{|c|}{Benutzbarkeit}  \\ 
 		\hline Verständlichkeit &  &  & \checkmark  &  \\ 
@@ -423,10 +400,10 @@
 		\hline \multicolumn{5}{|c|}{Änderbarkeit} \\ 
 		\hline Analysierbarkeit &  &   & \checkmark &  \\ 
 		\hline Modifizierbarkeit &  & \checkmark  &  &  \\ 
-		\hline Stabilität & \checkmark  &  &  &  \\ 
+		\hline Stabilität &  &  & \checkmark &  \\ 
 		\hline Prüfbarkeit &   &  &\checkmark  &  \\ 
 		\hline \multicolumn{5}{|c|}{Übertragbarkeit}  \\ 
-		\hline Anpassbarkeit & \checkmark  &  &  &  \\ 
+		\hline Anpassbarkeit &  &  &\checkmark  &  \\ 
 		\hline Installierbarkeit &  &  &  \checkmark &  \\ 
 		\hline Konformität	 &  &  &\checkmark   &  \\ 
 		\hline Austauschbarkeit &  &  &   & \checkmark \\ 
@@ -435,11 +412,15 @@
 	\label{tab:quali_anf}
 	\end{table}
 	
-	Richtigkeit, Interoperabilität, Ordnungsmäßigkeit, Fehlertoleranz - normal\\\\
-	Wiederherstellbarkeit - Die Daten des Systems müssen sehr gut wiederherstellbar sein, da es den Anforderungen entspricht, dass diese auf einen bestimmten Zeitraum einsehbar sein müssen. Die Daten dürfen somit, nicht verloren gehen.\\\\
-	Modifizierbarkeit/Anpassbarkeit - Ein Dozent muss seine Veranstaltung beliebig anlegen können. Das System unterliegt somit einer Modifizierbarkeit, die sich nach den Anpassungen des Dozenten richtet.
+	\begin{table}[ht]
+		\begin{tabular} [ll]
+			\textbf{Richtigkeit} & Da das System mit persönlichen und sensiblen Daten arbeitet, sollte dieses eine hohe Richtigkeit haben\\
+			\textbf{Fehlertoleranz} & Bei der Berechnung der Noten sollten so wenig Fehler wie möglich auftreten \\
+			\textbf{Wiederherstellbarkeit} & Die Daten des Systems müssen entsprechend der jeweiligen Anforderung der Hochschule über einen längeren Zeitraum einsehbar und wiederherstellbar sein \\
+			\textbf{Modifizierbarkeit} & Die Veranstaltung sollte gut modifizierbar sein, damit der Dozent diese an seine Anforderungen anpassen kann\\
+		\end{tabular}	
+	\end{table}
 
-	
 	\section{Benutzeroberfläche}
 	
 	Die Benutzeroberfläche entspricht den modernen Ansprüchen einer Web-Anwendungen und wird mit entsprechend Google-Designrichtlinien erstellt. Die intuitive Bedienung soll das Leitmotiv der Entwicklung werden.\\
@@ -487,7 +468,7 @@
 		
 		\subsection{Orgware}
 		
-		Zunächst ist das System nur durch freigegebene Benutzer erreichbar. Zu Demonstrationszwecken ist es Localhost.		
+		Zunächst ist das System nur durch freigegebene Benutzer erreichbar.		
 
 		\subsection{Produkt-Schnittstellen}
 		
@@ -539,6 +520,32 @@
   \section{Abkürzungen}
   \section{Modelle}
   
+<<<<<<< HEAD
+  	Aus den Use Cases in Abbildung 1 ergeben sich die folgende Geschäftsprozesse.\\
+  	Die Diagramme beschreiben systeminterne Abläufe.\\
+  	
+  	\begin{figure}[th!]
+  	\centering
+  	\includegraphics[width=\textwidth]{./img/EPK_Veranstaltung}
+  	\caption{Prozessdiagramm für den Geschäftsprozess Veranstaltungserstellung}
+  	\label{fig:process1}
+  	\end{figure}
+  		
+  	\begin{figure}[th!]
+  	\centering
+  	\includegraphics[width=0.6\textwidth]{./img/EPK_Bewertung}
+  	\caption{Ablaufdiagramm für den Geschäftsprozess Bewertung}
+  	\label{fig:process2}
+  	\end{figure}
+  	
+  	\begin{figure}[th!]
+  	\centering
+  	\includegraphics[width=0.6\textwidth]{./img/EPK_Einsehen}
+  	\caption{Ablaufdiagramm für den Geschäftsprozess Einsehen der Noten}
+  	\label{fig:process3}
+  	\end{figure}
+  
+=======
 \subsection{Data Flow Diagramm}
   Die Abbildung~\ref{fig:kontextdiagramm} stellt den groben Datenfluss für die gesamte Anwendung dar:
  
@@ -549,6 +556,7 @@
  \label{fig:kontextdiagramm}
  \end{figure}
  
+>>>>>>> c04956e324020844c8fa54c7f39ab8254edaa99e
   
  \subsection{Structured Analysis} 
  
