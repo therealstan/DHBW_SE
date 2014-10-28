@@ -72,7 +72,8 @@
 		
 	\section{Produktübersicht}
 	
-	Das Produkt wird durch folgende Use Cases definiert. Die Anforderung an die Funktionalität ensteht aus der Auswertung der Akteur/Produkt- und Akteur/Akteur-Beziehungen.
+	Das Produkt wird durch folgende Use Cases definiert. Alle Use Cases beziehen sich auf das Verhalten des Systems aus der Sicht eines außenstehenden Anwenders.\\
+	Die Anforderung an die Funktionalität entsteht aus der Auswertung der Akteur/Produkt- und Akteur/Akteur-Beziehungen.
 	
 	\subsection{Use Case Analyse}
 	
@@ -169,13 +170,15 @@
 	\caption{Darstellung des Gesamtsystems anhand der ausgearbeiteten Use-Cases}
 	\label{fig:use_case}
 	\end{figure}
+	\newpage
 	
-
+	Aus den Use Cases in Abbildung 1 ergeben sich die folgende Geschäftsprozesse.\\
+	Die Diagramme beschreiben systeminterne Abläufe.\\
 	
 	\begin{figure}[th!]
 	\centering
 	\includegraphics[width=\textwidth]{./img/EPK_Veranstaltung}
-	\caption{Prozessdiagramm für Geschäftsprozess Veranstaltungserstellung}
+	\caption{Prozessdiagramm für den Geschäftsprozess Veranstaltungserstellung}
 	\label{fig:process1}
 	\end{figure}
 		
@@ -194,34 +197,24 @@
 	\end{figure}
 
 	\section{Produktfunktionen}
-	Im folgenden sind die Produktfunktionen aus den Ablaufdiagrammen dokumentiert. Diese werden im Laufe der Entwicklung angepasst und in ihrem Umfang erweitert.
+	Im folgenden sind die Geschäftsprozesse aus Abb. 2,3,4 dokumentiert.\\
+	Diese Produktfunktionen werden im Laufe der Entwicklung angepasst und in ihrem Umfang erweitert.
 	
-	\begin{table}[ht]
-	\begin{tabular}{ll}
-		\multicolumn{2}{l}{/\textbf{\textit{F10}}/}\\\hline
-		 \textbf{Geschäftsprozess} & Veranstaltung planen \\ 
-		 \textbf{Kategorie} & primär \\ 
-		 \textbf{Vorbedingung} & Dozent ist angemeldet\\
-		 & ein Template liegt vor \\ 
-		  	& Bewertungsschema liegt vor\\
-		 	& Prüfer liegen vor\\
-		 \textbf{Nachbedingung Erfolg} & Eine Veranstaltung ist angelegt  \\ 
-		 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
-		 \textbf{Nachbedingung Fehlschlag} &  \\ 
-		 \textbf{Akteure} & Dozent \\ 
-		 \textbf{Auslösendes Ereignis} & Dozent legt eine Veranstaltung an  \\ 
-		 \textbf{Beschreibung} &  1. Dozent konfiguriert das Template\\ 
-		 & 2. Dozent befüllt(prüft) die Parameter des Bewertungsschemas\\
-		 & 3. Dozent kann Prüfer einer Veranstaltung zuteilen zuteilen \\
-		 & 4. Dozent kann Studenten/Gruppen der  Veranstaltung zuweisen\\
-		  \textbf{Erweiterung} &  \\ 
-		 \textbf{Alternativen} & 1. Neues Template anlegen \\
-		 & 2. Neue Studenten anlegen\\
-		 & 3. Neue Prüfer Anlegen \\
-		 & 4. Neues Bewertungsschema anlegen
-		 \end{tabular} 
-	\label{tab:F10}
-	\end{table}
+		\begin{table}[ht]
+			\begin{tabular}{ll}
+				\multicolumn{2}{l}{/\textbf{\textit{F10}}/}\\\hline
+				 \textbf{Geschäftsprozess} & Bewertungsschema festlegen \\ 
+				 \textbf{Kategorie} & primär \\ 
+				 \textbf{Vorbedingung} & 1. Dozent ist angemeldet  \\ 
+				 \textbf{Nachbedingung Erfolg} & Ein Bewertungsschema steht zur Verfügung\\ 
+				 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
+				 \textbf{Akteure} & Dozent \\ 
+				 \textbf{Auslösendes Ereignis} & Dozent legt ein Bewertungsschema an  \\ 
+				 \textbf{Beschreibung} &  1. Umrechnungsformel festlegen\\
+				 & 2. Parameter anpassen
+				 \end{tabular} 
+			\label{tab:F10}
+			\end{table}
 	
 		\begin{table}[ht]
 		\begin{tabular}{ll}
@@ -247,21 +240,33 @@
 		\label{tab:F20}
 		\end{table}
 	
-		\begin{table}[ht]
-		\begin{tabular}{ll}
-			\multicolumn{2}{l}{/\textbf{\textit{F30}}/}\\\hline
-			 \textbf{Geschäftsprozess} & Bewertungsschema festlegen \\ 
-			 \textbf{Kategorie} & primär \\ 
-			 \textbf{Vorbedingung} & 1. Dozent ist angemeldet  \\ 
-			 \textbf{Nachbedingung Erfolg} & Ein Bewertungsschema steht zur Verfügung\\ 
-			 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
-			 \textbf{Akteure} & Dozent \\ 
-			 \textbf{Auslösendes Ereignis} & Dozent legt ein Bewertungsschema an  \\ 
-			 \textbf{Beschreibung} &  1. Umrechnungsformel festlegen\\
-			 & 2. Parameter anpassen
-			 \end{tabular} 
-		\label{tab:F30}
-		\end{table}
+		
+			\begin{table}[ht]
+			\begin{tabular}{ll}
+				\multicolumn{2}{l}{/\textbf{\textit{F30}}/}\\\hline
+				 \textbf{Geschäftsprozess} & Veranstaltung planen \\ 
+				 \textbf{Kategorie} & primär \\ 
+				 \textbf{Vorbedingung} & Dozent ist angemeldet\\
+				 & ein Template liegt vor \\ 
+				  	& Bewertungsschema liegt vor\\
+				 	& Prüfer liegen vor\\
+				 \textbf{Nachbedingung Erfolg} & Eine Veranstaltung ist angelegt  \\ 
+				 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
+				 \textbf{Nachbedingung Fehlschlag} &  \\ 
+				 \textbf{Akteure} & Dozent \\ 
+				 \textbf{Auslösendes Ereignis} & Dozent legt eine Veranstaltung an  \\ 
+				 \textbf{Beschreibung} &  1. Dozent konfiguriert das Template\\ 
+				 & 2. Dozent befüllt(prüft) die Parameter des Bewertungsschemas\\
+				 & 3. Dozent kann Prüfer einer Veranstaltung zuteilen zuteilen \\
+				 & 4. Dozent kann Studenten/Gruppen der  Veranstaltung zuweisen\\
+				  \textbf{Erweiterung} &  \\ 
+				 \textbf{Alternativen} & 1. Neues Template anlegen \\
+				 & 2. Neue Studenten anlegen\\
+				 & 3. Neue Prüfer Anlegen \\
+				 & 4. Neues Bewertungsschema anlegen
+				 \end{tabular} 
+			\label{tab:F30}
+			\end{table}
 	
 	
 			\begin{table}[ht]
