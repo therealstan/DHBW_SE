@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  28 OCT 2014 16:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  29 OCT 2014 17:26
 entering extended mode
 **Pflichtenheft.tex
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.tex
@@ -1981,119 +1981,133 @@ Underfull \hbox (badness 10000) in paragraph at lines 426--427
 ] [20
 
 ]
-Overfull \hbox (2.39503pt too wide) in paragraph at lines 506--507
+Overfull \hbox (2.39503pt too wide) in paragraph at lines 505--506
 \T1/cmr/m/n/10.95 Tem-pla-tes, Ver-an-stal-tun-gen und Be-nut-zer-grup-pen er-s
 tel-
  []
 
 
-Overfull \hbox (2.12439pt too wide) in paragraph at lines 507--508
+Overfull \hbox (2.12439pt too wide) in paragraph at lines 506--507
 []\T1/cmr/m/n/10.95 Ein Be-nut-zer mit Rech-ten zur Da-ten-ein-ga-be. Kann nich
 ts
  []
 
 
-Overfull \hbox (89.74023pt too wide) in paragraph at lines 513--513
+Overfull \hbox (89.74023pt too wide) in paragraph at lines 512--512
 []\T1/cmr/bx/n/10.95 Notenkonvertierungsprofil 
  []
 
 [21
 
-] <./img/EPK_Veranstaltung.pdf, id=328, 1108.14pt x 1114.1625pt>
+] [22
+
+] <./img/EPK_legend.pdf, id=332, 1032.85875pt x 114.4275pt>
+File: ./img/EPK_legend.pdf Graphic file (type pdf)
+
+<use ./img/EPK_legend.pdf>
+Package pdftex.def Info: ./img/EPK_legend.pdf used on input line 537.
+(pdftex.def)             Requested size: 426.79141pt x 47.28223pt.
+
+<./img/EPK_Veranstaltung.pdf, id=333, 1108.14pt x 1114.1625pt>
 File: ./img/EPK_Veranstaltung.pdf Graphic file (type pdf)
 
 <use ./img/EPK_Veranstaltung.pdf>
-Package pdftex.def Info: ./img/EPK_Veranstaltung.pdf used on input line 531.
+Package pdftex.def Info: ./img/EPK_Veranstaltung.pdf used on input line 543.
 (pdftex.def)             Requested size: 426.79141pt x 429.1154pt.
 
-<./img/EPK_Bewertung.pdf, id=329, 754.82pt x 833.1125pt>
+<./img/EPK_Bewertung.pdf, id=334, 754.82pt x 833.1125pt>
 File: ./img/EPK_Bewertung.pdf Graphic file (type pdf)
 
 <use ./img/EPK_Bewertung.pdf>
-Package pdftex.def Info: ./img/EPK_Bewertung.pdf used on input line 538.
+Package pdftex.def Info: ./img/EPK_Bewertung.pdf used on input line 550.
 (pdftex.def)             Requested size: 256.07744pt x 282.6316pt.
 
-<./img/EPK_Einsehen.pdf, id=330, 565.11125pt x 373.395pt>
+<./img/EPK_Einsehen.pdf, id=335, 565.11125pt x 373.395pt>
 File: ./img/EPK_Einsehen.pdf Graphic file (type pdf)
 
 <use ./img/EPK_Einsehen.pdf>
-Package pdftex.def Info: ./img/EPK_Einsehen.pdf used on input line 545.
+Package pdftex.def Info: ./img/EPK_Einsehen.pdf used on input line 557.
 (pdftex.def)             Requested size: 256.07744pt x 169.20558pt.
- [22
+ [23
 
+ <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/EPK_legend.pdf>
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/EPK_Veranstaltu
-ng.pdf>] [23 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/EPK
+ng.pdf>] [24 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/EPK
 _Bewertung.pdf> <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/
 EPK_Einsehen.pdf>]
-<./img/dfd_context.pdf, id=346, 450.9648pt x 318.4698pt>
+<./img/dfd_context.pdf, id=354, 450.9648pt x 318.4698pt>
 File: ./img/dfd_context.pdf Graphic file (type pdf)
 
 <use ./img/dfd_context.pdf>
-Package pdftex.def Info: ./img/dfd_context.pdf used on input line 556.
+Package pdftex.def Info: ./img/dfd_context.pdf used on input line 568.
 (pdftex.def)             Requested size: 426.79141pt x 301.41232pt.
+ [25
 
-<./img/dfd_login.pdf, id=349, 498.4221pt x 329.7921pt>
+ <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_context.pdf
+>]
+<./img/dfd_login.pdf, id=375, 498.4221pt x 329.7921pt>
 File: ./img/dfd_login.pdf Graphic file (type pdf)
 
 <use ./img/dfd_login.pdf>
-Package pdftex.def Info: ./img/dfd_login.pdf used on input line 571.
-(pdftex.def)             Requested size: 426.79141pt x 282.4029pt.
+Package pdftex.def Info: ./img/dfd_login.pdf used on input line 582.
+(pdftex.def)             Requested size: 341.43442pt x 225.92131pt.
 
-<./img/dfd_config.pdf, id=351, 478.9092pt x 295.5843pt>
+<./img/dfd_config.pdf, id=377, 478.9092pt x 295.5843pt>
 File: ./img/dfd_config.pdf Graphic file (type pdf)
 
 <use ./img/dfd_config.pdf>
-Package pdftex.def Info: ./img/dfd_config.pdf used on input line 580.
-(pdftex.def)             Requested size: 426.79141pt x 263.41647pt.
+Package pdftex.def Info: ./img/dfd_config.pdf used on input line 592.
+(pdftex.def)             Requested size: 341.43442pt x 210.73228pt.
+ [26
 
-<./img/dfd_werten.pdf, id=353, 370.02242pt x 251.74051pt>
+ <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_login.pdf> 
+<C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_config.pdf>]
+
+<./img/dfd_werten.pdf, id=409, 370.02242pt x 251.74051pt>
 File: ./img/dfd_werten.pdf Graphic file (type pdf)
 
 <use ./img/dfd_werten.pdf>
-Package pdftex.def Info: ./img/dfd_werten.pdf used on input line 589.
+Package pdftex.def Info: ./img/dfd_werten.pdf used on input line 601.
 (pdftex.def)             Requested size: 426.79141pt x 290.37897pt.
- [24
+ [27
 
- <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_context.pdf
->] [25 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_login
-.pdf> <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_config
-.pdf>] [26 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_w
-erten.pdf>] [27
+ <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_werten.pdf>
+] [28
 
 ]
-<./files/Aufwand.pdf, id=423, 635.69496pt x 899.01869pt>
+<./files/Aufwand.pdf, id=431, 491.91779pt x 726.79532pt>
 File: ./files/Aufwand.pdf Graphic file (type pdf)
 
 <use ./files/Aufwand.pdf>
-Package pdftex.def Info: ./files/Aufwand.pdf used on input line 603.
-(pdftex.def)             Requested size: 384.10966pt x 543.21524pt.
+Package pdftex.def Info: ./files/Aufwand.pdf used on input line 615.
+(pdftex.def)             Requested size: 371.30644pt x 548.5996pt.
 
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 48.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 610.
-[28
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 622.
+[29
 
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/files/Aufwand.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 610.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 622.
 
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 610.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 610.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 622.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 622.
 Package rerunfilecheck Info: File `Pflichtenheft.out' has not changed.
 (rerunfilecheck)             Checksum: 29483DE67D9FC518964B0B310183486F;2323.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 610.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 622.
  ) 
 Here is how much of TeX's memory you used:
- 28661 strings out of 493921
- 535292 string characters out of 3144863
+ 28669 strings out of 493921
+ 535441 string characters out of 3144863
  609514 words of memory out of 3000000
- 31356 multiletter control sequences out of 15000+200000
+ 31361 multiletter control sequences out of 15000+200000
  19380 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 58i,11n,65p,444b,812s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 58i,11n,65p,444b,808s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
 600\ecbi1095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
 knappen\ec\dpi600\ecbx1095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fon
@@ -2109,9 +2123,9 @@ ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Pflichtenheft.pdf (28 pages, 4285285 bytes).
+Output written on Pflichtenheft.pdf (29 pages, 5919259 bytes).
 PDF statistics:
- 899 PDF objects out of 1000 (max. 8388607)
- 90 named destinations out of 1000 (max. 500000)
- 354 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 889 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
+ 359 words of extra memory for PDF output out of 10000 (max. 10000000)
 

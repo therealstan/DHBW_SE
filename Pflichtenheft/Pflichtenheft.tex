@@ -458,9 +458,8 @@
 	
 		\subsection{Software}
 		Server-Betriebssystem: UNIX\\
-		Server-Umgebung: Jetty\\
 		Clientsysteme: Browser\\
-		Web-Server: Apache (bei Bedarf)
+		Web-Server: Jetty (bei Bedarf)
 		
 		\subsection{Hardware}
 		Sind für dieses Projekt nicht relevant. (prinzipiell ein leistungsstarker Server)\\
@@ -476,7 +475,7 @@
 		
 	\section{Spezielle Anforderungen an die Entwicklungs-Umgebung}
 		\subsection{Software}
-		Git Versionsverwaltung, Issue Tracking System - YouTrack, IDE für JAVA Development
+		Git Versionsverwaltung, Issue Tracking System - YouTrack, IDE für JAVA Development, Database Development Tools
 		
 		\subsection{Hardware}
 		Laptop, Standalone PC (Server, Client)
@@ -518,12 +517,20 @@
 	 
 	\end{description}
   \section{Abkürzungen}
+  
+  	\begin{description}[\setlabelphantom{xxxxxx}]
+  	\item[$S_2G$] Punkte zu Note (score to grade) Konvertierung  anhand festgelegter Formel und Parameter.
+  	\item[$R_2S$] Wertung zu Punkten (rate to score). Punkte werden anhand manuell eingegebener Rates errechnet. 
+  	\item[$H_2$] Hollistisches Bewertungsmodul. Zwei Bereiche (frei konfigurierbar). Ausgang ist eine Score, welche weiter in $R_2S$.
+  	
+  	
+  	\end{description}
   \section{Modelle}
   \subsection{Geschäftsprozesse}
   
 
   	Aus den Use Cases in Abbildung 1 ergeben sich die folgende Geschäftsprozesse.\\
-  	Die Diagramme beschreiben systeminterne Abläufe.
+  	Die Diagramme beschreiben systeminterne Abläufe. Die im folgenden benutzte Nomenklatur entspricht der EPK (Ereignisgesteuerte Prozesskette) Syntax.
   	
   	\begin{figure}[th!]
   	\centering
@@ -564,28 +571,29 @@
  \end{figure}
  
 
-  
+  \clearpage
  \subsection{Structured Analysis} 
  
- Ausgehend von Abbildung~\ref{fig:kontextdiagramm} kann die Struktur des Datenflusses folgendermaßen spezifiziert werden.\\ 
- In der Abbildung~\ref{fig:login} wird der Login-Prozess abgebildet.  
+ Ausgehend von Abbildung~\ref{fig:kontextdiagramm} kann die Struktur des Datenflusses folgendermaßen spezifiziert werden. Dabei werden die Datenbewegungen innerhalb der verschiedenen Softwareschichten analysiert.
+ In der Abbildung~\ref{fig:login} wird der Login-Prozess abgebildet.   
  
    \begin{figure}[ht]
   \centering
-  \includegraphics[width=\textwidth]{./img/dfd_login}
+  \includegraphics[width=0.8\textwidth]{./img/dfd_login}
   \caption{Datenfluss bei einem Login Prozess}
   \label{fig:login}
   \end{figure}
+  
   
   In der Abbildung~\ref{fig:config} ist der Datenfluss bei der Konfigurierung des Templates, eines Kurses oder einer Veranstaltung dargestellt.
   
       \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{./img/dfd_config}
+    \includegraphics[width=0.8\textwidth]{./img/dfd_config}
     \caption{Datenfluss bei einem Konfigurierung-Prozess}
     \label{fig:config}
     \end{figure}
-    
+    \clearpage
   In der Abbildung~\ref{fig:werten} ist der Datenfluss bei einem Bewertungsvorgang abgebildet.
       
       \begin{figure}[ht]
@@ -604,7 +612,7 @@
   
   	\begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./files/Aufwand}
+	\includegraphics[width=0.87\textwidth]{./files/Aufwand}
 	\label{fig:Aufwand}
 	\end{figure}
 
