@@ -1,0 +1,13 @@
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+<New id="database" class="org.eclipse.jetty.plus.jndi.Resource">
+    <Arg/>
+    <Arg>jdbc/database</Arg>
+    <Arg>
+        <New class="com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource">
+            <Set name="Url">jdbc:mysql://sv.thomas-maier.net:3306/seproject</Set>
+            <Set name="User">gaylord</Set>
+            <Set name="Password">yoloswag</Set>
+        </New>
+    </Arg>
+</New>
+    </Configure>
