@@ -1,9 +1,10 @@
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.annotation.Resource;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -19,16 +20,16 @@ public class User {
 
     private String name;
     private String password;
-    private String dbPassword;
+    private String dbPasswordHash;
     private String dbName;
     DataSource ds;
 
     boolean isLoginPage = (FacesContext.getCurrentInstance().getViewRoot()
             .getViewId().lastIndexOf("login.xhtml") > -1);
 
+   
     public User() {
         try {
-
             Context ctx = new InitialContext();
             ds = (DataSource)ctx.lookup("java:comp/env/jdbc/database");
         } catch (NamingException e) {
@@ -37,15 +38,7 @@ public class User {
         }
     }
 
-    public String getDbPassword() {
-        return dbPassword;
-    }
-
-    public String getDbName() {
-        return dbName;
-    }
-
-    public String getName() {
+   public String getName() {
         return name;
     }
 
@@ -73,7 +66,7 @@ public class User {
                         String sql = "INSERT INTO user(name, password) VALUES(?,?)";
                         ps = con.prepareStatement(sql);
                         ps.setString(1, name);
-                        ps.setString(2, password);
+                        ps.setString(2, PasswordHash.createHash(password));
                         i = ps.executeUpdate();
                     }
                 }
@@ -114,7 +107,7 @@ public class User {
                         rs = ps.executeQuery();
                         rs.next();
                         dbName = rs.getString("name");
-                        dbPassword = rs.getString("password");
+                        dbPasswordHash = rs.getString("password");
                     }
                 } catch (SQLException sqle) {
                     System.out.println("Kann mich nicht verbinden");
@@ -124,11 +117,11 @@ public class User {
         }
     }
 
-    public String login() {
+    public String login() throws InvalidKeySpecException, NoSuchAlgorithmException {
         dbData(name);
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
                 .getExternalContext().getSession(false);
-        if (isLoginPage && (name.equals(dbName) && password.equals(dbPassword))) {
+        if (isLoginPage && (name.equals(dbName) && PasswordHash.validatePassword(password,dbPasswordHash))) {
             FacesContext.getCurrentInstance().getExternalContext()
                     .getSessionMap().put("username", name);
             if (session == null) {
