@@ -29,7 +29,6 @@ public class User {
     public User() {
         try {
 
-
             Context ctx = new InitialContext();
             ds = (DataSource)ctx.lookup("java:comp/env/jdbc/database");
         } catch (NamingException e) {
