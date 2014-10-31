@@ -1,54 +1,33 @@
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
+
 import javax.servlet.http.HttpSession;
-import javax.sql.DataSource;
 
 @ManagedBean(name = "user")
 @SessionScoped
 public class User {
 
-    public enum Role {
-        ADMIN, TUTOR, STUDENT, ACCESSOR
-    }
-
     private String name;
     private String password;
-    private String dbPasswordHash;
-    private String dbName;
+    private int userID;
 
-    DataSource ds;
+    DatabaseCon dbCon;
 
     boolean isLoginPage = (FacesContext.getCurrentInstance().getViewRoot()
             .getViewId().lastIndexOf("login.xhtml") > -1);
 
     private boolean isLoggedIn = false;
 
-    private List<Role> roles;
-
     public boolean isLoggedIn() {
         return isLoggedIn;
     }
 
     public User() {
-        try {
-            Context ctx = new InitialContext();
-            ds = (DataSource)ctx.lookup("java:comp/env/jdbc/database");
-        } catch (NamingException e) {
-
-            e.printStackTrace();
-        }
+        dbCon = new DatabaseCon();
     }
 
     public String getName() {
@@ -68,70 +47,17 @@ public class User {
     }
 
     public String add() {
-        int i = 0;
-        if (name != null) {
-            PreparedStatement ps = null;
-            Connection con = null;
-            try {
-                if (ds != null) {
-                    con = ds.getConnection();
-                    if (con != null) {
-                        String sql = "INSERT INTO user(name, password) VALUES(?,?)";
-                        ps = con.prepareStatement(sql);
-                        ps.setString(1, name);
-                        ps.setString(2, PasswordHash.createHash(password));
-                        i = ps.executeUpdate();
-                    }
-                }
-            } catch (Exception e) {
-                System.out.println(e);
-            } finally {
-                try {
-                    if (con != null) {
-                        con.close();
-                    }
-                    if (ps != null) {
-                        ps.close();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        if (i > 0) {
+        if (dbCon.addUser(name,password) > 0) {
+            dbCon.setUserRole(dbCon.getUserID(name), DatabaseCon.userRole.STUDENT);
             return "success";
         } else
             return "unsuccess";
     }
 
-    public void dbData(String uName) {
-        if (uName != null) {
-            PreparedStatement ps;
-            Connection con;
-            ResultSet rs;
-
-            if (ds != null) {
-                try {
-                    con = ds.getConnection();
-                    if (con != null) {
-                        String sql = "select name,password from user where name = '"
-                                + uName + "'";
-                        ps = con.prepareStatement(sql);
-                        rs = ps.executeQuery();
-                        rs.next();
-                        dbName = rs.getString("name");
-                        dbPasswordHash = rs.getString("password");
-                    }
-                } catch (SQLException sqle) {
-                    System.out.println("Kann mich nicht verbinden");
-                    sqle.printStackTrace();
-                }
-            }
-        }
-    }
-
     public String login() throws InvalidKeySpecException, NoSuchAlgorithmException {
-        dbData(name);
+        userID = dbCon.getUserID(name);
+        String dbName = dbCon.getUserName(userID);
+        String dbPasswordHash = dbCon.getPasswordHash(userID);
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
                 .getExternalContext().getSession(false);
         if (isLoginPage && (name.equals(dbName) && PasswordHash.validatePassword(password,dbPasswordHash))) {
