@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -18,16 +19,28 @@ import javax.sql.DataSource;
 @SessionScoped
 public class User {
 
+    public enum Role {
+        ADMIN, TUTOR, STUDENT, ACCESSOR
+    }
+
     private String name;
     private String password;
     private String dbPasswordHash;
     private String dbName;
+
     DataSource ds;
 
     boolean isLoginPage = (FacesContext.getCurrentInstance().getViewRoot()
             .getViewId().lastIndexOf("login.xhtml") > -1);
 
-   
+    private boolean isLoggedIn = false;
+
+    private List<Role> roles;
+
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
     public User() {
         try {
             Context ctx = new InitialContext();
@@ -38,7 +51,7 @@ public class User {
         }
     }
 
-   public String getName() {
+    public String getName() {
         return name;
     }
 
@@ -143,6 +156,7 @@ public class User {
                                     "/login.xhtml");
                 }
             }
+            isLoggedIn = true;
             return "output";
         } else {
             return "invalid";

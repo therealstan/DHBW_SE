@@ -20,5 +20,14 @@
     <welcome-file-list>
         <welcome-file>login.xhtml</welcome-file>
     </welcome-file-list>
+    
+    <filter>
+        <filter-name>UserFilter</filter-name>
+        <filter-class>UserFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UserFilter</filter-name>
+        <url-pattern>/secured/*</url-pattern>
+    </filter-mapping>
 
 </web-app>
