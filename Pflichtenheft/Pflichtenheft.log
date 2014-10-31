@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  29 OCT 2014 17:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  30 OCT 2014 11:05
 entering extended mode
 **Pflichtenheft.tex
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.tex
@@ -1497,7 +1497,15 @@ exclude: leaders
 exclude: leaders
 exclude: leaders
 exclude: leaders
-) (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.aux)
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count192
+\float@exts=\toks36
+\float@box=\box63
+\@float@everytoks=\toks37
+\@floatcapt=\box64
+)
+(C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
@@ -1514,11 +1522,12 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 3.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 3.
-\AtBeginShipoutBox=\box63
+\AtBeginShipoutBox=\box65
 Package hyperref Info: Link coloring OFF on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
@@ -1527,7 +1536,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count192
+\c@section@level=\count193
 )
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
@@ -1539,17 +1548,17 @@ LaTeX Info: Redefining \nameref on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count193
+\scratchcounter=\count194
 \scratchdimen=\dimen286
-\scratchbox=\box64
-\nofMPsegments=\count194
-\nofMParguments=\count195
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count196
+\scratchbox=\box66
+\nofMPsegments=\count195
+\nofMParguments=\count196
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count197
 \MPscratchDim=\dimen287
-\MPnumerator=\count197
-\makeMPintoPDFobject=\count198
-\everyMPtoPDFconversion=\toks37
+\MPnumerator=\count198
+\makeMPintoPDFobject=\count199
+\everyMPtoPDFconversion=\toks39
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1595,9 +1604,10 @@ ons.cfg"
 File: siunitx-abbreviations.cfg 2013/07/31 v2.5s siunitx: Abbreviated units
 ) ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count199
+\c@lstlisting=\count200
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
@@ -1620,8 +1630,9 @@ Package tocstyle Info: prepare \l@subsubsection for redefinition on input line
 3.
 Package tocstyle Info: prepare \l@table for redefinition on input line 3.
 Package tocstyle Info: prepare \l@figure for redefinition on input line 3.
-\c__siunitx_mathsf_int=\count200
-\c__siunitx_mathtt_int=\count201
+\c__siunitx_mathsf_int=\count201
+Normal \count register pool exhausted, switching to extended pool.
+\c__siunitx_mathtt_int=\count277
 
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\doc/title.tex
 [1
@@ -1931,12 +1942,14 @@ Overfull \hbox (50.01404pt too wide) in paragraph at lines 222--246
 [][]
  []
 
+[9
 
+]
 Overfull \hbox (27.60223pt too wide) in paragraph at lines 273--292
 [][]
  []
 
-
+[10]
 Overfull \hbox (32.46143pt too wide) in paragraph at lines 295--311
 [][]
  []
@@ -1951,9 +1964,7 @@ Overfull \hbox (36.24455pt too wide) in paragraph at lines 332--346
 [][]
  []
 
-[9
-
-] [10] [11] [12]
+[11] [12]
 Overfull \hbox (0.93713pt too wide) in paragraph at lines 357--358
 []\T1/cmr/m/n/10.95 Veranstaltung {Ver-an-stal-tungs_id, Bewertungsschema(S$[]$
 G), Be-wer-tung-stem-pla-
@@ -2001,28 +2012,28 @@ Overfull \hbox (89.74023pt too wide) in paragraph at lines 512--512
 
 ] [22
 
-] <./img/EPK_legend.pdf, id=332, 1032.85875pt x 114.4275pt>
+] <./img/EPK_legend.pdf, id=334, 1032.85875pt x 114.4275pt>
 File: ./img/EPK_legend.pdf Graphic file (type pdf)
 
 <use ./img/EPK_legend.pdf>
 Package pdftex.def Info: ./img/EPK_legend.pdf used on input line 537.
 (pdftex.def)             Requested size: 426.79141pt x 47.28223pt.
 
-<./img/EPK_Veranstaltung.pdf, id=333, 1108.14pt x 1114.1625pt>
+<./img/EPK_Veranstaltung.pdf, id=335, 1108.14pt x 1114.1625pt>
 File: ./img/EPK_Veranstaltung.pdf Graphic file (type pdf)
 
 <use ./img/EPK_Veranstaltung.pdf>
 Package pdftex.def Info: ./img/EPK_Veranstaltung.pdf used on input line 543.
 (pdftex.def)             Requested size: 426.79141pt x 429.1154pt.
 
-<./img/EPK_Bewertung.pdf, id=334, 754.82pt x 833.1125pt>
+<./img/EPK_Bewertung.pdf, id=336, 754.82pt x 833.1125pt>
 File: ./img/EPK_Bewertung.pdf Graphic file (type pdf)
 
 <use ./img/EPK_Bewertung.pdf>
 Package pdftex.def Info: ./img/EPK_Bewertung.pdf used on input line 550.
 (pdftex.def)             Requested size: 256.07744pt x 282.6316pt.
 
-<./img/EPK_Einsehen.pdf, id=335, 565.11125pt x 373.395pt>
+<./img/EPK_Einsehen.pdf, id=337, 565.11125pt x 373.395pt>
 File: ./img/EPK_Einsehen.pdf Graphic file (type pdf)
 
 <use ./img/EPK_Einsehen.pdf>
@@ -2035,7 +2046,7 @@ Package pdftex.def Info: ./img/EPK_Einsehen.pdf used on input line 557.
 ng.pdf>] [24 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/EPK
 _Bewertung.pdf> <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/
 EPK_Einsehen.pdf>]
-<./img/dfd_context.pdf, id=354, 450.9648pt x 318.4698pt>
+<./img/dfd_context.pdf, id=356, 450.9648pt x 318.4698pt>
 File: ./img/dfd_context.pdf Graphic file (type pdf)
 
 <use ./img/dfd_context.pdf>
@@ -2045,14 +2056,14 @@ Package pdftex.def Info: ./img/dfd_context.pdf used on input line 568.
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_context.pdf
 >]
-<./img/dfd_login.pdf, id=375, 498.4221pt x 329.7921pt>
+<./img/dfd_login.pdf, id=377, 498.4221pt x 329.7921pt>
 File: ./img/dfd_login.pdf Graphic file (type pdf)
 
 <use ./img/dfd_login.pdf>
 Package pdftex.def Info: ./img/dfd_login.pdf used on input line 582.
 (pdftex.def)             Requested size: 341.43442pt x 225.92131pt.
 
-<./img/dfd_config.pdf, id=377, 478.9092pt x 295.5843pt>
+<./img/dfd_config.pdf, id=379, 478.9092pt x 295.5843pt>
 File: ./img/dfd_config.pdf Graphic file (type pdf)
 
 <use ./img/dfd_config.pdf>
@@ -2063,7 +2074,7 @@ Package pdftex.def Info: ./img/dfd_config.pdf used on input line 592.
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_login.pdf> 
 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_config.pdf>]
 
-<./img/dfd_werten.pdf, id=409, 370.02242pt x 251.74051pt>
+<./img/dfd_werten.pdf, id=411, 370.02242pt x 251.74051pt>
 File: ./img/dfd_werten.pdf Graphic file (type pdf)
 
 <use ./img/dfd_werten.pdf>
@@ -2075,36 +2086,36 @@ Package pdftex.def Info: ./img/dfd_werten.pdf used on input line 601.
 ] [28
 
 ]
-<./files/Aufwand.pdf, id=431, 491.91779pt x 726.79532pt>
+<./files/Aufwand.pdf, id=433, 491.91779pt x 726.79532pt>
 File: ./files/Aufwand.pdf Graphic file (type pdf)
 
 <use ./files/Aufwand.pdf>
-Package pdftex.def Info: ./files/Aufwand.pdf used on input line 615.
+Package pdftex.def Info: ./files/Aufwand.pdf used on input line 617.
 (pdftex.def)             Requested size: 371.30644pt x 548.5996pt.
 
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 48.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 622.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 624.
 [29
 
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/files/Aufwand.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 622.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 624.
 
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 622.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 622.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 624.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 624.
 Package rerunfilecheck Info: File `Pflichtenheft.out' has not changed.
 (rerunfilecheck)             Checksum: 29483DE67D9FC518964B0B310183486F;2323.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 622.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 624.
  ) 
 Here is how much of TeX's memory you used:
- 28669 strings out of 493921
- 535441 string characters out of 3144863
- 609514 words of memory out of 3000000
- 31361 multiletter control sequences out of 15000+200000
+ 28720 strings out of 493921
+ 536165 string characters out of 3144863
+ 603514 words of memory out of 3000000
+ 31408 multiletter control sequences out of 15000+200000
  19380 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  58i,11n,65p,444b,808s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2123,9 +2134,9 @@ ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Pflichtenheft.pdf (29 pages, 5919259 bytes).
+Output written on Pflichtenheft.pdf (29 pages, 5919444 bytes).
 PDF statistics:
- 889 PDF objects out of 1000 (max. 8388607)
+ 891 PDF objects out of 1000 (max. 8388607)
  92 named destinations out of 1000 (max. 500000)
  359 words of extra memory for PDF output out of 10000 (max. 10000000)
 
