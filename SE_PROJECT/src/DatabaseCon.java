@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class DatabaseCon {
 
     public static enum userRole {
-        ADMIN, TUTOR, STUDENT, ACCESSOR
+        ADMIN , TUTOR, STUDENT, ACCESSOR, DEFAULT
     }
 
     DataSource ds;
@@ -42,6 +42,7 @@ public class DatabaseCon {
                         ps.setString(1, name);
                         ps.setString(2, PasswordHash.createHash(password));
                         i = ps.executeUpdate();
+                        setUserRole(getUserID(name), userRole.DEFAULT);
                     }
                 }
             } catch (Exception e) {
@@ -117,6 +118,76 @@ public class DatabaseCon {
                 }
             }
         }
+    }
+
+    public void changeUserRole(int userID, userRole role){
+        if (userID != 0) {
+            PreparedStatement ps = null;
+            Connection con = null;
+            try {
+                if (ds != null) {
+                    con = ds.getConnection();
+                    if (con != null) {
+                        String sql = "DELETE from userUserRole where userID = '" + userID + "'";
+                        ps = con.prepareStatement(sql);
+                        ps.executeUpdate();
+                        sql = "INSERT INTO userUserRole(userID,roleID) VALUES (?,?)";
+                        ps = con.prepareStatement(sql);
+                        int roleID = getRoleID(role);
+                        ps.setInt(1,userID);
+                        ps.setInt(2,roleID);
+                        ps.executeUpdate();
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            } finally {
+                try {
+                    if (con != null) {
+                        con.close();
+                    }
+                    if (ps != null) {
+                        ps.close();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public userRole getUserRole(int userID){
+        userRole role = null;
+
+        PreparedStatement ps;
+        Connection con;
+        ResultSet rs;
+        try {
+            con = ds.getConnection();
+            if (con != null) {
+                String sql = "select roleID from userUserRole where userID = '"
+                        + userID + "'";
+                ps = con.prepareStatement(sql);
+                rs = ps.executeQuery();
+                rs.next();
+                int roleID = rs.getInt("roleID");
+                sql = "select roleName from userRole where roleID = '"+roleID+"'";
+                ps = con.prepareStatement(sql);
+                rs = ps.executeQuery();
+                rs.next();
+                String s_roleID = rs.getString("roleName");
+                for (userRole r : userRole.values() ) {
+                    if(r.toString().equalsIgnoreCase(s_roleID))
+                    {
+                        role = r;
+                    }
+                }
+            }
+        } catch (SQLException sqle) {
+            System.out.println("Kann mich nicht verbinden");
+            sqle.printStackTrace();
+        }
+        return role;
     }
 
     public int getUserID(String name){

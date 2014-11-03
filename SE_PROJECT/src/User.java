@@ -15,6 +15,8 @@ public class User {
     private String password;
     private int userID;
 
+    private DatabaseCon.userRole role;
+
     DatabaseCon dbCon;
 
     boolean isLoginPage = (FacesContext.getCurrentInstance().getViewRoot()
@@ -48,7 +50,6 @@ public class User {
 
     public String add() {
         if (dbCon.addUser(name,password) > 0) {
-            dbCon.setUserRole(dbCon.getUserID(name), DatabaseCon.userRole.STUDENT);
             return "success";
         } else
             return "unsuccess";
@@ -83,7 +84,8 @@ public class User {
                 }
             }
             isLoggedIn = true;
-            return "output";
+            this.role = dbCon.getUserRole(userID);
+            return role.toString().toLowerCase();
         } else {
             return "invalid";
         }
@@ -98,5 +100,9 @@ public class User {
                 .getNavigationHandler()
                 .handleNavigation(FacesContext.getCurrentInstance(), null,
                         "/login.xhtml");
+    }
+
+    public DatabaseCon.userRole getRole() {
+        return role;
     }
 }

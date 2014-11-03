@@ -10,8 +10,32 @@
         <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{user.login}</from-action>
-            <from-outcome>output</from-outcome>
-            <to-view-id>/secured/success.xhtml</to-view-id>
+            <from-outcome>student</from-outcome>
+            <to-view-id>/secured/student.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-action>#{user.login}</from-action>
+            <from-outcome>default</from-outcome>
+            <to-view-id>/secured/default.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-action>#{user.login}</from-action>
+            <from-outcome>accessor</from-outcome>
+            <to-view-id>/secured/accessor.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-action>#{user.login}</from-action>
+            <from-outcome>tutor</from-outcome>
+            <to-view-id>/secured/tutor.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-action>#{user.login}</from-action>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>/secured/admin.xhtml</to-view-id>
         </navigation-case>
 
         <navigation-case>

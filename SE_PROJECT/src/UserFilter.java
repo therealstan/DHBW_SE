@@ -22,9 +22,16 @@ public class UserFilter implements Filter {
         HttpSession session = ((HttpServletRequest) servletRequest).getSession(false);
         User user = (session != null) ? (User) session.getAttribute("user") : null;
 
+        /*
+        TODO: FilterMapping nicht so sicher!
+         */
         if (user != null && user.isLoggedIn()) {
             // User is logged in, so just continue request.
-            filterChain.doFilter(servletRequest,servletResponse);
+            if(user.getRole() != null && req.toString().contains(user.getRole().toString().toLowerCase())){
+                filterChain.doFilter(servletRequest,servletResponse);}
+            else{
+                resp.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+            }
         } else {
             resp.sendError(HttpServletResponse.SC_UNAUTHORIZED);
         }
