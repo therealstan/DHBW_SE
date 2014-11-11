@@ -60,10 +60,11 @@
 		\begin{itemize}
 		\item[-]	Das System soll nur einmal angelegt werden und autark funktionieren.
 		\item[-]	Klar definierte Benutzergruppen und Rechte
-		\item[-]	Datenbankschnittstelle für die Benutzerverwaltung
+		\item[-]	Datenbankschnittstelle für die Benutzerverwaltung (mögliche Anbindung an Dualis bei vorhandener API)
 		\item[-]	Datenbank-Umgebung für die Speicherung der Daten
 		\item[-]	Archivierung der Daten (Datensicherheit wegen Einsehbarkeit der Daten)
 		\item[-]	Zugriff von außen sowohl als Lesen, als auch als Edit möglich. 
+		\item[-]	Die Anwendung soll parallelen Zugriff von mehreren Benutzern zulassen.
 		\item[-]	Der Administrator kann die Datenbank sichern und die Programmdaten ändern.\\
 					Er hat keine Lese-/Schreibrechte auf die Datenbankinhalte.
 		\end{itemize}
@@ -367,7 +368,8 @@
 	\item[/L10/] Die Antwortzeiten der Anwendung sollen so gering wie möglich gehalten werden.
 	\item[/L20/] 	Die steigenden Benutzerzahlen die zur gleichen Zeit auf das System zugreifen, sollen keine signifikanten Einflüsse auf die Antwortzeiten des Systems haben.
 	\item[/L30/]	Benutzerfreundliche UX soll implementiert werden.
-	\item[/L40/]	Anbindung an bereits vorhandene Datenbanken soll in Zukunft möglich sein (wird im Prototypen zunächst nicht implementiert)
+	\item[/L40/]	Die Anwendung besitzt eine eigene Datenbank zur Speicherung und Verwaltung der Anwendungsdaten.
+	Die Ausgliederung einzelner Teilmodule, wie z.B. die Benutzerverwaltung ist möglich (API muss von Kunden bereitgestellt werden).
 	\item[/L50/] 	Die Abfragen und die Einsicht der Daten von Außerhalb (WWW) ist entsprechend der Benutzerberechtigung möglich. (wird im Prototypen zu einem späteren Zeitpunkt realisiert)
 	\item[/L60/] 	Datenbeständigkeit soll garantiert werden.
 	\end{description}
@@ -385,7 +387,7 @@
 		\hline Richtigkeit &  & \checkmark  &  &  \\ 
 		\hline Interoperabilität &  &  &\checkmark  &  \\ 
 		\hline Ordnungsmäßigkeit &  &  &\checkmark  &  \\ 
-		\hline Sicherheit &  & & \checkmark  &  \\ 
+		\hline Sicherheit & & \checkmark & &  \\ 
 		\hline \multicolumn{5}{|c|}{Zuverlässigkeit}   \\ 
 		\hline Reife &  &   & \checkmark &  \\ 
 		\hline Fehlertoleranz &  &  \checkmark &  &  \\ 
@@ -399,7 +401,7 @@
 		\hline Verbrauchsverhalten &  &  &\checkmark   &  \\ 
 		\hline \multicolumn{5}{|c|}{Änderbarkeit} \\ 
 		\hline Analysierbarkeit &  &   & \checkmark &  \\ 
-		\hline Modifizierbarkeit &  & \checkmark  &  &  \\ 
+		\hline Modifizierbarkeit &  &  &  \checkmark  &  \\ 
 		\hline Stabilität &  &  & \checkmark &  \\ 
 		\hline Prüfbarkeit &   &  &\checkmark  &  \\ 
 		\hline \multicolumn{5}{|c|}{Übertragbarkeit}  \\ 
@@ -414,10 +416,14 @@
 	
 
 		\begin{description}[\setlabelphantom{Wiederherstellbarkeit}]
-			\item[Richtigkeit]  Da das System mit persönlichen und sensiblen Daten arbeitet, sollte dieses eine hohe Richtigkeit haben
+			\item[Richtigkeit]  Da das System mit persönlichen und sensiblen Daten arbeitet, sollte dieses eine hohe Richtigkeit haben. Die Tests auf die Richtigkeit und die Robustheit des Systems sind mit dem Entwicklungsprozess verflochten und basieren auf den vorgestellten Benutzerszenarien (Agile Development). 
+			\item[Sicherheit] Die Sicherheitsaspekte der einzelnen Module werde im Lauf der Entwicklung integriert.
+			Im Prototyp wird für das Anmeldeverfahren per Passwort der Sicherheitsstandard PKCS\#5 (PBKDF2, RFC2898) verwendet und die Sichten der einzelnen Bereiche der Anwendung strikt an die Benutzerberechtigung gebunden. 
+			Für die Umsetzung der Anwendung soll eine gesicherte Verbindung über HTTPS (SSH, RS2818) bereit gestellt werden.
 			\item[Fehlertoleranz]  Bei der Berechnung der Noten sollten so wenig Fehler wie möglich auftreten 
-			\item[Wiederherstellbarkeit]  Die Daten des Systems müssen entsprechend der jeweiligen Anforderung der Hochschule über einen längeren Zeitraum einsehbar und wiederherstellbar sein 
-			\item[Modifizierbarkeit] Die Veranstaltung sollte gut modifizierbar sein, damit der Dozent diese an seine Anforderungen anpassen kann
+			\item[Wiederherstellbarkeit]  Die Daten des Systems müssen entsprechend der jeweiligen Anforderung der Hochschule über einen längeren Zeitraum einsehbar und wiederherstellbar sein.
+			Da alle benutzerbezogenen Daten in der Datenbank gespeichert und verwaltet werden bezieht sich die Wiederherstellbarkeit auf der MYSQL-Standard.
+			Die Entwicklung der Backupstrategie folgt im weiteren Verlauf der Entwicklung.
 		\end{description}	
 	
 
@@ -519,6 +525,7 @@
   \section{Abkürzungen}
   
   	\begin{description}[\setlabelphantom{xxxxxx}]
+  	\item[API] Application Programming Interface. Externe Programmschnittstelle, hier für Anbindung an externe Datenbank.
   	\item[$S_2G$] Punkte zu Note (score to grade) Konvertierung  anhand festgelegter Formel und Parameter.
   	\item[$R_2S$] Wertung zu Punkten (rate to score). Punkte werden anhand manuell eingegebener Rates errechnet. 
   	\item[$H_2$] Hollistisches Bewertungsmodul. Zwei Bereiche (frei konfigurierbar). Ausgang ist eine Score, welche weiter in $R_2S$.
