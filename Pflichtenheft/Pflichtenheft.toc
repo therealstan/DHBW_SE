@@ -33,7 +33,7 @@
 \contentsline {subsection}{\numberline {12.3}Produktive Anwendung}{21}{subsection.12.3}
 \contentsline {subsection}{\numberline {12.4}Sicherheitskonzept}{21}{subsection.12.4}
 \contentsline {subsection}{\numberline {12.5}Back-Up Planung}{21}{subsection.12.5}
-\contentsline {subsection}{\numberline {12.6}User Expirience und User Interface}{22}{subsection.12.6}
+\contentsline {subsection}{\numberline {12.6}User Experience und User Interface}{22}{subsection.12.6}
 \contentsline {subsection}{\numberline {12.7}Maintenance}{22}{subsection.12.7}
 \contentsline {section}{\numberline {13}Erg\IeC {\"a}nzungen}{23}{section.13}
 \contentsline {section}{\numberline {A}Begriffsdefinitionen}{23}{appendix.A}
