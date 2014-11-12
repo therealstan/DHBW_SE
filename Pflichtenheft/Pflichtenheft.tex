@@ -50,7 +50,7 @@
 		
 		\subsection{Zielgruppen}
 		\begin{itemize}
-		\item[-] 	Admin
+		\item[-] 	Administrator (Verwalter des Gesamtsystems)
 		\item[-]	Dozent
 		\item[-]	Prüfer
 		\item[-]	Studenten
@@ -73,15 +73,15 @@
 		
 	\section{Produktübersicht}
 	
-	Das Produkt wird durch folgende Use Cases definiert. Alle Use Cases beziehen sich auf das Verhalten des Systems aus der Sicht eines außenstehenden Anwenders.\\
-	Die Anforderung an die Funktionalität entsteht aus der Auswertung der Akteur/Produkt- und Akteur/Akteur-Beziehungen.
+	Das Produkt wird durch folgende Use Cases beschrieben. Alle Use Cases beziehen sich auf das Verhalten des Systems aus der Sicht eines außenstehenden Anwenders. Die Use Cases beschreiben die Hauptfunktionen, welche ein Benutzer des Systems wahrnehmen kann.\\
+	Die Anforderung an die Funktionalität entsteht aus der Auswertung der Akteur/Produkt- und Akteur/Akteur-Beziehungen im Kapitel~\ref{chap:Prfunk}.
 	
 	\subsection{Use Case Analyse}
 	
 	\begin{table}[H]
 	\begin{tabular}{ll}
 	 \textbf{Use Case ID} & 1 \\
- 	 \textbf{Elementarer Geschäftsprozess} & /F10/ Veranstaltung planen \\ 
+ 	 \textbf{Elementarer Geschäftsprozess} &  Veranstaltung planen \\ 
 	 \textbf{Ziel des Use Cases} & Darstellung des  Prozesses einer    \\
 	 & Veranstaltungsplanung\\ 
 	 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
@@ -98,7 +98,7 @@
 		\begin{table}[H]
 		\begin{tabular}{ll}
 		 \textbf{Use Case ID} & 2 \\
-	 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Template erstellen \\ 
+	 	 \textbf{Elementarer Geschäftsprozess} &  Template erstellen \\ 
 		 \textbf{Ziel des Use Cases} & Templates für die Veranstaltungen können \\& angelegt werden   \\
 		 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
 		 \textbf{Vorbedingung} & Dozent ist angemeldet \\ 
@@ -114,7 +114,7 @@
 			\begin{table}[H]
 			\begin{tabular}{ll}
 			 \textbf{Use Case ID} & 3 \\
-		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Bewerten \\ 
+		 	 \textbf{Elementarer Geschäftsprozess} &  Bewerten \\ 
 			 \textbf{Ziel des Use Cases} & Prüfer bewertet  \\
 			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
 			 \textbf{Vorbedingung} & Veranstaltung existiert \\
@@ -132,7 +132,7 @@
 			\begin{table}[H]
 			\begin{tabular}{ll}
 			 \textbf{Use Case ID} & 4 \\
-		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Einsehen \\ 
+		 	 \textbf{Elementarer Geschäftsprozess} &  Einsehen \\ 
 			 \textbf{Ziel des Use Cases} & Studenten sehen ihre Noten ein  \\
 			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
 			 \textbf{Vorbedingung} & Bewertung liegt bereits vor \\
@@ -148,7 +148,7 @@
 			\begin{table}[H]
 			\begin{tabular}{ll}
 			 \textbf{Use Case ID} & 5 \\
-		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Teilnehmer anlegen \\ 
+		 	 \textbf{Elementarer Geschäftsprozess} &  Teilnehmer anlegen \\ 
 			 \textbf{Ziel des Use Cases} & Prüfer oder Dozent konfigurieren \\& die Teilnehmer einer Veranstaltung  \\
 			 \textbf{Umgebende Systemgrenze} & Planung Prüfung \\ 
 			 \textbf{Vorbedingung} & Veranstaltung ist konfiguriert \\
@@ -173,7 +173,7 @@
 	\end{figure}
 	\newpage
 	
-	\section{Produktfunktionen}
+	\section{Produktfunktionen\label{chap:Prfunk}}
 	Im folgenden sind die Geschäftsprozesse der Anwendung dokumentiert.\\
 	Diese Produktfunktionen werden im Laufe der Entwicklung angepasst und in ihrem Umfang erweitert.
 	Die Geschäftsprozesse finden sich als Diagramme im Anhang (Abb. \ref{fig:process1}, \ref{fig:process2}, \ref{fig:process3})
@@ -184,7 +184,7 @@
 				 \textbf{Geschäftsprozess} & Bewertungsschema festlegen \\ 
 				 \textbf{Kategorie} & primär \\ 
 				 \textbf{Vorbedingung} & 1. Dozent ist angemeldet  \\ 
-				 \textbf{Nachbedingung Erfolg} & Ein Bewertungsschema steht zur Verfügung\\ 
+				 \textbf{Nachbedingung Erfolg\phantom{xxxx}} & Ein Bewertungsschema steht zur Verfügung\\ 
 				 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
 				 \textbf{Akteure} & Dozent \\ 
 				 \textbf{Auslösendes Ereignis} & Dozent legt ein Bewertungsschema an  \\ 
@@ -256,7 +256,7 @@
 				 & 2. Veranstaltung ist angelegt\\
 				 & 3. Gruppen/Student ist einer Veranstaltung zugewiesen\\
 				 & 4. Prüfer ist einer Veranstaltung zugewiesen\\
-				 \textbf{Nachbedingung Erfolg} & Ein Student/Gruppe wurde bewertet\\
+				 \textbf{Nachbedingung Erfolg\phantom{xxxx}} & Ein Student/Gruppe wurde bewertet\\
 				 & Teilbewertung/vollständige Bewertung ist abgeschlossen\\ 
 				 \textbf{Akteure} & Dozent \\ 
 				 & Prüfer\\
@@ -352,15 +352,24 @@
 	\section{Produktdaten}
 	
 		Die Größe der einzelnen Datenpunkte richtet sich variabel nach der letztendlichen Größe des Anwendungssystems. Die praktische Obergrenze wird durch die Hardware bzw. Datenbank festgelegt. 
-	
+		
+		Die unten aufgeführten Produktdaten in der Notation /Dxx/ beschreiben die Gesamtheit der Daten, welche die Anwendung benötigt oder erstellt. Das vorläufige Datenbankmodell ist in der Abbildung~\ref{fig:ERM} dargestellt, erst in dem ER-Modell werden die Trennungen in die Tabellen vorgenommen. 
+		
 	\begin{description}[\setlabelphantom{xxxxxx}]
 	\item[/D10/] Benutzer \{Benutzer\_id, Benutzertyp(Rechte) , Personendaten, Veranstaltungen\}\\ (Max. 100000) 
 	\item[/D20/] Veranstaltung \{Veranstaltungs\_id, Bewertungsschema(S$_2$G), Bewertungstemplate, Prüfer, Stundenten, Score, Note, Status\_Bewertung\, Beschreibung\} \\ (Max. 100000)
-	\item[/D30/] GUI-Daten (mehrere verschiedene Ansichten) \\
-	Genauere Spezifikation erfolgt im zweiten Teil des Projekts im 4. Semester
-	\item[/D40/] Datenarchiv (Alle Daten)
-	
+	\item[/D30/] Datenarchiv (Alle Daten)
 	\end{description}
+	
+	
+	\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{./img/ERM}
+\caption{Entity Relation Modell in IDEF1X Notation}
+\label{fig:ERM}
+\end{figure}
+
+	
 	
 	\section{Produktleistungen}
 	
