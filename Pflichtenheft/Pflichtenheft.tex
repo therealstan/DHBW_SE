@@ -11,7 +11,7 @@
 			
 			\begin{itemize}
 			\item[-]	Verschiedene Benutzergruppen
-			\item[-]	Benutzer anlegen 
+			\item[-]	Neue Benutzer anlegen und administrieren 
 			\item[-]	Rechtehierarchien
 			\item[-]	Studenten können ihre Noten in dem System einsehen.
 			\item[-]	Notenkonvertierungsprofile erstellen und verwalten
@@ -49,12 +49,13 @@
 		
 		
 		\subsection{Zielgruppen}
-		\begin{itemize}
-		\item[-] 	Administrator (Verwalter des Gesamtsystems)
-		\item[-]	Dozent
-		\item[-]	Prüfer
-		\item[-]	Studenten
-		\end{itemize}
+		
+		\begin{description}[\setlabelphantom{Administrator}]
+		\item[Administrator] 	 Administrator sichert und verwaltet das Gesamtsystem (Server, Webserver u.A.). Er hat keine Möglichkeit die Inhalte (z.B. Studentennoten) zu manipulieren. 
+		\item[Dozent]	Dozenten benutzen diese Anwendung um eine Veranstaltung zu erstellen und eine von Ihnen bestimmte Bewertungsroutine umzusetzen.
+		\item[Prüfer] Prüfer benutzen diese Anwendung um auf eine einfache zentralisierte Art und Weise in der ihnen zugewiesenen Veranstaltung Bewertungen durchzuführen.
+		\item[Studenten]	Studenten benutzen diese Anwendung um eine Auskunft über ihre Leistungen in den belegten Veranstaltungen zu erfassen.
+		\end{description}
 
 		\subsection{Betriebsbedingungen}
 		\begin{itemize}
@@ -353,18 +354,21 @@
 	
 		Die Größe der einzelnen Datenpunkte richtet sich variabel nach der letztendlichen Größe des Anwendungssystems. Die praktische Obergrenze wird durch die Hardware bzw. Datenbank festgelegt. 
 		
-		Die unten aufgeführten Produktdaten in der Notation /Dxx/ beschreiben die Gesamtheit der Daten, welche die Anwendung benötigt oder erstellt. Das vorläufige Datenbankmodell ist in der Abbildung~\ref{fig:ERM} dargestellt, erst in dem ER-Modell werden die Trennungen in die Tabellen vorgenommen. 
+		Die unten aufgeführten Produktdaten in der Notation /Dxx/ beschreiben die Gesamtheit der Daten, welche die Anwendung benötigt oder erstellt. Das vorläufige Datenbankmodell ist in der Abbildung~\ref{fig:ERM} dargestellt, erst in dem ER-Modell werden die Trennungen in die Tabellen vorgenommen.
+		
+	 
 		
 	\begin{description}[\setlabelphantom{xxxxxx}]
 	\item[/D10/] Benutzer \{Benutzer\_id, Benutzertyp(Rechte) , Personendaten, Veranstaltungen\}\\ (Max. 100000) 
 	\item[/D20/] Veranstaltung \{Veranstaltungs\_id, Bewertungsschema(S$_2$G), Bewertungstemplate, Prüfer, Stundenten, Score, Note, Status\_Bewertung\, Beschreibung\} \\ (Max. 100000)
-	\item[/D30/] Datenarchiv (Alle Daten)
+	\item[/D30/] Serialisierte Objekte
+	\item[/D40/] Datenarchiv (Alle Daten)
 	\end{description}
 	
 	
-	\begin{figure}
+	\begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{./img/ERM}
+\includegraphics[width=0.7\textwidth]{./img/ERM}
 \caption{Entity Relation Modell in IDEF1X Notation}
 \label{fig:ERM}
 \end{figure}
@@ -423,7 +427,7 @@
 	\label{tab:quali_anf}
 	\end{table}
 	
-
+\clearpage
 		\begin{description}[\setlabelphantom{Wiederherstellbarkeit}]
 			\item[Richtigkeit]  Da das System mit persönlichen und sensiblen Daten arbeitet, sollte dieses eine hohe Richtigkeit haben. Die Tests auf die Richtigkeit und die Robustheit des Systems sind mit dem Entwicklungsprozess verflochten und basieren auf den vorgestellten Benutzerszenarien (Agile Development). 
 			\item[Sicherheit] Die Sicherheitsaspekte der einzelnen Module werde im Lauf der Entwicklung integriert.
@@ -438,11 +442,16 @@
 
 	\section{Benutzeroberfläche}
 	
-	Die Benutzeroberfläche entspricht den modernen Ansprüchen einer Web-Anwendungen und wird mit entsprechend Google-Designrichtlinien erstellt. Die intuitive Bedienung soll das Leitmotiv der Entwicklung werden.\\
+	Die Benutzeroberfläche [UI] (\underline{\textbf{U}}ser \underline{\textbf{I}}nterface) entspricht den modernen Ansprüchen einer Web-Anwendungen und wird mit Google Designrichtlinien erstellt. 
+	
+ 	Das Leitmotiv für die Entwicklung des UI  ist "\textit{Focus on the user and all else will follow}" (engl.: konzentriere dich auf den Bentzer und der Rest folgt.).
+ 	
+ 	 \url{http://www.google.com/design/}
 	
 	Die genauere Spezifikation der grafischen Benutzeroberfläche wird zu einem späteren Zeitpunkt des Projektes definiert. 
 	
-	\begin{table}[ht]
+	\begin{table}[H]
+	\centering
 	\caption{Benutzergruppen und Rechteverteilung}
 	\begin{tabular}{|c|c|c|c|c|}
 	\hline Benutzergruppe & Lesen & Schreiben & Ändern & Systemanpassungen \\ 
@@ -455,6 +464,11 @@
 	\label{tab:usergroup}
 	\end{table}
 	
+	\paragraph{Benutzersichten}
+	
+	Jede Benutzergruppe erhält eine eigene Anwengungssicht. Die jeweiligen Sichten bieten unterschiedliche Möglichkeiten zur Interaktion entsprechend der in Kapitel~\ref{chap:Prfunk} definierten Funktionen.
+	
+
 	
 	\section{Nichtfunktionale Anforderungen}
 	
@@ -473,12 +487,13 @@
 	
 		\subsection{Software}
 		Server-Betriebssystem: UNIX\\
-		Clientsysteme: Browser\\
-		Web-Server: Jetty (bei Bedarf)
+		Clientsysteme: Browser (Versionen ab 2013)\\
+		Web-Server: Jetty (Kontext für Java Server Faces)
+		Datenbank: MySQL (Anbindung durch JDBC)
 		
 		\subsection{Hardware}
-		Sind für dieses Projekt nicht relevant. (prinzipiell ein leistungsstarker Server)\\
-		Für den Prototypen ist nur eine eingeschränkte Funktionalität vorgesehen.
+		Leistungsstarker Server\\
+		Für den Prototypen ist nur eine eingeschränkte Funktionalität vorgesehen
 		
 		\subsection{Orgware}
 		
@@ -500,13 +515,43 @@
 		WEB-Schnittstelle
 		
 	\section{Gliederung in Teilprodukte}
-	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung.\\
+	
+	Im Laufe der Produktentwicklung werden folgende Produkte an den Kunden ausgeliefert zum Zweck des Tests und der Produktivsetzung:
+	
+	\subsection{Prototyp ohne UI}
+	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung. Ein UI wird nur zu Testzwecken angebunden, jedoch nur um die Schnittstelle zu prüfen. \\
 	Veranstaltungskonfigurator beschränkt sich hierbei auf einen minimalen Funktionsumfang um die mögliche Arbeitsweise deutlich zu machen.\\ 
 	Konfigurieren bedeutet in diesem Zusammenhang die Notenumrechnung mit Parametern zu belegen und zwischen unterschiedlichen Bewertungsschemata auswählen zu können.\\ 
 	Des Weiteren lassen sich zu einer Veranstaltung einzeln gewichtete Bewertungskriterien hinzufügen.\\ 
 	Das Bewertungssystem beinhaltet eine vom Dozent vordefinierte Maske, in die der Prüfer die Ergebnisse der Veranstaltung eintragen kann. Anhand der Ergebnisse wird dann eine Note für diese Veranstaltung errechnet.
 	Über ein Modul zum Einsehen der Bewertung, können zum einen Dozent und Prüfer die eingegeben Ergebnisse überprüfen, zum anderen die Studenten ihr Abschneiden bei der jeweiligen Veranstaltung ansehen.
-		
+	
+	\subsection{Erweiterter Simulationsprotyp mit UI}
+	Der Prototyp wird modular erweitert und mit weiterer Funktionalität belegt bis alle Anforderungen erfüllt sind. In diesem Stadium hat die Anwendung den vollen Funktionsumfang. Die Anwendung kann bereits zum Test der Umgebung und der Hardware eingesetzt werden. 
+	In diesem Stadium der Entwicklung besteht kein Ansprüche auf die fehlerfreie Funktion der Anwendung.
+	
+	\subsection{Produktive Anwendung}
+	In diesem Stadium werden alle Systemanpassungen durchgeführt und die Anwendung läuft fehlerfrei. Auf Anfrage können weitere Funktionen über den Erweiterten Simulationsprototypen eingebunden werden. Dadurch entstehen weitere Kosten.
+	
+	\subsection{Sicherheitskonzept}
+	
+	Die Ausarbeitung eines Sicherheitskonzepts für die Daten wird als Teilprodukt angeboten. Dabei stehen dem Kunden drei Optionen zur Auswahl: Schwach, Normal, Hoch. 
+	Die Einstufung orientiert sich vor allem an der Komplexität des Konzeptes und dem Umfang der Tests. 
+	
+	Unabhängig vom gewählten Modell werden  Grundsicherheitsstandards implementiert.
+	
+	\subsection{Back-Up Planung}
+	
+	Die Back-Up Planung läuft über Standardmodelle der Datenbank. Für erweiterte Back-Up Strategien muss ein gesonderter Auftrag erstellt werden. Auf Wunsch des Kunden kann jede Lösung implementiert werden.
+	
+	\subsection{User Expirience und User Interface}
+	
+	Die Anwendung ist mit einer herkömmlichen Benutzeroberfläche ausgestattet. Diese wird parallel zum Prototypen entwickelt. Eine Erweiterung und die Anpassung der Benutzeroberfläche und vor allem der User Experience resultiert in einem extra Arbeitspaket.
+	
+	
+	\subsection{Maintenance}
+	
+	Die Ausarbeitung eines Instandhaltungsonzepts ist nicht Teil des angebotenen Umfanges, kann jedoch auf Wunsch des Kunden in einem extra Arbeitspaket umgesetzt werden.
 	
 	\section{Ergänzungen}
 		

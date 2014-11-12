@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  12 NOV 2014 21:25
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.29)  12 NOV 2014 23:11
 entering extended mode
 **Pflichtenheft.tex
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.tex
@@ -1835,6 +1835,55 @@ text indent calculated (toc, 1): 18.09325pt
 number indent calculated (toc, 1): 0.0pt
 text noindent (toc, 1): 24.80185pt
 number noindent (toc, 1): 0.0pt
+number indent by \l@... (toc, 2):  16.33182pt
+text indent by \l@... (toc, 2):  25.04214pt
+number indent by parent (toc, 2):  18.09325pt
+text indent calculated (toc, 2): 24.80185pt
+number indent calculated (toc, 2): 18.09325pt
+text noindent (toc, 2): 24.80185pt
+number noindent (toc, 2): 0.0pt
+number indent by \l@... (toc, 2):  16.33182pt
+text indent by \l@... (toc, 2):  25.04214pt
+number indent by parent (toc, 2):  18.09325pt
+text indent calculated (toc, 2): 24.80185pt
+number indent calculated (toc, 2): 18.09325pt
+text noindent (toc, 2): 24.80185pt
+number noindent (toc, 2): 0.0pt
+number indent by \l@... (toc, 2):  16.33182pt
+text indent by \l@... (toc, 2):  25.04214pt
+number indent by parent (toc, 2):  18.09325pt
+text indent calculated (toc, 2): 24.80185pt
+number indent calculated (toc, 2): 18.09325pt
+text noindent (toc, 2): 24.80185pt
+number noindent (toc, 2): 0.0pt
+number indent by \l@... (toc, 2):  16.33182pt
+text indent by \l@... (toc, 2):  25.04214pt
+number indent by parent (toc, 2):  18.09325pt
+text indent calculated (toc, 2): 24.80185pt
+number indent calculated (toc, 2): 18.09325pt
+text noindent (toc, 2): 24.80185pt
+number noindent (toc, 2): 0.0pt
+number indent by \l@... (toc, 2):  16.33182pt
+text indent by \l@... (toc, 2):  25.04214pt
+number indent by parent (toc, 2):  18.09325pt
+text indent calculated (toc, 2): 24.80185pt
+number indent calculated (toc, 2): 18.09325pt
+text noindent (toc, 2): 24.80185pt
+number noindent (toc, 2): 0.0pt
+number indent by \l@... (toc, 2):  16.33182pt
+text indent by \l@... (toc, 2):  25.04214pt
+number indent by parent (toc, 2):  18.09325pt
+text indent calculated (toc, 2): 24.80185pt
+number indent calculated (toc, 2): 18.09325pt
+text noindent (toc, 2): 24.80185pt
+number noindent (toc, 2): 0.0pt
+number indent by \l@... (toc, 2):  16.33182pt
+text indent by \l@... (toc, 2):  25.04214pt
+number indent by parent (toc, 2):  18.09325pt
+text indent calculated (toc, 2): 24.80185pt
+number indent calculated (toc, 2): 18.09325pt
+text noindent (toc, 2): 24.80185pt
+number noindent (toc, 2): 0.0pt
 number indent by \l@... (toc, 1):  0.0pt
 text indent by \l@... (toc, 1):  16.33182pt
 number indent by parent (toc, 1):  0.0pt
@@ -1856,6 +1905,9 @@ text indent calculated (toc, 1): 18.09325pt
 number indent calculated (toc, 1): 0.0pt
 text noindent (toc, 1): 24.80185pt
 number noindent (toc, 1): 0.0pt
+[2
+
+]
 number indent by \l@... (toc, 1):  0.0pt
 text indent by \l@... (toc, 1):  16.33182pt
 number indent by parent (toc, 1):  0.0pt
@@ -1900,9 +1952,7 @@ text noindent (toc, 1): 24.80185pt
 number noindent (toc, 1): 0.0pt
 )
 \tf@toc=\write5
- [2
-
-] [3]
+ [3]
 Overfull \hbox (65.29605pt too wide) in paragraph at lines 36--37
 \T1/cmr/m/n/10.95 be-stan-den Lo-gik un-ter-lie-gen. An-schlie-ÿend er-folgt ei
 -ne kon-fi-gu-rier-ba-re Punkte-Notenkonvertierung. 
@@ -1915,90 +1965,94 @@ Overfull \hbox (65.29605pt too wide) in paragraph at lines 36--37
 ] [6
 
 ]
-Overfull \hbox (31.69391pt too wide) in paragraph at lines 149--162
+Overfull \hbox (31.69391pt too wide) in paragraph at lines 150--163
 [][]
  []
 
-[7] <./img/use_case.pdf, id=238, 598.39557pt x 657.8979pt>
+[7] <./img/use_case.pdf, id=273, 598.39557pt x 657.8979pt>
 File: ./img/use_case.pdf Graphic file (type pdf)
 
 <use ./img/use_case.pdf>
-Package pdftex.def Info: ./img/use_case.pdf used on input line 170.
+Package pdftex.def Info: ./img/use_case.pdf used on input line 171.
 (pdftex.def)             Requested size: 426.79141pt x 469.23898pt.
  [8
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/use_case.pdf>]
-Overfull \hbox (53.51834pt too wide) in paragraph at lines 182--195
+Overfull \hbox (53.51834pt too wide) in paragraph at lines 183--196
 [][]
  []
 
 
-Overfull \hbox (34.5325pt too wide) in paragraph at lines 198--219
+Overfull \hbox (34.5325pt too wide) in paragraph at lines 199--220
 [][]
  []
 
 
-Overfull \hbox (50.01404pt too wide) in paragraph at lines 223--247
+Overfull \hbox (50.01404pt too wide) in paragraph at lines 224--248
 [][]
  []
 
 [9
 
 ]
-Overfull \hbox (12.62581pt too wide) in paragraph at lines 251--271
+Overfull \hbox (12.62581pt too wide) in paragraph at lines 252--272
 [][]
  []
 
 
-Overfull \hbox (27.60223pt too wide) in paragraph at lines 274--293
+Overfull \hbox (27.60223pt too wide) in paragraph at lines 275--294
 [][]
  []
 
 [10]
-Overfull \hbox (32.46143pt too wide) in paragraph at lines 296--312
+Overfull \hbox (32.46143pt too wide) in paragraph at lines 297--313
 [][]
  []
 
 
-Overfull \hbox (32.46143pt too wide) in paragraph at lines 316--330
+Overfull \hbox (32.46143pt too wide) in paragraph at lines 317--331
 [][]
  []
 
 
-Overfull \hbox (36.24455pt too wide) in paragraph at lines 333--347
+Overfull \hbox (36.24455pt too wide) in paragraph at lines 334--348
 [][]
  []
 
 [11] [12]
-Overfull \hbox (0.93713pt too wide) in paragraph at lines 360--361
+Overfull \hbox (0.93713pt too wide) in paragraph at lines 363--364
 []\T1/cmr/m/n/10.95 Veranstaltung {Ver-an-stal-tungs_id, Bewertungsschema(S$[]$
 G), Be-wer-tung-stem-pla-
  []
 
-<./img/ERM.pdf, id=288, 561.29701pt x 669.22017pt>
+<./img/ERM.pdf, id=323, 561.29701pt x 669.22017pt>
 File: ./img/ERM.pdf Graphic file (type pdf)
  <use ./img/ERM.pdf>
-Package pdftex.def Info: ./img/ERM.pdf used on input line 367.
-(pdftex.def)             Requested size: 426.79141pt x 508.8577pt.
+Package pdftex.def Info: ./img/ERM.pdf used on input line 371.
+(pdftex.def)             Requested size: 298.75269pt x 356.19629pt.
  [13
 
+ <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/ERM.pdf>] [14
+
 ]
-[14 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/ERM.pdf>]
 [15
 
 ]
-Overfull \hbox (3.62482pt too wide) in paragraph at lines 429--432
+Overfull \hbox (3.62482pt too wide) in paragraph at lines 433--436
 \T1/cmr/m/n/10.95 fah-ren per Pass-wort der Si-cher-heits-stan-dard PK-CS#5 (PB
 KDF2,
  []
 
 [16
 
-] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 449.
 
- []
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [17
 
+]
 [18
 
 ] [19
@@ -2007,22 +2061,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--442
 
 ] [21
 
-] [22
-
-]
-Overfull \hbox (2.39503pt too wide) in paragraph at lines 520--521
+] [22]
+Overfull \hbox (2.39503pt too wide) in paragraph at lines 565--566
 \T1/cmr/m/n/10.95 Tem-pla-tes, Ver-an-stal-tun-gen und Be-nut-zer-grup-pen er-s
 tel-
  []
 
 
-Overfull \hbox (2.12439pt too wide) in paragraph at lines 521--522
+Overfull \hbox (2.12439pt too wide) in paragraph at lines 566--567
 []\T1/cmr/m/n/10.95 Ein Be-nut-zer mit Rech-ten zur Da-ten-ein-ga-be. Kann nich
 ts
  []
 
 
-Overfull \hbox (89.74023pt too wide) in paragraph at lines 527--527
+Overfull \hbox (89.74023pt too wide) in paragraph at lines 572--572
 []\T1/cmr/bx/n/10.95 Notenkonvertierungsprofil 
  []
 
@@ -2030,32 +2082,32 @@ Overfull \hbox (89.74023pt too wide) in paragraph at lines 527--527
 
 ] [24
 
-] <./img/EPK_legend.pdf, id=358, 1032.85875pt x 114.4275pt>
+] <./img/EPK_legend.pdf, id=397, 1032.85875pt x 114.4275pt>
 File: ./img/EPK_legend.pdf Graphic file (type pdf)
 
 <use ./img/EPK_legend.pdf>
-Package pdftex.def Info: ./img/EPK_legend.pdf used on input line 553.
+Package pdftex.def Info: ./img/EPK_legend.pdf used on input line 598.
 (pdftex.def)             Requested size: 426.79141pt x 47.28223pt.
 
-<./img/EPK_Veranstaltung.pdf, id=359, 1108.14pt x 1114.1625pt>
+<./img/EPK_Veranstaltung.pdf, id=398, 1108.14pt x 1114.1625pt>
 File: ./img/EPK_Veranstaltung.pdf Graphic file (type pdf)
 
 <use ./img/EPK_Veranstaltung.pdf>
-Package pdftex.def Info: ./img/EPK_Veranstaltung.pdf used on input line 559.
+Package pdftex.def Info: ./img/EPK_Veranstaltung.pdf used on input line 604.
 (pdftex.def)             Requested size: 426.79141pt x 429.1154pt.
 
-<./img/EPK_Bewertung.pdf, id=360, 754.82pt x 833.1125pt>
+<./img/EPK_Bewertung.pdf, id=399, 754.82pt x 833.1125pt>
 File: ./img/EPK_Bewertung.pdf Graphic file (type pdf)
 
 <use ./img/EPK_Bewertung.pdf>
-Package pdftex.def Info: ./img/EPK_Bewertung.pdf used on input line 566.
+Package pdftex.def Info: ./img/EPK_Bewertung.pdf used on input line 611.
 (pdftex.def)             Requested size: 256.07744pt x 282.6316pt.
 
-<./img/EPK_Einsehen.pdf, id=361, 565.11125pt x 373.395pt>
+<./img/EPK_Einsehen.pdf, id=400, 565.11125pt x 373.395pt>
 File: ./img/EPK_Einsehen.pdf Graphic file (type pdf)
 
 <use ./img/EPK_Einsehen.pdf>
-Package pdftex.def Info: ./img/EPK_Einsehen.pdf used on input line 573.
+Package pdftex.def Info: ./img/EPK_Einsehen.pdf used on input line 618.
 (pdftex.def)             Requested size: 256.07744pt x 169.20558pt.
  [25
 
@@ -2064,39 +2116,39 @@ Package pdftex.def Info: ./img/EPK_Einsehen.pdf used on input line 573.
 ng.pdf>] [26 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/EPK
 _Bewertung.pdf> <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/
 EPK_Einsehen.pdf>]
-<./img/dfd_context.pdf, id=381, 450.9648pt x 318.4698pt>
+<./img/dfd_context.pdf, id=420, 450.9648pt x 318.4698pt>
 File: ./img/dfd_context.pdf Graphic file (type pdf)
 
 <use ./img/dfd_context.pdf>
-Package pdftex.def Info: ./img/dfd_context.pdf used on input line 584.
+Package pdftex.def Info: ./img/dfd_context.pdf used on input line 629.
 (pdftex.def)             Requested size: 426.79141pt x 301.41232pt.
  [27
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_context.pdf
 >]
-<./img/dfd_login.pdf, id=401, 498.4221pt x 329.7921pt>
+<./img/dfd_login.pdf, id=440, 498.4221pt x 329.7921pt>
 File: ./img/dfd_login.pdf Graphic file (type pdf)
 
 <use ./img/dfd_login.pdf>
-Package pdftex.def Info: ./img/dfd_login.pdf used on input line 598.
+Package pdftex.def Info: ./img/dfd_login.pdf used on input line 643.
 (pdftex.def)             Requested size: 341.43442pt x 225.92131pt.
 
-<./img/dfd_config.pdf, id=403, 478.9092pt x 295.5843pt>
+<./img/dfd_config.pdf, id=442, 478.9092pt x 295.5843pt>
 File: ./img/dfd_config.pdf Graphic file (type pdf)
 
 <use ./img/dfd_config.pdf>
-Package pdftex.def Info: ./img/dfd_config.pdf used on input line 608.
+Package pdftex.def Info: ./img/dfd_config.pdf used on input line 653.
 (pdftex.def)             Requested size: 341.43442pt x 210.73228pt.
  [28
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_login.pdf> 
 <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/img/dfd_config.pdf>]
 
-<./img/dfd_werten.pdf, id=435, 370.02242pt x 251.74051pt>
+<./img/dfd_werten.pdf, id=474, 370.02242pt x 251.74051pt>
 File: ./img/dfd_werten.pdf Graphic file (type pdf)
 
 <use ./img/dfd_werten.pdf>
-Package pdftex.def Info: ./img/dfd_werten.pdf used on input line 617.
+Package pdftex.def Info: ./img/dfd_werten.pdf used on input line 662.
 (pdftex.def)             Requested size: 426.79141pt x 290.37897pt.
  [29
 
@@ -2104,57 +2156,60 @@ Package pdftex.def Info: ./img/dfd_werten.pdf used on input line 617.
 ] [30
 
 ]
-<./files/Aufwand.pdf, id=457, 491.91779pt x 726.79532pt>
+<./files/Aufwand.pdf, id=496, 491.91779pt x 726.79532pt>
 File: ./files/Aufwand.pdf Graphic file (type pdf)
 
 <use ./files/Aufwand.pdf>
-Package pdftex.def Info: ./files/Aufwand.pdf used on input line 633.
+Package pdftex.def Info: ./files/Aufwand.pdf used on input line 678.
 (pdftex.def)             Requested size: 371.30644pt x 548.5996pt.
 
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 48.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 640.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 685.
 [31
 
 
  <C:/Users/Stanislav/Documents/GitHub/DHBW_SE/Pflichtenheft/files/Aufwand.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 640.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 685.
 
 (C:\Users\Stanislav\Documents\GitHub\DHBW_SE\Pflichtenheft\Pflichtenheft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 640.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 640.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 685.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 685.
 Package rerunfilecheck Info: File `Pflichtenheft.out' has not changed.
-(rerunfilecheck)             Checksum: 29483DE67D9FC518964B0B310183486F;2323.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 640.
+(rerunfilecheck)             Checksum: 3B7E10CDC59A1D8BDA241ACD8A9449B9;2844.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 685.
  ) 
 Here is how much of TeX's memory you used:
- 28730 strings out of 493921
- 536296 string characters out of 3144863
- 604514 words of memory out of 3000000
- 31414 multiletter control sequences out of 15000+200000
- 19380 words of font info for 51 fonts, out of 3000000 for 9000
+ 28779 strings out of 493921
+ 537366 string characters out of 3144863
+ 602514 words of memory out of 3000000
+ 31451 multiletter control sequences out of 15000+200000
+ 20383 words of font info for 53 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 58i,11n,65p,444b,804s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 58i,11n,65p,444b,967s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\ecbi1095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
-knappen\ec\dpi600\ecbx1095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\Stanislav\AppData\Local\
-MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1095.pk> <C:\Users\Stanislav\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1440.pk> <C:\Us
-ers\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1
-200.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
-c\dpi600\ecbx2074.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\Stanislav\AppData\L
-ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Pflichtenheft.pdf (31 pages, 6665797 bytes).
+600\ectt1095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\ecti1095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecbi1095.pk> <C:\Users\Stanislav\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Stanislav\
+AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Us
+ers\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1
+095.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
+c\dpi600\ecsx1440.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
+our\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Stanislav\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\Stanislav\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Stani
+slav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <
+C:\Users\Stanislav\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+eccc1728.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
+am10.pfb>
+Output written on Pflichtenheft.pdf (31 pages, 6687753 bytes).
 PDF statistics:
- 914 PDF objects out of 1000 (max. 8388607)
- 95 named destinations out of 1000 (max. 500000)
- 364 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1003 PDF objects out of 1200 (max. 8388607)
+ 102 named destinations out of 1000 (max. 500000)
+ 420 words of extra memory for PDF output out of 10000 (max. 10000000)
 

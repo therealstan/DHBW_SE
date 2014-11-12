@@ -26,12 +26,19 @@
 \BOOKMARK [2][-]{subsection.11.3}{Orgware}{section.11}% 26
 \BOOKMARK [2][-]{subsection.11.4}{Entwicklungs-Schnittstellen}{section.11}% 27
 \BOOKMARK [1][-]{section.12}{Gliederung in Teilprodukte}{}% 28
-\BOOKMARK [1][-]{section.13}{Erg\344nzungen}{}% 29
-\BOOKMARK [1][-]{appendix.A}{Begriffsdefinitionen}{}% 30
-\BOOKMARK [1][-]{appendix.B}{Abk\374rzungen}{}% 31
-\BOOKMARK [1][-]{appendix.C}{Modelle}{}% 32
-\BOOKMARK [2][-]{subsection.C.1}{Gesch\344ftsprozesse}{appendix.C}% 33
-\BOOKMARK [2][-]{subsection.C.2}{Data Flow Diagramm}{appendix.C}% 34
-\BOOKMARK [2][-]{subsection.C.3}{Structured Analysis}{appendix.C}% 35
-\BOOKMARK [1][-]{appendix.D}{Qualit\344tsmerkmale}{}% 36
-\BOOKMARK [1][-]{appendix.E}{Aufwandsabsch\344tzung}{}% 37
+\BOOKMARK [2][-]{subsection.12.1}{Prototyp ohne UI}{section.12}% 29
+\BOOKMARK [2][-]{subsection.12.2}{Erweiterter Simulationsprotyp mit UI}{section.12}% 30
+\BOOKMARK [2][-]{subsection.12.3}{Produktive Anwendung}{section.12}% 31
+\BOOKMARK [2][-]{subsection.12.4}{Sicherheitskonzept}{section.12}% 32
+\BOOKMARK [2][-]{subsection.12.5}{Back-Up Planung}{section.12}% 33
+\BOOKMARK [2][-]{subsection.12.6}{User Expirience und User Interface}{section.12}% 34
+\BOOKMARK [2][-]{subsection.12.7}{Maintenance}{section.12}% 35
+\BOOKMARK [1][-]{section.13}{Erg\344nzungen}{}% 36
+\BOOKMARK [1][-]{appendix.A}{Begriffsdefinitionen}{}% 37
+\BOOKMARK [1][-]{appendix.B}{Abk\374rzungen}{}% 38
+\BOOKMARK [1][-]{appendix.C}{Modelle}{}% 39
+\BOOKMARK [2][-]{subsection.C.1}{Gesch\344ftsprozesse}{appendix.C}% 40
+\BOOKMARK [2][-]{subsection.C.2}{Data Flow Diagramm}{appendix.C}% 41
+\BOOKMARK [2][-]{subsection.C.3}{Structured Analysis}{appendix.C}% 42
+\BOOKMARK [1][-]{appendix.D}{Qualit\344tsmerkmale}{}% 43
+\BOOKMARK [1][-]{appendix.E}{Aufwandsabsch\344tzung}{}% 44
