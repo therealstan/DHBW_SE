@@ -17,7 +17,11 @@ public class User {
 
     private DatabaseCon.userRole role;
 
-    DatabaseCon dbCon;
+    public DatabaseCon getDbCon() {
+        return dbCon;
+    }
+
+    private DatabaseCon dbCon;
 
     boolean isLoginPage = (FacesContext.getCurrentInstance().getViewRoot()
             .getViewId().lastIndexOf("login.xhtml") > -1);

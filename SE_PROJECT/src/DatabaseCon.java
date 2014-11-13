@@ -2,6 +2,10 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+import java.beans.Statement;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +20,10 @@ public class DatabaseCon {
         ADMIN , TUTOR, STUDENT, ACCESSOR, DEFAULT
     }
 
+    public DataSource getDs() {
+        return ds;
+    }
+
     DataSource ds;
 
     public DatabaseCon() {
@@ -26,6 +34,123 @@ public class DatabaseCon {
 
             e.printStackTrace();
         }
+    }
+
+    public long addTemplate(String name, H2 h2, R2S r2s, S2G s2g){
+        int id = -1;
+
+        if (h2 != null && r2s != null && s2g != null) {
+            PreparedStatement ps = null;
+            Connection con = null;
+            try {
+                if (ds != null) {
+                    con = ds.getConnection();
+                    if (con != null) {
+                        String sql = "INSERT INTO template(name, h2_ID, s2g_ID, r2s_ID) VALUES(?,?,?,?)";
+                        ps = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
+                        ps.setString(1, name);
+                        ps.setLong(2, serializeObject(h2));
+                        ps.setLong(3, serializeObject(s2g));
+                        ps.setLong(4, serializeObject(r2s));
+                        ps.executeUpdate();
+
+                        ResultSet rs = ps.getGeneratedKeys();
+                        if (rs.next()) {
+                            id = rs.getInt(1);
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            } finally {
+                try {
+                    if (con != null) {
+                        con.close();
+                    }
+                    if (ps != null) {
+                        ps.close();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return id;
+    }
+
+    public long serializeObject(Object object){
+        int id = -1;
+
+        if (object != null) {
+            PreparedStatement ps = null;
+            Connection con = null;
+            try {
+                if (ds != null) {
+                    con = ds.getConnection();
+                    if (con != null) {
+                        String sql = "INSERT INTO data(name, object) VALUES(?,?)";
+                        ps = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
+                        ps.setString(1, object.getClass().getName());
+                        ps.setObject(2, object);
+                        ps.executeUpdate();
+
+                        ResultSet rs = ps.getGeneratedKeys();
+                        if (rs.next()) {
+                            id = rs.getInt(1);
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            } finally {
+                try {
+                    if (con != null) {
+                        con.close();
+                    }
+                    if (ps != null) {
+                        ps.close();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return id;
+    }
+
+    public Object deSerializeObject(long id){
+        Object object = new Object();
+
+        PreparedStatement ps;
+        Connection con;
+        ResultSet rs;
+        try {
+            con = ds.getConnection();
+            if (con != null) {
+                String sql = "select object from data where id = (?)";
+                ps = con.prepareStatement(sql);
+                ps.setLong(1,id);
+                rs = ps.executeQuery();
+                rs.next();
+                // object = rs.getObject(1);
+
+                byte[] buf = rs.getBytes(1);
+                ObjectInputStream objectIn = null;
+                if (buf != null)
+                    objectIn = new ObjectInputStream(new ByteArrayInputStream(buf));
+
+                object = objectIn.readObject();
+            }
+        } catch (SQLException sqle) {
+            System.out.println("Kann mich nicht verbinden");
+            sqle.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String s = object.getClass().getName();
+        return object;
     }
 
     public int addUser(String name, String password) {
@@ -235,7 +360,7 @@ public class DatabaseCon {
                         ps = con.prepareStatement(sql);
                         rs = ps.executeQuery();
                         rs.next();
-                       userName = rs.getString("name");
+                        userName = rs.getString("name");
                     }
                 } catch (SQLException sqle) {
                     System.out.println("Kann mich nicht verbinden");

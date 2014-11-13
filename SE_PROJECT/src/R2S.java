@@ -1,28 +1,48 @@
+import javax.sql.DataSource;
+import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Dom on 11.11.2014.
  */
-public class R2S {
-
-    private H2 h2;
-
-    private H2 getH2()
-    {
-        /*
-        Todo:
-        Datenbankabfrage für H2 Objekt
-         */
-        return new H2();
-    }
+public class R2S implements Serializable {
 
     private List<Double> impacts;
     private List<Double> rate;
 
+    public static long getID(DatabaseCon dbCon, long templateID){
+        long id = -1;
+
+        DataSource ds = dbCon.getDs();
+
+        PreparedStatement ps;
+        Connection con;
+        ResultSet rs;
+        try {
+            con = ds.getConnection();
+            if (con != null) {
+                String sql = "select r2s_ID from template where id = (?)";
+                ps = con.prepareStatement(sql);
+                ps.setLong(1, templateID);
+                rs = ps.executeQuery();
+                rs.next();
+
+                id = rs.getInt("r2s_ID");
+            }
+        } catch (SQLException sqle) {
+            System.out.println("Kann mich nicht verbinden");
+            sqle.printStackTrace();
+        }
+        return id;
+    }
+
     public R2S()
     {
-        this.h2 = getH2();
         this.impacts = new ArrayList<Double>();
         this.rate = new ArrayList<Double>();
     }
@@ -45,7 +65,7 @@ public class R2S {
         }
     }
 
-    public double getScore(boolean b) throws Exception {
+    public double getScore(boolean b, H2 h2) throws Exception {
         double score = 0;
         if(!rate.isEmpty()){
             score = h2.boolToScore(b);
