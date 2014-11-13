@@ -21,12 +21,7 @@
 			\item[-]	Die Festlegung eines Grundscore (Gruppe, Einzeln) lässt sich in zwei skalierbare \newline Bereiche beliebig teilen ($H_2$)
 			\item[-]	Score Refining Faktoren können in einem Template frei eingestellt werden (Items) ($R_2S$)
 			\item[-]	Skalierbarkeit des Bewertungssystems von Bewertung der Gruppe zu Einzelperson und umgekehrt.
-
-			\item[-]	Zuweisung von Aufgaben zu einer Studentengruppen
-			 \item[-]	Veranstaltung durch Dozent oder Prüfer.				
-
 			\item[-]	Zuweisung von beliebig gruppierten Studenten zu einer Veranstaltung durch Dozent oder Prüfer.				
-
 			\end{itemize}
 
 			
@@ -35,22 +30,12 @@
 		\item[-]	Alle Zwischenbewertungen die zur Note führen werden dem Studenten angezeigt.
 		\item[-]	Profilverwaltung um standardisierte Bewertungen erzeugen zu können.
 		\end{itemize}
-		\clearpage
+		
 		\subsection{Abgrenzungskriterien}
-		\subsubsection*{Veranstaltungsplanung und Erstellung der Bewertungsroutine}
-		
-		Ein Dozent bekommt mit dieser Anwendung ein  Baukasten zu Erstellung einer Bewertung zur Lehrveranstaltung. Die Anwendung stellt mehrere mögliche Bewertungsfunktionen, die kombiniert werden können. Durch das kombinieren der Funktionen können Bewertungen beinahe beliebiger Komplexität erstellt werden.
-		
-		Für die Simulationszwecke beschränkt sich der Prototyp auf die Module ($H_2$ , $R_2S$, $S_2G$)
-		
-		\subsubsection*{Bewertungslogik}
-		
-		Die Anwendung unterstützt zunächst die Bewertung der Veranstaltungen die grundsätzlich mit einem bestanden / nicht bestanden, also 0 oder 1 bewertet werden können. Dies wird als Grundlage für alle weiteren Berechnungen als Grundlage genommen. Die Ermittlung einer Note kann sowohl für Einzelperson, als auch für die Mitglieder einer Gruppe durchgeführt werden. 
-
-		\subsection*{Veranstaltungsarten}
-		
-		Jede erstellte Veranstaltung beinhaltet genau ein Bewertungsschema (keine Konsolidierung mehrerer Veranstaltungen möglich) und führt somit zu einer Note. Die Erstellung einer Note aus der Kombination von verschiedenen Einzelnoten ist nicht möglich.
-
+		\begin{itemize}
+		\item[-]	Bewertungssystem bewertet nur die Veranstaltungen die einer Art bestanden/nicht bestanden Logik unterliegen. Anschließend erfolgt eine konfigurierbare Punkte-Notenkonvertierung.
+		\item[-]	Jede erstellte Veranstaltung beinhaltet genau ein Bewertungsschema und führt somit zu einer Note. Die Kombinierbarkeit von verschiedenen Einzelnoten ist nicht möglich.
+		\end{itemize}
 		
 	\section{Produkteinsatz}
 	
@@ -95,8 +80,8 @@
 	\subsection{Use Case Analyse}
 	
 	\begin{table}[H]
-	\begin{tabular}{|ll}
-	 \rowcolor{hellgrau}\textbf{Use Case ID} & 1 \\
+	\begin{tabular}{ll}
+	 \textbf{Use Case ID} & 1 \\
  	 \textbf{Elementarer Geschäftsprozess} &  Veranstaltung planen \\ 
 	 \textbf{Ziel des Use Cases} & Darstellung des  Prozesses einer    \\
 	 & Veranstaltungsplanung\\ 
@@ -112,8 +97,8 @@
 	\end{table}
 	
 		\begin{table}[H]
-		\begin{tabular}{|ll}
-		  \rowcolor{hellgrau}\textbf{Use Case ID} & 2 \\
+		\begin{tabular}{ll}
+		 \textbf{Use Case ID} & 2 \\
 	 	 \textbf{Elementarer Geschäftsprozess} &  Template erstellen \\ 
 		 \textbf{Ziel des Use Cases} & Templates für die Veranstaltungen können \\& angelegt werden   \\
 		 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
@@ -128,8 +113,8 @@
 	
 	
 			\begin{table}[H]
-			\begin{tabular}{|ll}
-			  \rowcolor{hellgrau}\textbf{Use Case ID} & 3 \\
+			\begin{tabular}{ll}
+			 \textbf{Use Case ID} & 3 \\
 		 	 \textbf{Elementarer Geschäftsprozess} &  Bewerten \\ 
 			 \textbf{Ziel des Use Cases} & Prüfer bewertet  \\
 			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
@@ -146,8 +131,8 @@
 			\end{table}
 			
 			\begin{table}[H]
-			\begin{tabular}{|ll}
-			  \rowcolor{hellgrau}\textbf{Use Case ID} & 4 \\
+			\begin{tabular}{ll}
+			 \textbf{Use Case ID} & 4 \\
 		 	 \textbf{Elementarer Geschäftsprozess} &  Einsehen \\ 
 			 \textbf{Ziel des Use Cases} & Studenten sehen ihre Noten ein  \\
 			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
@@ -162,8 +147,8 @@
 			\end{table}
 			
 			\begin{table}[H]
-			\begin{tabular}{|ll}
-			  \rowcolor{hellgrau}\textbf{Use Case ID} & 5 \\
+			\begin{tabular}{ll}
+			 \textbf{Use Case ID} & 5 \\
 		 	 \textbf{Elementarer Geschäftsprozess} &  Teilnehmer anlegen \\ 
 			 \textbf{Ziel des Use Cases} & Prüfer oder Dozent konfigurieren \\& die Teilnehmer einer Veranstaltung  \\
 			 \textbf{Umgebende Systemgrenze} & Planung Prüfung \\ 
@@ -195,8 +180,8 @@
 	Die Geschäftsprozesse finden sich als Diagramme im Anhang (Abb. \ref{fig:process1}, \ref{fig:process2}, \ref{fig:process3})
 	
 		\begin{table}[H]
-			\begin{tabular}{|ll}
-				\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F10}}/}\\\hline
+			\begin{tabular}{ll}
+				\multicolumn{2}{l}{/\textbf{\textit{F10}}/}\\\hline
 				 \textbf{Geschäftsprozess} & Bewertungsschema festlegen \\ 
 				 \textbf{Kategorie} & primär \\ 
 				 \textbf{Vorbedingung} & 1. Dozent ist angemeldet  \\ 
@@ -204,15 +189,15 @@
 				 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
 				 \textbf{Akteure} & Dozent \\ 
 				 \textbf{Auslösendes Ereignis} & Dozent legt ein Bewertungsschema an  \\ 
-				 \textbf{Unterfunktionen} & /\textbf{\textit{F11}}/ Umrechnungsformel festlegen\\
-				 & /\textbf{\textit{F12}}/ Parameter anpassen
+				 \textbf{Beschreibung} &  1. Umrechnungsformel festlegen\\
+				 & 2. Parameter anpassen
 				 \end{tabular} 
 			\label{tab:F10}
 			\end{table}
 	
 		\begin{table}[H]
-		\begin{tabular}{|ll}
-			\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F20}}/}\\\hline
+		\begin{tabular}{ll}
+			\multicolumn{2}{l}{/\textbf{\textit{F20}}/}\\\hline
 			 \textbf{Geschäftsprozess} & Template erstellen \\ 
 			 \textbf{Kategorie} & primär \\ 
 			 \textbf{Vorbedingung} & Dozent ist angemeldet\\
@@ -225,9 +210,9 @@
 			 \textbf{Auslösendes Ereignis} & Dozent legt ein Template an \\
 			 & Bei Veranstaltungserstellung wurde kein Template gefunden\\
 			 & Bei Veranstaltungserstellung wird ein neues Template erstellt\\
-			 \textbf{Unterfunktionen} & /\textbf{\textit{F21}}/ Die Art der Prüfung wird spezifiziert \\
-			 &  /\textbf{\textit{F22}}/ Items hinzufügen\\
-			 & /\textbf{\textit{F23}}/ Bewertungsschema hinzufügen\\
+			 \textbf{Beschreibung} & 1. Die Art der Prüfung wird spezifiziert \\
+			 & 2. Items hinzufügen\\
+			 & 3. Bewertungsschema hinzufügen\\
 			  \textbf{Erweiterung} & 1. Templates refactoring \\ 
 			 \textbf{Alternativen} & 1. Neues Bewertungsschema erstellen anlegen \\  			
 			 \end{tabular} 
@@ -236,8 +221,8 @@
 	
 		
 			\begin{table}[H]
-			\begin{tabular}{|ll}
-				\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F30}}/}\\\hline
+			\begin{tabular}{ll}
+				\multicolumn{2}{l}{/\textbf{\textit{F30}}/}\\\hline
 				 \textbf{Geschäftsprozess} & Veranstaltung planen \\ 
 				 \textbf{Kategorie} & primär \\ 
 				 \textbf{Vorbedingung} & Dozent ist angemeldet\\
@@ -249,10 +234,10 @@
 				 \textbf{Nachbedingung Fehlschlag} &  \\ 
 				 \textbf{Akteure} & Dozent \\ 
 				 \textbf{Auslösendes Ereignis} & Dozent legt eine Veranstaltung an  \\ 
-				 \textbf{Unterfunktionen} & /\textbf{\textit{F31}}/ Dozent konfiguriert das Template\\ 
-				 & /\textbf{\textit{F32}}/ Dozent befüllt(prüft) die Parameter des Bewertungsschemas\\
-				 &/\textbf{\textit{F33}}/ Dozent kann Prüfer einer Veranstaltung zuteilen zuteilen \\
-				 & /\textbf{\textit{F34}}/ Dozent kann Studenten/Gruppen der  Veranstaltung zuweisen\\
+				 \textbf{Beschreibung} &  1. Dozent konfiguriert das Template\\ 
+				 & 2. Dozent befüllt(prüft) die Parameter des Bewertungsschemas\\
+				 & 3. Dozent kann Prüfer einer Veranstaltung zuteilen zuteilen \\
+				 & 4. Dozent kann Studenten/Gruppen der  Veranstaltung zuweisen\\
 				  \textbf{Erweiterung} &  \\ 
 				 \textbf{Alternativen} & 1. Neues Template anlegen \\
 				 & 2. Neue Studenten anlegen\\
@@ -264,8 +249,8 @@
 	
 	
 			\begin{table}[H]
-			\begin{tabular}{|ll}
-				\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F40}}/}\\\hline
+			\begin{tabular}{ll}
+				\multicolumn{2}{l}{/\textbf{\textit{F40}}/}\\\hline
 				 \textbf{Geschäftsprozess} & Bewerten \\ 
 				 \textbf{Kategorie} & primär \\ 
 				 \textbf{Vorbedingung} & 1. Dozent/Prüfer ist angemeldet  \\ 
@@ -277,18 +262,18 @@
 				 \textbf{Akteure} & Dozent \\ 
 				 & Prüfer\\
 				 \textbf{Auslösendes Ereignis} & Prüfer will bewerten \\ 
-				 \textbf{Unterfunktionen} &  /\textbf{\textit{F41}}/ Prüfer wählt Veranstaltung aus\\
-				 & /\textbf{\textit{F42}}/ Prüfer wählt Student/Gruppe zur Bewertung aus\\
-				 &/\textbf{\textit{F43}}/  Bewertungen/Teilbewertungen eintragen\\
-				 & /\textbf{\textit{F44}}/ Bewertung abschließen\\
+				 \textbf{Beschreibung} &  1. Prüfer wählt Veranstaltung aus\\
+				 & Prüfer wählt Student/Gruppe zur Bewertung aus\\
+				 & Bewertungen/Teilbewertungen eintragen\\
+				 & Bewertung abschließen\\
 			
 				 \end{tabular} 
 			\label{tab:F40}
 			\end{table}
 			
 \begin{table}[H]
-	\begin{tabular}{|ll}
-		\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F50}}/}\\\hline
+	\begin{tabular}{ll}
+		\multicolumn{2}{l}{/\textbf{\textit{F50}}/}\\\hline
 		 \textbf{Geschäftsprozess} & Bewertung abschließen\\ 
 		 \textbf{Kategorie} & primär \\ 
 		 \textbf{Vorbedingung} & Bewertungen einer Veranstaltung in allen Items liegen vor\\
@@ -309,8 +294,8 @@
 	\end{table}		
 			
 	\begin{table}[H]
-		\begin{tabular}{|ll}
-			\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F60}}/}\\\hline
+		\begin{tabular}{ll}
+			\multicolumn{2}{l}{/\textbf{\textit{F60}}/}\\\hline
 			 \textbf{Geschäftsprozess} & Kurs anlegen\\ 
 			 \textbf{Kategorie} & primär \\ 
 			 \textbf{Vorbedingung} & 1. Dozent ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
@@ -319,9 +304,9 @@
 			 \textbf{Nachbedingung Fehlschlag} & -\\
 			 \textbf{Akteure} & Dozent \\ 
 			 \textbf{Auslösendes Ereignis} & Dozent legt einen Kurs an\\ 
-			 \textbf{Unterfunktionen} &  /\textbf{\textit{F61}}/  Kurs erstellen\\
-			 & /\textbf{\textit{F62}}/  Studenten hinzufügen\\
-			 & /\textbf{\textit{F63}}/  Kurs erstellen\\
+			 \textbf{Beschreibung} &  1. Kurs erstellen\\
+			 & 2. Studenten hinzufügen\\
+			 & 3. Kurs erstellen\\
 			 \textbf{Alternativen} & 1. Studenten anlegen \\
 			 \end{tabular} 
 		\label{tab:F60}
@@ -329,8 +314,8 @@
 		
 		
 			\begin{table}[H]
-				\begin{tabular}{|ll}
-					\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F70}}/}\\\hline
+				\begin{tabular}{ll}
+					\multicolumn{2}{l}{/\textbf{\textit{F70}}/}\\\hline
 					 \textbf{Geschäftsprozess} & Studenten anlegen\\ 
 					 \textbf{Kategorie} & primär \\ 
 					 \textbf{Vorbedingung} & 1. Dozent ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
@@ -339,15 +324,15 @@
 					 \textbf{Nachbedingung Fehlschlag} & -\\
 					 \textbf{Akteure} & Dozent \\ 
 					 \textbf{Auslösendes Ereignis} & Dozent legt Studenten an\\ 
-					 \textbf{Unterfunktionen} &  /\textbf{\textit{F71}}/  Studentenregisterkarte erstellen\\
-					 & /\textbf{\textit{F72}}/ Daten befüllen\\
+					 \textbf{Beschreibung} &  1. Studentenregisterkarte erstellen\\
+					 & 2. Daten befüllen\\
 				 \end{tabular} 
 				\label{tab:F70}
 				\end{table}	
 			
 			\begin{table}[H]
-				\begin{tabular}{|ll}
-				\rowcolor{hellgrau}	\multicolumn{2}{l}{/\textbf{\textit{F80}}/}\\\hline
+				\begin{tabular}{ll}
+					\multicolumn{2}{l}{/\textbf{\textit{F80}}/}\\\hline
 					 \textbf{Geschäftsprozess} & Bewertung einsehen\\ 
 					 \textbf{Kategorie} & primär \\ 
 					 \textbf{Vorbedingung} & 1. Student ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
@@ -356,8 +341,8 @@
 					  \textbf{Nachbedingung Fehlschlag} & Benachrichtigung\\
 					 \textbf{Akteure} & Student \\ 
 					 \textbf{Auslösendes Ereignis} & Student will seine Noten einsehen\\ 
-					 \textbf{Unterfunktionen} &  /\textbf{\textit{F81}}/  Student meldet sich an\\
-					 & /\textbf{\textit{F82}}/  Student sieht seine Noten\\
+					 \textbf{Beschreibung} &  1. Student meldet sich an\\
+					 & 2. Student sieht seine Noten\\
 				 \end{tabular} 
 				\label{tab:F80}
 				\end{table}	
@@ -512,7 +497,7 @@
 		
 		\subsection{Orgware}
 		
-		Zunächst ist das System nur durch freigegebene Benutzer erreichbar. 		
+		Zunächst ist das System nur durch freigegebene Benutzer erreichbar.		
 
 		\subsection{Produkt-Schnittstellen}
 		
@@ -549,18 +534,11 @@
 	In diesem Stadium werden alle Systemanpassungen durchgeführt und die Anwendung läuft fehlerfrei. Auf Anfrage können weitere Funktionen über den Erweiterten Simulationsprototypen eingebunden werden. Dadurch entstehen weitere Kosten.
 	
 	\subsection{Sicherheitskonzept}
-	Die Standards in Sicherheit der Verbindung und Datenübertragung werden in der Anwendung, als Grundfunktionalität vorgesehen und ist in den Entwicklungsprozess integriert.
 	
-
-	Die Ausarbeitung eines erweiterten Sicherheitskonzepts für die Daten und Zugriffe, sowie gegen Angriffe wird als Teilprodukt angeboten. Dabei stehen dem Kunden drei Optionen zur Auswahl: Schwach, Normal, Hoch. 
-	
-	Die Einstufung orientiert sich vor allem an der Komplexität des Konzeptes und dem Umfang der Tests. Daraus entstehen zusätzliche Arbeitspakete, welche separat abgerechnet werden. 
-	
-
 	Die Ausarbeitung eines Sicherheitskonzepts für die Daten wird als Teilprodukt angeboten. Dabei stehen dem Kunden drei Optionen zur Auswahl: Schwach, Normal, Hoch. 
 	Die Einstufung orientiert sich vor allem an der Komplexität des Konzeptes und dem Umfang der Tests. \newline	
 	Unabhängig vom gewählten Modell werden  Grundsicherheitsstandards implementiert.
-
+	
 	\subsection{Back-Up Planung}
 	
 	Die Back-Up Planung läuft über Standardmodelle der Datenbank. Für erweiterte Back-Up Strategien muss ein gesonderter Auftrag erstellt werden. Auf Wunsch des Kunden sind unterschiedliche Konzepte umsetzbar.
@@ -651,6 +629,35 @@
  \caption{Kontextdiagramm der Software}
  \label{fig:kontextdiagramm}
  \end{figure}
+ Der Anmeldeprozess wurde dabei separiert in Abbildung \ref{fig:login} dargestellt.
+ 
+ \clearpage
+ Das Diagramm \ref{fig:Diagramm0} beschriebt den Datenfluss des Bewertungssystems.
+ 
+   \begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{./img/dfd_diagramm0}
+  \caption{Bewertungssystem}
+  \label{fig:Diagramm0}
+  \end{figure}
+  \clearpage
+  
+  Durch das Diagramm \ref{fig:Diagramm1} wird der Prozess 'D1-Veranstaltung planen' genauer beschrieben.
+   \begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{./img/dfd_diagramm1}
+   \caption{Veranstaltung planen}
+   \label{fig:Diagramm1}
+   \end{figure}
+	\clearpage
+	
+	In der Abbildung \ref{fig:Diagramm2} ist der Datenfluss bei einem Bewertungsvorgang abgebildet.
+	\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{./img/dfd_diagramm2}
+   \caption{Bewerten}
+   \label{fig:Diagramm2}
+   \end{figure}
  
 
   \clearpage
@@ -676,21 +683,8 @@
     \label{fig:config}
     \end{figure}
     \clearpage
-  In der Abbildung~\ref{fig:werten} ist der Datenfluss bei einem Bewertungsvorgang abgebildet.
-      
-      \begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{./img/dfd_werten}
-    \caption{Datenfluss bei einem Bewertungsvorgang}
-    \label{fig:werten}
-    \end{figure}
     
-	
-	
-	\subsection{Strukturierter Entwurf}
-	
-	\subsection{Modularer Entwurf}
-	
+
   \section{Qualitätsmerkmale\label{sec:quali}}
   \clearpage
   
