@@ -1,39 +1,34 @@
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
 import javax.servlet.http.HttpSession;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
 @ManagedBean(name = "user")
 @SessionScoped
 public class User {
 
+    boolean isLoginPage = (FacesContext.getCurrentInstance().getViewRoot()
+            .getViewId().lastIndexOf("login.xhtml") > -1);
     private String name;
     private String password;
-    private int userID;
-
+    private long userID;
+    private double grade;
     private DatabaseCon.userRole role;
+    private DatabaseCon dbCon;
+    private boolean isLoggedIn = false;
+
+    public User() {
+        dbCon = new DatabaseCon();
+    }
 
     public DatabaseCon getDbCon() {
         return dbCon;
     }
 
-    private DatabaseCon dbCon;
-
-    boolean isLoginPage = (FacesContext.getCurrentInstance().getViewRoot()
-            .getViewId().lastIndexOf("login.xhtml") > -1);
-
-    private boolean isLoggedIn = false;
-
     public boolean isLoggedIn() {
         return isLoggedIn;
-    }
-
-    public User() {
-        dbCon = new DatabaseCon();
     }
 
     public String getName() {
@@ -53,7 +48,7 @@ public class User {
     }
 
     public String add() {
-        if (dbCon.addUser(name,password) > 0) {
+        if (dbCon.addUser(name, password)) {
             return "success";
         } else
             return "unsuccess";
@@ -108,5 +103,9 @@ public class User {
 
     public DatabaseCon.userRole getRole() {
         return role;
+    }
+
+    public double getGrade() {
+        return dbCon.getGrade(this.userID);
     }
 }

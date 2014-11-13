@@ -2,9 +2,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-import java.beans.Statement;
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,24 +14,87 @@ import java.sql.SQLException;
  */
 public class DatabaseCon {
 
-    public static enum userRole {
-        ADMIN , TUTOR, STUDENT, ACCESSOR, DEFAULT
+    DataSource ds;
+
+    public DatabaseCon() {
+        try {
+            Context ctx = new InitialContext();
+            ds = (DataSource) ctx.lookup("java:comp/env/jdbc/database");
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
     }
 
     public DataSource getDs() {
         return ds;
     }
 
-    DataSource ds;
-
-    public DatabaseCon() {
-        try {
-            Context ctx = new InitialContext();
-            ds = (DataSource)ctx.lookup("java:comp/env/jdbc/database");
-        } catch (NamingException e) {
-
-            e.printStackTrace();
+    public void setGrade(long courseID, long studentID, double grade) {
+        if (getUserRole(studentID) == userRole.STUDENT) {
+            PreparedStatement ps = null;
+            Connection con = null;
+            try {
+                if (ds != null) {
+                    con = ds.getConnection();
+                    if (con != null) {
+                        String sql = "INSERT INTO grade(courseID, userID, grade) VALUES (?,?,?)";
+                        ps = con.prepareStatement(sql);
+                        ps.setLong(1, courseID);
+                        ps.setLong(2, studentID);
+                        ps.setDouble(3, grade);
+                        ps.executeUpdate();
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (con != null) {
+                        con.close();
+                    }
+                    if (ps != null) {
+                        ps.close();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
+    }
+
+    public double getGrade(long studentID) {
+        double grade = -1;
+        if (getUserRole(studentID) == userRole.STUDENT) {
+            PreparedStatement ps = null;
+            Connection con = null;
+            try {
+                if (ds != null) {
+                    con = ds.getConnection();
+                    if (con != null) {
+                        String sql = "SELECT grade FROM grade WHERE userID = (?)";
+                        ps = con.prepareStatement(sql);
+                        ps.setLong(1, studentID);
+                        ResultSet rs = ps.executeQuery();
+                        rs.next();
+                        grade = rs.getDouble("grade");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (con != null) {
+                        con.close();
+                    }
+                    if (ps != null) {
+                        ps.close();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return grade;
     }
 
     public long addTemplate(String name, H2 h2, R2S r2s, S2G s2g){
@@ -61,7 +122,7 @@ public class DatabaseCon {
                     }
                 }
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             } finally {
                 try {
                     if (con != null) {
@@ -78,7 +139,7 @@ public class DatabaseCon {
         return id;
     }
 
-    public long serializeObject(Object object){
+    public long serializeObject(Object object) {
         int id = -1;
 
         if (object != null) {
@@ -101,7 +162,7 @@ public class DatabaseCon {
                     }
                 }
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             } finally {
                 try {
                     if (con != null) {
@@ -118,7 +179,7 @@ public class DatabaseCon {
         return id;
     }
 
-    public Object deSerializeObject(long id){
+    public Object deSerializeObject(long id) {
         Object object = new Object();
 
         PreparedStatement ps;
@@ -127,9 +188,9 @@ public class DatabaseCon {
         try {
             con = ds.getConnection();
             if (con != null) {
-                String sql = "select object from data where id = (?)";
+                String sql = "SELECT object FROM data WHERE id = (?)";
                 ps = con.prepareStatement(sql);
-                ps.setLong(1,id);
+                ps.setLong(1, id);
                 rs = ps.executeQuery();
                 rs.next();
                 // object = rs.getObject(1);
@@ -144,16 +205,13 @@ public class DatabaseCon {
         } catch (SQLException sqle) {
             System.out.println("Kann mich nicht verbinden");
             sqle.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        String s = object.getClass().getName();
         return object;
     }
 
-    public int addUser(String name, String password) {
+    public boolean addUser(String name, String password) {
         int i = 0;
         if (name != null) {
             PreparedStatement ps = null;
@@ -171,7 +229,7 @@ public class DatabaseCon {
                     }
                 }
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             } finally {
                 try {
                     if (con != null) {
@@ -185,25 +243,26 @@ public class DatabaseCon {
                 }
             }
         }
-        return i;
-
+        return i > 0;
     }
 
-    public int getRoleID(userRole role){
-        int roleID = 0;
+    public long getRoleID(userRole role) {
+        long roleID = 0;
 
         PreparedStatement ps;
         Connection con;
-        ResultSet rs;
         try {
             con = ds.getConnection();
             if (con != null) {
-                String sql = "select roleID from userRole where roleName = '"
-                        + role.toString() + "'";
-                ps = con.prepareStatement(sql);
-                rs = ps.executeQuery();
-                rs.next();
-                roleID = rs.getInt("roleID");
+                String sql = "SELECT roleID FROM userRole WHERE roleName = (?)";
+                ps = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
+                ps.setString(1, role.toString());
+                ps.executeQuery();
+
+                ResultSet rs = ps.getGeneratedKeys();
+                if (rs.next()) {
+                    roleID = rs.getInt(1);
+                }
             }
         } catch (SQLException sqle) {
             System.out.println("Kann mich nicht verbinden");
@@ -212,7 +271,7 @@ public class DatabaseCon {
         return roleID;
     }
 
-    public void setUserRole(int userID, userRole role){
+    public void setUserRole(long userID, userRole role) {
         if (userID != 0) {
             PreparedStatement ps = null;
             Connection con = null;
@@ -222,14 +281,14 @@ public class DatabaseCon {
                     if (con != null) {
                         String sql = "INSERT INTO userUserRole(userID,roleID) VALUES (?,?)";
                         ps = con.prepareStatement(sql);
-                        int roleID = getRoleID(role);
-                        ps.setInt(1,userID);
-                        ps.setInt(2,roleID);
+                        long roleID = getRoleID(role);
+                        ps.setLong(1, userID);
+                        ps.setLong(2, roleID);
                         ps.executeUpdate();
                     }
                 }
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             } finally {
                 try {
                     if (con != null) {
@@ -245,7 +304,7 @@ public class DatabaseCon {
         }
     }
 
-    public void changeUserRole(int userID, userRole role){
+    public void changeUserRole(long userID, userRole role) {
         if (userID != 0) {
             PreparedStatement ps = null;
             Connection con = null;
@@ -258,14 +317,14 @@ public class DatabaseCon {
                         ps.executeUpdate();
                         sql = "INSERT INTO userUserRole(userID,roleID) VALUES (?,?)";
                         ps = con.prepareStatement(sql);
-                        int roleID = getRoleID(role);
-                        ps.setInt(1,userID);
-                        ps.setInt(2,roleID);
+                        long roleID = getRoleID(role);
+                        ps.setLong(1, userID);
+                        ps.setLong(2, roleID);
                         ps.executeUpdate();
                     }
                 }
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             } finally {
                 try {
                     if (con != null) {
@@ -281,7 +340,7 @@ public class DatabaseCon {
         }
     }
 
-    public userRole getUserRole(int userID){
+    public userRole getUserRole(long userID) {
         userRole role = null;
 
         PreparedStatement ps;
@@ -296,14 +355,13 @@ public class DatabaseCon {
                 rs = ps.executeQuery();
                 rs.next();
                 int roleID = rs.getInt("roleID");
-                sql = "select roleName from userRole where roleID = '"+roleID+"'";
+                sql = "select roleName from userRole where roleID = '" + roleID + "'";
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
                 rs.next();
                 String s_roleID = rs.getString("roleName");
-                for (userRole r : userRole.values() ) {
-                    if(r.toString().equalsIgnoreCase(s_roleID))
-                    {
+                for (userRole r : userRole.values()) {
+                    if (r.toString().equalsIgnoreCase(s_roleID)) {
                         role = r;
                     }
                 }
@@ -315,14 +373,12 @@ public class DatabaseCon {
         return role;
     }
 
-    public int getUserID(String name){
+    public int getUserID(String name) {
         int userID = 0;
 
         if (name != null) {
             PreparedStatement ps;
             Connection con;
-            ResultSet rs;
-
             if (ds != null) {
                 try {
                     con = ds.getConnection();
@@ -330,7 +386,7 @@ public class DatabaseCon {
                         String sql = "select id from user where name = '"
                                 + name + "'";
                         ps = con.prepareStatement(sql);
-                        rs = ps.executeQuery();
+                        ResultSet rs = ps.executeQuery();
                         rs.next();
                         userID = rs.getInt("id");
                     }
@@ -343,13 +399,12 @@ public class DatabaseCon {
         return userID;
     }
 
-    public String getUserName(int userID){
+    public String getUserName(long userID) {
         String userName = null;
 
         if (userID != 0) {
             PreparedStatement ps;
             Connection con;
-            ResultSet rs;
 
             if (ds != null) {
                 try {
@@ -358,7 +413,7 @@ public class DatabaseCon {
                         String sql = "select name from user where id = '"
                                 + userID + "'";
                         ps = con.prepareStatement(sql);
-                        rs = ps.executeQuery();
+                        ResultSet rs = ps.executeQuery();
                         rs.next();
                         userName = rs.getString("name");
                     }
@@ -371,13 +426,12 @@ public class DatabaseCon {
         return userName;
     }
 
-    public String getPasswordHash(int userID){
+    public String getPasswordHash(long userID) {
         String passwordHash = null;
 
         if (userID != 0) {
             PreparedStatement ps;
             Connection con;
-            ResultSet rs;
 
             if (ds != null) {
                 try {
@@ -386,7 +440,7 @@ public class DatabaseCon {
                         String sql = "select password from user where id = '"
                                 + userID + "'";
                         ps = con.prepareStatement(sql);
-                        rs = ps.executeQuery();
+                        ResultSet rs = ps.executeQuery();
                         rs.next();
                         passwordHash = rs.getString("password");
                     }
@@ -397,6 +451,10 @@ public class DatabaseCon {
             }
         }
         return passwordHash;
+    }
+
+    public static enum userRole {
+        ADMIN, TUTOR, STUDENT, ACCESSOR, DEFAULT
     }
 
 }

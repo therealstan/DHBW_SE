@@ -4,15 +4,13 @@ import javax.faces.bean.SessionScoped;
 /**
  * Created by Dom on 11.11.2014.
  */
-
 @ManagedBean(name = "bewerten")
 @SessionScoped
 public class Bewerten {
 
     private DatabaseCon dbCon;
 
-    public String start(DatabaseCon dbCon)
-    {
+    public String start(DatabaseCon dbCon) {
         this.dbCon = dbCon;
         /*
         ToDo:
@@ -23,7 +21,6 @@ public class Bewerten {
         h2.setP(0.9);
 
         S2G s2g = new S2G(1.0,0,1.0,7.0);
-        long s2gID = dbCon.serializeObject(s2g);
 
         R2S r2s = new R2S();
         r2s.addImpact(0.5);
@@ -41,6 +38,10 @@ public class Bewerten {
 
             R2S test = (R2S) dbCon.deSerializeObject(R2S.getID(dbCon, templateID));
             double d = test.getScore(true, (H2) dbCon.deSerializeObject(H2.getID(dbCon,templateID)));
+            S2G s2G = (S2G) dbCon.deSerializeObject(S2G.getID(dbCon, templateID));
+            double note = s2g.getGrade(d);
+
+            dbCon.setGrade(1, dbCon.getUserID("louis"), note);
             System.out.println(d);
         }
         catch (Exception e){
