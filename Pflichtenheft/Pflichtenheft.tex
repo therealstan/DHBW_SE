@@ -11,7 +11,7 @@
 			
 			\begin{itemize}
 			\item[-]	Verschiedene Benutzergruppen
-			\item[-]	Benutzer anlegen 
+			\item[-]	Neue Benutzer anlegen und administrieren 
 			\item[-]	Rechtehierarchien
 			\item[-]	Studenten können ihre Noten in dem System einsehen.
 			\item[-]	Notenkonvertierungsprofile erstellen und verwalten
@@ -21,7 +21,12 @@
 			\item[-]	Die Festlegung eines Grundscore (Gruppe, Einzeln) lässt sich in zwei skalierbare \newline Bereiche beliebig teilen ($H_2$)
 			\item[-]	Score Refining Faktoren können in einem Template frei eingestellt werden (Items) ($R_2S$)
 			\item[-]	Skalierbarkeit des Bewertungssystems von Bewertung der Gruppe zu Einzelperson und umgekehrt.
-			\item[-]	Zuweisung von beliebig gruppierten Studenten zu einer \item[-]	Veranstaltung durch Dozent oder Prüfer.				
+<<<<<<< HEAD
+			\item[-]	Zuweisung von Aufgaben zu einer Studentengruppen
+			 \item[-]	Veranstaltung durch Dozent oder Prüfer.				
+=======
+			\item[-]	Zuweisung von beliebig gruppierten Studenten zu einer Veranstaltung durch Dozent oder Prüfer.				
+>>>>>>> 311bf1f4b06796cf11030e4cbe1b2409ee952c1c
 			\end{itemize}
 
 			
@@ -30,12 +35,22 @@
 		\item[-]	Alle Zwischenbewertungen die zur Note führen werden dem Studenten angezeigt.
 		\item[-]	Profilverwaltung um standardisierte Bewertungen erzeugen zu können.
 		\end{itemize}
-		
+		\clearpage
 		\subsection{Abgrenzungskriterien}
-		\begin{itemize}
-		\item[-]	Bewertungssystem bewertet nur die Veranstaltungen die einer Art bestanden/nicht bestanden Logik unterliegen. Anschließend erfolgt eine konfigurierbare Punkte-Notenkonvertierung.
-		\item[-]	Jede erstellte Veranstaltung beinhaltet genau ein Bewertungsschema und führt somit zu einer Note. Die Kombinierbarkeit von verschiedenen Einzelnoten ist nicht möglich.
-		\end{itemize}
+		\subsubsection*{Veranstaltungsplanung und Erstellung der Bewertungsroutine}
+		
+		Ein Dozent bekommt mit dieser Anwendung ein  Baukasten zu Erstellung einer Bewertung zur Lehrveranstaltung. Die Anwendung stellt mehrere mögliche Bewertungsfunktionen, die kombiniert werden können. Durch das kombinieren der Funktionen können Bewertungen beinahe beliebiger Komplexität erstellt werden.
+		
+		Für die Simulationszwecke beschränkt sich der Prototyp auf die Module ($H_2$ , $R_2S$, $S_2G$)
+		
+		\subsubsection*{Bewertungslogik}
+		
+		Die Anwendung unterstützt zunächst die Bewertung der Veranstaltungen die grundsätzlich mit einem bestanden / nicht bestanden, also 0 oder 1 bewertet werden können. Dies wird als Grundlage für alle weiteren Berechnungen als Grundlage genommen. Die Ermittlung einer Note kann sowohl für Einzelperson, als auch für die Mitglieder einer Gruppe durchgeführt werden. 
+
+		\subsection*{Veranstaltungsarten}
+		
+		Jede erstellte Veranstaltung beinhaltet genau ein Bewertungsschema (keine Konsolidierung mehrerer Veranstaltungen möglich) und führt somit zu einer Note. Die Erstellung einer Note aus der Kombination von verschiedenen Einzelnoten ist nicht möglich.
+
 		
 	\section{Produkteinsatz}
 	
@@ -49,12 +64,13 @@
 		
 		
 		\subsection{Zielgruppen}
-		\begin{itemize}
-		\item[-] 	Admin
-		\item[-]	Dozent
-		\item[-]	Prüfer
-		\item[-]	Studenten
-		\end{itemize}
+		
+		\begin{description}[\setlabelphantom{Administrator}]
+		\item[Administrator] 	 Administrator sichert und verwaltet das Gesamtsystem (Server, Webserver u.A.). Er hat keine Möglichkeit die Inhalte (z.B. Studentennoten) zu manipulieren. 
+		\item[Dozent]	Dozenten benutzen diese Anwendung um eine Veranstaltung zu erstellen und eine von Ihnen bestimmte Bewertungsroutine umzusetzen.
+		\item[Prüfer] Prüfer nutzen diese Anwendung um auf eine einfache zentralisierte Art und Weise in der ihnen zugewiesenen Veranstaltung Bewertungen durchzuführen.
+		\item[Studenten]	Studenten benutzen diese Anwendung um eine Auskunft über ihre Leistungen in den belegten Veranstaltungen zu erhalten.
+		\end{description}
 
 		\subsection{Betriebsbedingungen}
 		\begin{itemize}
@@ -63,7 +79,7 @@
 		\item[-]	Datenbankschnittstelle für die Benutzerverwaltung (mögliche Anbindung an Dualis bei vorhandener API)
 		\item[-]	Datenbank-Umgebung für die Speicherung der Daten
 		\item[-]	Archivierung der Daten (Datensicherheit wegen Einsehbarkeit der Daten)
-		\item[-]	Zugriff von außen sowohl als Lesen, als auch als Edit möglich. 
+		\item[-]	Zugriff von außen: Sowohl Lesen, als auch als Edit möglich. 
 		\item[-]	Die Anwendung soll parallelen Zugriff von mehreren Benutzern zulassen.
 		\item[-]	Der Administrator kann die Datenbank sichern und die Programmdaten ändern.\\
 					Er hat keine Lese-/Schreibrechte auf die Datenbankinhalte.
@@ -73,15 +89,15 @@
 		
 	\section{Produktübersicht}
 	
-	Das Produkt wird durch folgende Use Cases definiert. Alle Use Cases beziehen sich auf das Verhalten des Systems aus der Sicht eines außenstehenden Anwenders.\\
-	Die Anforderung an die Funktionalität entsteht aus der Auswertung der Akteur/Produkt- und Akteur/Akteur-Beziehungen.
+	Das Produkt wird durch folgende Use Cases beschrieben. Alle Use Cases beziehen sich auf das Verhalten des Systems aus der Sicht eines außenstehenden Anwenders. Die Use Cases beschreiben die Hauptfunktionen, welche ein Benutzer des Systems wahrnehmen kann.\\
+	Die Anforderung an die Funktionalität entsteht aus der Auswertung der Akteur/Produkt- und Akteur/Akteur-Beziehungen im Kapitel~\ref{chap:Prfunk}.
 	
 	\subsection{Use Case Analyse}
 	
 	\begin{table}[H]
-	\begin{tabular}{ll}
-	 \textbf{Use Case ID} & 1 \\
- 	 \textbf{Elementarer Geschäftsprozess} & /F10/ Veranstaltung planen \\ 
+	\begin{tabular}{|ll}
+	 \rowcolor{hellgrau}\textbf{Use Case ID} & 1 \\
+ 	 \textbf{Elementarer Geschäftsprozess} &  Veranstaltung planen \\ 
 	 \textbf{Ziel des Use Cases} & Darstellung des  Prozesses einer    \\
 	 & Veranstaltungsplanung\\ 
 	 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
@@ -96,9 +112,9 @@
 	\end{table}
 	
 		\begin{table}[H]
-		\begin{tabular}{ll}
-		 \textbf{Use Case ID} & 2 \\
-	 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Template erstellen \\ 
+		\begin{tabular}{|ll}
+		  \rowcolor{hellgrau}\textbf{Use Case ID} & 2 \\
+	 	 \textbf{Elementarer Geschäftsprozess} &  Template erstellen \\ 
 		 \textbf{Ziel des Use Cases} & Templates für die Veranstaltungen können \\& angelegt werden   \\
 		 \textbf{Umgebende Systemgrenze}& Veranstaltungskonfigurator \\ 
 		 \textbf{Vorbedingung} & Dozent ist angemeldet \\ 
@@ -112,9 +128,9 @@
 	
 	
 			\begin{table}[H]
-			\begin{tabular}{ll}
-			 \textbf{Use Case ID} & 3 \\
-		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Bewerten \\ 
+			\begin{tabular}{|ll}
+			  \rowcolor{hellgrau}\textbf{Use Case ID} & 3 \\
+		 	 \textbf{Elementarer Geschäftsprozess} &  Bewerten \\ 
 			 \textbf{Ziel des Use Cases} & Prüfer bewertet  \\
 			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
 			 \textbf{Vorbedingung} & Veranstaltung existiert \\
@@ -130,9 +146,9 @@
 			\end{table}
 			
 			\begin{table}[H]
-			\begin{tabular}{ll}
-			 \textbf{Use Case ID} & 4 \\
-		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Einsehen \\ 
+			\begin{tabular}{|ll}
+			  \rowcolor{hellgrau}\textbf{Use Case ID} & 4 \\
+		 	 \textbf{Elementarer Geschäftsprozess} &  Einsehen \\ 
 			 \textbf{Ziel des Use Cases} & Studenten sehen ihre Noten ein  \\
 			 \textbf{Umgebende Systemgrenze} & Bewertung \\ 
 			 \textbf{Vorbedingung} & Bewertung liegt bereits vor \\
@@ -146,9 +162,9 @@
 			\end{table}
 			
 			\begin{table}[H]
-			\begin{tabular}{ll}
-			 \textbf{Use Case ID} & 5 \\
-		 	 \textbf{Elementarer Geschäftsprozess} & /F20/ Teilnehmer anlegen \\ 
+			\begin{tabular}{|ll}
+			  \rowcolor{hellgrau}\textbf{Use Case ID} & 5 \\
+		 	 \textbf{Elementarer Geschäftsprozess} &  Teilnehmer anlegen \\ 
 			 \textbf{Ziel des Use Cases} & Prüfer oder Dozent konfigurieren \\& die Teilnehmer einer Veranstaltung  \\
 			 \textbf{Umgebende Systemgrenze} & Planung Prüfung \\ 
 			 \textbf{Vorbedingung} & Veranstaltung ist konfiguriert \\
@@ -173,30 +189,30 @@
 	\end{figure}
 	\newpage
 	
-	\section{Produktfunktionen}
+	\section{Produktfunktionen\label{chap:Prfunk}}
 	Im folgenden sind die Geschäftsprozesse der Anwendung dokumentiert.\\
 	Diese Produktfunktionen werden im Laufe der Entwicklung angepasst und in ihrem Umfang erweitert.
 	Die Geschäftsprozesse finden sich als Diagramme im Anhang (Abb. \ref{fig:process1}, \ref{fig:process2}, \ref{fig:process3})
 	
 		\begin{table}[H]
-			\begin{tabular}{ll}
-				\multicolumn{2}{l}{/\textbf{\textit{F10}}/}\\\hline
+			\begin{tabular}{|ll}
+				\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F10}}/}\\\hline
 				 \textbf{Geschäftsprozess} & Bewertungsschema festlegen \\ 
 				 \textbf{Kategorie} & primär \\ 
 				 \textbf{Vorbedingung} & 1. Dozent ist angemeldet  \\ 
-				 \textbf{Nachbedingung Erfolg} & Ein Bewertungsschema steht zur Verfügung\\ 
+				 \textbf{Nachbedingung Erfolg\phantom{xxxx}} & Ein Bewertungsschema steht zur Verfügung\\ 
 				 & Prüfer erfährt welchen Kurs (bzw.  Student/en) er zu prüfen hat.\\
 				 \textbf{Akteure} & Dozent \\ 
 				 \textbf{Auslösendes Ereignis} & Dozent legt ein Bewertungsschema an  \\ 
-				 \textbf{Beschreibung} &  1. Umrechnungsformel festlegen\\
-				 & 2. Parameter anpassen
+				 \textbf{Unterfunktionen} & /\textbf{\textit{F11}}/ Umrechnungsformel festlegen\\
+				 & /\textbf{\textit{F12}}/ Parameter anpassen
 				 \end{tabular} 
 			\label{tab:F10}
 			\end{table}
 	
 		\begin{table}[H]
-		\begin{tabular}{ll}
-			\multicolumn{2}{l}{/\textbf{\textit{F20}}/}\\\hline
+		\begin{tabular}{|ll}
+			\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F20}}/}\\\hline
 			 \textbf{Geschäftsprozess} & Template erstellen \\ 
 			 \textbf{Kategorie} & primär \\ 
 			 \textbf{Vorbedingung} & Dozent ist angemeldet\\
@@ -209,9 +225,9 @@
 			 \textbf{Auslösendes Ereignis} & Dozent legt ein Template an \\
 			 & Bei Veranstaltungserstellung wurde kein Template gefunden\\
 			 & Bei Veranstaltungserstellung wird ein neues Template erstellt\\
-			 \textbf{Beschreibung} & 1. Die Art der Prüfung wird spezifiziert \\
-			 & 2. Items hinzufügen\\
-			 & 3. Bewertungsschema hinzufügen\\
+			 \textbf{Unterfunktionen} & /\textbf{\textit{F21}}/ Die Art der Prüfung wird spezifiziert \\
+			 &  /\textbf{\textit{F22}}/ Items hinzufügen\\
+			 & /\textbf{\textit{F23}}/ Bewertungsschema hinzufügen\\
 			  \textbf{Erweiterung} & 1. Templates refactoring \\ 
 			 \textbf{Alternativen} & 1. Neues Bewertungsschema erstellen anlegen \\  			
 			 \end{tabular} 
@@ -220,8 +236,8 @@
 	
 		
 			\begin{table}[H]
-			\begin{tabular}{ll}
-				\multicolumn{2}{l}{/\textbf{\textit{F30}}/}\\\hline
+			\begin{tabular}{|ll}
+				\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F30}}/}\\\hline
 				 \textbf{Geschäftsprozess} & Veranstaltung planen \\ 
 				 \textbf{Kategorie} & primär \\ 
 				 \textbf{Vorbedingung} & Dozent ist angemeldet\\
@@ -233,10 +249,10 @@
 				 \textbf{Nachbedingung Fehlschlag} &  \\ 
 				 \textbf{Akteure} & Dozent \\ 
 				 \textbf{Auslösendes Ereignis} & Dozent legt eine Veranstaltung an  \\ 
-				 \textbf{Beschreibung} &  1. Dozent konfiguriert das Template\\ 
-				 & 2. Dozent befüllt(prüft) die Parameter des Bewertungsschemas\\
-				 & 3. Dozent kann Prüfer einer Veranstaltung zuteilen zuteilen \\
-				 & 4. Dozent kann Studenten/Gruppen der  Veranstaltung zuweisen\\
+				 \textbf{Unterfunktionen} & /\textbf{\textit{F31}}/ Dozent konfiguriert das Template\\ 
+				 & /\textbf{\textit{F32}}/ Dozent befüllt(prüft) die Parameter des Bewertungsschemas\\
+				 &/\textbf{\textit{F33}}/ Dozent kann Prüfer einer Veranstaltung zuteilen zuteilen \\
+				 & /\textbf{\textit{F34}}/ Dozent kann Studenten/Gruppen der  Veranstaltung zuweisen\\
 				  \textbf{Erweiterung} &  \\ 
 				 \textbf{Alternativen} & 1. Neues Template anlegen \\
 				 & 2. Neue Studenten anlegen\\
@@ -248,31 +264,31 @@
 	
 	
 			\begin{table}[H]
-			\begin{tabular}{ll}
-				\multicolumn{2}{l}{/\textbf{\textit{F40}}/}\\\hline
+			\begin{tabular}{|ll}
+				\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F40}}/}\\\hline
 				 \textbf{Geschäftsprozess} & Bewerten \\ 
 				 \textbf{Kategorie} & primär \\ 
 				 \textbf{Vorbedingung} & 1. Dozent/Prüfer ist angemeldet  \\ 
 				 & 2. Veranstaltung ist angelegt\\
 				 & 3. Gruppen/Student ist einer Veranstaltung zugewiesen\\
 				 & 4. Prüfer ist einer Veranstaltung zugewiesen\\
-				 \textbf{Nachbedingung Erfolg} & Ein Student/Gruppe wurde bewertet\\
+				 \textbf{Nachbedingung Erfolg\phantom{xxxx}} & Ein Student/Gruppe wurde bewertet\\
 				 & Teilbewertung/vollständige Bewertung ist abgeschlossen\\ 
 				 \textbf{Akteure} & Dozent \\ 
 				 & Prüfer\\
 				 \textbf{Auslösendes Ereignis} & Prüfer will bewerten \\ 
-				 \textbf{Beschreibung} &  1. Prüfer wählt Veranstaltung aus\\
-				 & Prüfer wählt Student/Gruppe zur Bewertung aus\\
-				 & Bewertungen/Teilbewertungen eintragen\\
-				 & Bewertung abschließen\\
+				 \textbf{Unterfunktionen} &  /\textbf{\textit{F41}}/ Prüfer wählt Veranstaltung aus\\
+				 & /\textbf{\textit{F42}}/ Prüfer wählt Student/Gruppe zur Bewertung aus\\
+				 &/\textbf{\textit{F43}}/  Bewertungen/Teilbewertungen eintragen\\
+				 & /\textbf{\textit{F44}}/ Bewertung abschließen\\
 			
 				 \end{tabular} 
 			\label{tab:F40}
 			\end{table}
 			
 \begin{table}[H]
-	\begin{tabular}{ll}
-		\multicolumn{2}{l}{/\textbf{\textit{F50}}/}\\\hline
+	\begin{tabular}{|ll}
+		\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F50}}/}\\\hline
 		 \textbf{Geschäftsprozess} & Bewertung abschließen\\ 
 		 \textbf{Kategorie} & primär \\ 
 		 \textbf{Vorbedingung} & Bewertungen einer Veranstaltung in allen Items liegen vor\\
@@ -293,8 +309,8 @@
 	\end{table}		
 			
 	\begin{table}[H]
-		\begin{tabular}{ll}
-			\multicolumn{2}{l}{/\textbf{\textit{F60}}/}\\\hline
+		\begin{tabular}{|ll}
+			\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F60}}/}\\\hline
 			 \textbf{Geschäftsprozess} & Kurs anlegen\\ 
 			 \textbf{Kategorie} & primär \\ 
 			 \textbf{Vorbedingung} & 1. Dozent ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
@@ -303,9 +319,9 @@
 			 \textbf{Nachbedingung Fehlschlag} & -\\
 			 \textbf{Akteure} & Dozent \\ 
 			 \textbf{Auslösendes Ereignis} & Dozent legt einen Kurs an\\ 
-			 \textbf{Beschreibung} &  1. Kurs erstellen\\
-			 & 2. Studenten hinzufügen\\
-			 & 3. Kurs erstellen\\
+			 \textbf{Unterfunktionen} &  /\textbf{\textit{F61}}/  Kurs erstellen\\
+			 & /\textbf{\textit{F62}}/  Studenten hinzufügen\\
+			 & /\textbf{\textit{F63}}/  Kurs erstellen\\
 			 \textbf{Alternativen} & 1. Studenten anlegen \\
 			 \end{tabular} 
 		\label{tab:F60}
@@ -313,8 +329,8 @@
 		
 		
 			\begin{table}[H]
-				\begin{tabular}{ll}
-					\multicolumn{2}{l}{/\textbf{\textit{F70}}/}\\\hline
+				\begin{tabular}{|ll}
+					\rowcolor{hellgrau}\multicolumn{2}{l}{/\textbf{\textit{F70}}/}\\\hline
 					 \textbf{Geschäftsprozess} & Studenten anlegen\\ 
 					 \textbf{Kategorie} & primär \\ 
 					 \textbf{Vorbedingung} & 1. Dozent ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
@@ -323,15 +339,15 @@
 					 \textbf{Nachbedingung Fehlschlag} & -\\
 					 \textbf{Akteure} & Dozent \\ 
 					 \textbf{Auslösendes Ereignis} & Dozent legt Studenten an\\ 
-					 \textbf{Beschreibung} &  1. Studentenregisterkarte erstellen\\
-					 & 2. Daten befüllen\\
+					 \textbf{Unterfunktionen} &  /\textbf{\textit{F71}}/  Studentenregisterkarte erstellen\\
+					 & /\textbf{\textit{F72}}/ Daten befüllen\\
 				 \end{tabular} 
 				\label{tab:F70}
 				\end{table}	
 			
 			\begin{table}[H]
-				\begin{tabular}{ll}
-					\multicolumn{2}{l}{/\textbf{\textit{F80}}/}\\\hline
+				\begin{tabular}{|ll}
+				\rowcolor{hellgrau}	\multicolumn{2}{l}{/\textbf{\textit{F80}}/}\\\hline
 					 \textbf{Geschäftsprozess} & Bewertung einsehen\\ 
 					 \textbf{Kategorie} & primär \\ 
 					 \textbf{Vorbedingung} & 1. Student ist angemeldet \phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa} \\
@@ -340,8 +356,8 @@
 					  \textbf{Nachbedingung Fehlschlag} & Benachrichtigung\\
 					 \textbf{Akteure} & Student \\ 
 					 \textbf{Auslösendes Ereignis} & Student will seine Noten einsehen\\ 
-					 \textbf{Beschreibung} &  1. Student meldet sich an\\
-					 & 2. Student sieht seine Noten\\
+					 \textbf{Unterfunktionen} &  /\textbf{\textit{F81}}/  Student meldet sich an\\
+					 & /\textbf{\textit{F82}}/  Student sieht seine Noten\\
 				 \end{tabular} 
 				\label{tab:F80}
 				\end{table}	
@@ -352,15 +368,27 @@
 	\section{Produktdaten}
 	
 		Die Größe der einzelnen Datenpunkte richtet sich variabel nach der letztendlichen Größe des Anwendungssystems. Die praktische Obergrenze wird durch die Hardware bzw. Datenbank festgelegt. 
-	
+		
+		Die unten aufgeführten Produktdaten in der Notation /Dxx/ beschreiben die Gesamtheit der Daten, welche die Anwendung benötigt oder erstellt. Das vorläufige Datenbankmodell ist in der Abbildung~\ref{fig:ERM} dargestellt, erst in dem ER-Modell werden die Trennungen in die Tabellen vorgenommen.
+		
+	 
+		
 	\begin{description}[\setlabelphantom{xxxxxx}]
 	\item[/D10/] Benutzer \{Benutzer\_id, Benutzertyp(Rechte) , Personendaten, Veranstaltungen\}\\ (Max. 100000) 
 	\item[/D20/] Veranstaltung \{Veranstaltungs\_id, Bewertungsschema(S$_2$G), Bewertungstemplate, Prüfer, Stundenten, Score, Note, Status\_Bewertung\, Beschreibung\} \\ (Max. 100000)
-	\item[/D30/] GUI-Daten (mehrere verschiedene Ansichten) \\
-	Genauere Spezifikation erfolgt im zweiten Teil des Projekts im 4. Semester
+	\item[/D30/] Serialisierte Objekte
 	\item[/D40/] Datenarchiv (Alle Daten)
-	
 	\end{description}
+	
+	
+	\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{./img/ERM}
+\caption{Entity Relation Modell in IDEF1X Notation}
+\label{fig:ERM}
+\end{figure}
+
+	
 	
 	\section{Produktleistungen}
 	
@@ -414,7 +442,7 @@
 	\label{tab:quali_anf}
 	\end{table}
 	
-
+\clearpage
 		\begin{description}[\setlabelphantom{Wiederherstellbarkeit}]
 			\item[Richtigkeit]  Da das System mit persönlichen und sensiblen Daten arbeitet, sollte dieses eine hohe Richtigkeit haben. Die Tests auf die Richtigkeit und die Robustheit des Systems sind mit dem Entwicklungsprozess verflochten und basieren auf den vorgestellten Benutzerszenarien (Agile Development). 
 			\item[Sicherheit] Die Sicherheitsaspekte der einzelnen Module werde im Lauf der Entwicklung integriert.
@@ -429,11 +457,16 @@
 
 	\section{Benutzeroberfläche}
 	
-	Die Benutzeroberfläche entspricht den modernen Ansprüchen einer Web-Anwendungen und wird mit entsprechend Google-Designrichtlinien erstellt. Die intuitive Bedienung soll das Leitmotiv der Entwicklung werden.\\
+	Die Benutzeroberfläche [UI] (\underline{\textbf{U}}ser \underline{\textbf{I}}nterface) entspricht den modernen Ansprüchen einer Web-Anwendungen und wird mit Google Designrichtlinien erstellt. 
+	
+ 	Das Leitmotiv für die Entwicklung des UI  ist "\textit{Focus on the user and all else will follow}" (engl.: konzentriere dich auf den Bentzer und der Rest folgt.).
+ 	
+ 	 \url{http://www.google.com/design/}
 	
 	Die genauere Spezifikation der grafischen Benutzeroberfläche wird zu einem späteren Zeitpunkt des Projektes definiert. 
 	
-	\begin{table}[ht]
+	\begin{table}[H]
+	\centering
 	\caption{Benutzergruppen und Rechteverteilung}
 	\begin{tabular}{|c|c|c|c|c|}
 	\hline Benutzergruppe & Lesen & Schreiben & Ändern & Systemanpassungen \\ 
@@ -446,6 +479,11 @@
 	\label{tab:usergroup}
 	\end{table}
 	
+	\paragraph{Benutzersichten}
+	
+	Jede Benutzergruppe erhält eine eigene Anwengungssicht. Die jeweiligen Sichten bieten unterschiedliche Möglichkeiten zur Interaktion entsprechend der in Kapitel~\ref{chap:Prfunk} definierten Funktionen.
+	
+
 	
 	\section{Nichtfunktionale Anforderungen}
 	
@@ -464,16 +502,17 @@
 	
 		\subsection{Software}
 		Server-Betriebssystem: UNIX\\
-		Clientsysteme: Browser\\
-		Web-Server: Jetty (bei Bedarf)
+		Clientsysteme: Browser (Versionen ab 2013)\\
+		Web-Server: Jetty (Kontext für Java Server Faces)
+		Datenbank: MySQL (Anbindung durch JDBC)
 		
 		\subsection{Hardware}
-		Sind für dieses Projekt nicht relevant. (prinzipiell ein leistungsstarker Server)\\
-		Für den Prototypen ist nur eine eingeschränkte Funktionalität vorgesehen.
+		Leistungsstarker Server\\
+		Für den Prototypen ist nur eine eingeschränkte Funktionalität vorgesehen
 		
 		\subsection{Orgware}
 		
-		Zunächst ist das System nur durch freigegebene Benutzer erreichbar.		
+		Zunächst ist das System nur durch freigegebene Benutzer erreichbar. 		
 
 		\subsection{Produkt-Schnittstellen}
 		
@@ -491,13 +530,51 @@
 		WEB-Schnittstelle
 		
 	\section{Gliederung in Teilprodukte}
-	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung.\\
+	
+	Im Laufe der Produktentwicklung werden folgende Produkte an den Kunden ausgeliefert zum Zweck des Tests und der Produktivsetzung:
+	
+	\subsection{Prototyp ohne UI}
+	Der Prototyp besteht aus einem  Veranstaltungskonfigurator, einem Bewertungssystem und einem Modul zum Einsehen der Bewertung. Ein UI wird nur zu Testzwecken angebunden um die Schnittstelle zu simulieren und zu prüfen. \\
 	Veranstaltungskonfigurator beschränkt sich hierbei auf einen minimalen Funktionsumfang um die mögliche Arbeitsweise deutlich zu machen.\\ 
 	Konfigurieren bedeutet in diesem Zusammenhang die Notenumrechnung mit Parametern zu belegen und zwischen unterschiedlichen Bewertungsschemata auswählen zu können.\\ 
 	Des Weiteren lassen sich zu einer Veranstaltung einzeln gewichtete Bewertungskriterien hinzufügen.\\ 
 	Das Bewertungssystem beinhaltet eine vom Dozent vordefinierte Maske, in die der Prüfer die Ergebnisse der Veranstaltung eintragen kann. Anhand der Ergebnisse wird dann eine Note für diese Veranstaltung errechnet.
 	Über ein Modul zum Einsehen der Bewertung, können zum einen Dozent und Prüfer die eingegeben Ergebnisse überprüfen, zum anderen die Studenten ihr Abschneiden bei der jeweiligen Veranstaltung ansehen.
-		
+	
+	\subsection{Erweiterter Simulationsprotyp mit UI}
+	Der Prototyp wird modular erweitert und mit weiterer Funktionalität belegt bis alle Anforderungen erfüllt sind. In diesem Stadium hat die Anwendung den vollen Funktionsumfang. Die Anwendung kann bereits zum Test der Umgebung und der Hardware eingesetzt werden. 
+	In diesem Stadium der Entwicklung besteht kein Ansprüche auf die fehlerfreie Funktion der Anwendung.
+	
+	\subsection{Produktive Anwendung}
+	In diesem Stadium werden alle Systemanpassungen durchgeführt und die Anwendung läuft fehlerfrei. Auf Anfrage können weitere Funktionen über den Erweiterten Simulationsprototypen eingebunden werden. Dadurch entstehen weitere Kosten.
+	
+	\subsection{Sicherheitskonzept}
+	Die Standards in Sicherheit der Verbindung und Datenübertragung werden in der Anwendung, als Grundfunktionalität vorgesehen und ist in den Entwicklungsprozess integriert.
+	
+<<<<<<< HEAD
+	Die Ausarbeitung eines erweiterten Sicherheitskonzepts für die Daten und Zugriffe, sowie gegen Angriffe wird als Teilprodukt angeboten. Dabei stehen dem Kunden drei Optionen zur Auswahl: Schwach, Normal, Hoch. 
+	
+	Die Einstufung orientiert sich vor allem an der Komplexität des Konzeptes und dem Umfang der Tests. Daraus entstehen zusätzliche Arbeitspakete, welche separat abgerechnet werden. 
+	
+
+=======
+	Die Ausarbeitung eines Sicherheitskonzepts für die Daten wird als Teilprodukt angeboten. Dabei stehen dem Kunden drei Optionen zur Auswahl: Schwach, Normal, Hoch. 
+	Die Einstufung orientiert sich vor allem an der Komplexität des Konzeptes und dem Umfang der Tests. \newline	
+	Unabhängig vom gewählten Modell werden  Grundsicherheitsstandards implementiert.
+>>>>>>> 311bf1f4b06796cf11030e4cbe1b2409ee952c1c
+	
+	\subsection{Back-Up Planung}
+	
+	Die Back-Up Planung läuft über Standardmodelle der Datenbank. Für erweiterte Back-Up Strategien muss ein gesonderter Auftrag erstellt werden. Auf Wunsch des Kunden sind unterschiedliche Konzepte umsetzbar.
+	
+	\subsection{User Experience und User Interface}
+	
+	Die Anwendung ist mit einer herkömmlichen Benutzeroberfläche ausgestattet. Diese wird parallel zum Prototypen entwickelt. Eine Erweiterung und die Anpassung der Benutzeroberfläche und vor allem der User Experience resultiert in einem extra Arbeitspaket.
+	
+	
+	\subsection{Maintenance}
+	
+	Die Ausarbeitung eines Instandhaltungsonzepts ist nicht Teil des angebotenen Umfangs, kann jedoch auf Wunsch des Kunden in einem extra Arbeitspaket umgesetzt werden.
 	
 	\section{Ergänzungen}
 		
@@ -525,7 +602,7 @@
   \section{Abkürzungen}
   
   	\begin{description}[\setlabelphantom{xxxxxx}]
-  	\item[API] Application Programming Interface. Externe Programmschnittstelle, hier für Anbindung an externe Datenbank.
+  	\item[$API$] Application Programming Interface. Externe Programmschnittstelle, hier für Anbindung an externe Datenbank.
   	\item[$S_2G$] Punkte zu Note (score to grade) Konvertierung  anhand festgelegter Formel und Parameter.
   	\item[$R_2S$] Wertung zu Punkten (rate to score). Punkte werden anhand manuell eingegebener Rates errechnet. 
   	\item[$H_2$] Hollistisches Bewertungsmodul. Zwei Bereiche (frei konfigurierbar). Ausgang ist eine Score, welche weiter in $R_2S$.
@@ -610,7 +687,12 @@
     \label{fig:werten}
     \end{figure}
     
-
+	
+	
+	\subsection{Strukturierter Entwurf}
+	
+	\subsection{Modularer Entwurf}
+	
   \section{Qualitätsmerkmale\label{sec:quali}}
   \clearpage
   
