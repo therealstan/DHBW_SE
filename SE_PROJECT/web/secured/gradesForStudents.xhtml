@@ -6,19 +6,52 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:o="http://openfaces.org/">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        .container{
+            margin-left: 6em;
+            height: 4em;
+            margin-right: 30em;
+        }
 
+        .header{
 
-<o:dataTable var="Leistung"  style="border:1px dotted gray;">
-    <o:column>
-        <f:facet name="header">
-            <h:outputText value="Fach" />
-        </f:facet>
-    </o:column>
-    <o:column>
-        <f:facet name="header">
-            <h:outputText value="Note" />
-        </f:facet>
-        <h:outputText value="#{user.grade}" />
-    </o:column>
-</o:dataTable>
+            text-align: center;
+            vertical-align: middle;
+            height: 3em;
+            background-color: lightgrey;
+
+        }
+        .h1{
+            text-decoration-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="h1">Notenübersicht für <h:outputText value="#{user.name}" /> </h1>
+        </div>
+    </div>
+
+    <div class = "container">
+        <div class="table">
+            <o:dataTable var="Leistung" value="#{user.grade}" style="border:1px dotted gray;">
+                <o:column id ="fachColumn">
+                    <f:facet name="header">
+                        <h:outputText value="Fach" />
+                    </f:facet>
+                </o:column>
+                <o:column id = "noteColumn">
+                    <f:facet name="header">
+                        <h:outputText value="Note" />
+                    </f:facet>
+                  <!--  <h:outputText value="#{user.grade}" /> -->
+                </o:column>
+            </o:dataTable>
+        </div>
+    </div>
+</body>
+
 </html>
