@@ -30,11 +30,11 @@ public class TutorBean {
     private List<S2G> s2gList;
     //region S2G
     private String selectedS2G;
-    //region R2S
-    private List<String> S2GNames;
-    private List<Double> S2GImpacts;
+
+
     //endregion
 
+    //region R2S
     public TutorBean() {
         this.s2gList = new ArrayList<S2G>();
     }
@@ -146,9 +146,7 @@ public class TutorBean {
         this.impact3 = impact3;
     }
 
-    public void addR2SName(String name) {
-        this.S2GNames.add(name);
-    }
+
     //endregion
 
     public String setValues(DatabaseCon dbCon) {

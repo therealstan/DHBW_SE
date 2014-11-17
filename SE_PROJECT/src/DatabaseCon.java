@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Dom on 31.10.2014.
@@ -62,8 +64,8 @@ public class DatabaseCon {
         }
     }
 
-    public double getGrade(long studentID) {
-        double grade = -1;
+    public List<Double> getGrade(long studentID) {
+        List<Double> list = new ArrayList<Double>();
         if (getUserRole(studentID) == userRole.STUDENT) {
             PreparedStatement ps = null;
             Connection con = null;
@@ -75,8 +77,9 @@ public class DatabaseCon {
                         ps = con.prepareStatement(sql);
                         ps.setLong(1, studentID);
                         ResultSet rs = ps.executeQuery();
-                        rs.next();
-                        grade = rs.getDouble("grade");
+                        while (rs.next()) {
+                            list.add(rs.getDouble("grade"));
+                        }
                     }
                 }
             } catch (Exception e) {
@@ -94,7 +97,55 @@ public class DatabaseCon {
                 }
             }
         }
-        return grade;
+        return list;
+    }
+
+    public List<String> getFach(long studentID) {
+        List<String> list = new ArrayList<String>();
+        if (getUserRole(studentID) == userRole.STUDENT) {
+            PreparedStatement ps = null;
+            Connection con = null;
+            try {
+                if (ds != null) {
+                    con = ds.getConnection();
+                    if (con != null) {
+                        String sql = "SELECT courseID FROM grade WHERE userID = (?)";
+                        ps = con.prepareStatement(sql);
+                        ps.setLong(1, studentID);
+                        ResultSet rs = ps.executeQuery();
+
+                        List<Integer> courseIDList = new ArrayList<Integer>();
+                        while (rs.next()) {
+                            courseIDList.add(rs.getInt("courseID"));
+                        }
+
+                        for (Integer integer : courseIDList) {
+                            sql = "SELECT name FROM course WHERE courseID = (?)";
+                            ps = con.prepareStatement(sql);
+                            ps.setInt(1, integer);
+                            rs = ps.executeQuery();
+                            while (rs.next()) {
+                                list.add(rs.getString("name"));
+                            }
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (con != null) {
+                        con.close();
+                    }
+                    if (ps != null) {
+                        ps.close();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return list;
     }
 
     public long addTemplate(String name, H2 h2, R2S r2s, S2G s2g){

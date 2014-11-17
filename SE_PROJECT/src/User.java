@@ -22,6 +22,10 @@ public class User {
         dbCon = new DatabaseCon();
     }
 
+    public long getUserID() {
+        return userID;
+    }
+
     public DatabaseCon getDbCon() {
         return dbCon;
     }
@@ -102,9 +106,5 @@ public class User {
 
     public DatabaseCon.userRole getRole() {
         return role;
-    }
-
-    public double getGrade() {
-        return dbCon.getGrade(this.userID);
     }
 }
