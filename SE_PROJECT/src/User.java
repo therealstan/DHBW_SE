@@ -14,7 +14,6 @@ public class User {
     private String name;
     private String password;
     private long userID;
-    private double grade;
     private DatabaseCon.userRole role;
     private DatabaseCon dbCon;
     private boolean isLoggedIn = false;
@@ -60,7 +59,7 @@ public class User {
         String dbPasswordHash = dbCon.getPasswordHash(userID);
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
                 .getExternalContext().getSession(false);
-        if (isLoginPage && (name.equals(dbName) && PasswordHash.validatePassword(password,dbPasswordHash))) {
+        if (isLoginPage && (name.equals(dbName) && PasswordHash.validatePassword(password, dbPasswordHash))) {
             FacesContext.getCurrentInstance().getExternalContext()
                     .getSessionMap().put("username", name);
             if (session == null) {

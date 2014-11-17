@@ -15,6 +15,8 @@ public class S2G implements Serializable{
     private double gMin;
     private double gMax;
 
+    private String description;
+
     public S2G(double curvature, double polarity, double gMin, double gMax) {
         this.curvature = curvature;
         this.polarity = polarity;
@@ -46,6 +48,14 @@ public class S2G implements Serializable{
             sqle.printStackTrace();
         }
         return id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getGrade(double score) {
