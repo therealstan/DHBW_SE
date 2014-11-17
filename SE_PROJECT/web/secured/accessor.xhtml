@@ -4,8 +4,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Prüfer"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:o="http://openfaces.org/">
+
+
+
+<h:form id="accessor">
+<table frame="box">
+    <tr>
+        <th>Prüfer</th>
+    </tr>
+    <tr>
+
+        <td>Bitte Ok oder NOK eintragen</td>
+        <td>
+            <o:inputTextarea id="h2input"
+                             style="background: beige; border: 2px solid pink; width: 80px; color: brown; font-weight: bold;"
+                             promptText="OK/NOK"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Rates</td>
+        <td>
+            <o:inputTextarea id="rate1"
+                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+                             promptText="Rate1"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"/>
+        </td>
+    </tr>
+    <tr>Bitte die Rates eintragen</tr>
+    <tr>
+        <td></td>
+        <td>
+            <o:inputTextarea id="rate2"
+                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+                             promptText="Rate2"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"/>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <o:inputTextarea id="rate3"
+                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+                             promptText="Rate3"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td><o:commandButton value="Bewerten" action="#{bewerten.start(user.dbCon)}"/></td>
+    </tr>
+
+    <tr><td>Errechnete Note</td><td><h:outputText value="#{user.grade}" /></td></tr>
+</table>
+</h:form>
+
 </html>
