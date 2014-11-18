@@ -16,7 +16,6 @@ import java.util.List;
 @SessionScoped
 public class TutorBean {
 
-    //region H2
     String h2Name;
     double h2Threshold;
     String impact1Name;
@@ -24,17 +23,11 @@ public class TutorBean {
     String impact3Name;
     double impact1;
     double impact2;
-    //endregion
     double impact3;
     private DatabaseCon dbCon;
     private List<S2G> s2gList;
-    //region S2G
     private String selectedS2G;
 
-
-    //endregion
-
-    //region R2S
     public TutorBean() {
         this.s2gList = new ArrayList<S2G>();
     }
@@ -69,10 +62,7 @@ public class TutorBean {
         return list;
     }
 
-    /*
-    ToDo:
-    extrem unschön
-     */
+    //region R2S
 
     public String getSelectedS2G() {
         return selectedS2G;
@@ -97,6 +87,12 @@ public class TutorBean {
     public void setH2Name(String h2Name) {
         this.h2Name = h2Name;
     }
+
+
+    /*
+    ToDo:
+    extrem unschön
+     */
 
     public String getImpact1Name() {
         return impact1Name;
@@ -145,7 +141,6 @@ public class TutorBean {
     public void setImpact3(double impact3) {
         this.impact3 = impact3;
     }
-
 
     //endregion
 
