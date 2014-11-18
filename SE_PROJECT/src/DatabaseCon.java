@@ -150,7 +150,11 @@ public class DatabaseCon {
                         ps = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
                         ps.setString(1, name);
                         ps.setLong(2, serializeObject(h2));
-                        ps.setLong(3, serializeObject(s2g));
+                        if (s2g.isSerialized) {
+                            ps.setLong(3, s2g.getID());
+                        } else {
+                            ps.setLong(3, serializeObject(s2g));
+                        }
                         ps.setLong(4, serializeObject(r2s));
                         ps.executeUpdate();
 

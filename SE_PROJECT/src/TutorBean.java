@@ -16,6 +16,7 @@ import java.util.List;
 @SessionScoped
 public class TutorBean {
 
+    String templateName;
     String h2Name;
     double h2Threshold;
     String impact1Name;
@@ -30,6 +31,14 @@ public class TutorBean {
 
     public TutorBean() {
         this.s2gList = new ArrayList<S2G>();
+    }
+
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
     }
 
     public List<String> getS2GStringList(DatabaseCon dbCon) {
@@ -147,6 +156,14 @@ public class TutorBean {
     public String setValues(DatabaseCon dbCon) {
         this.dbCon = dbCon;
 
+//        S2G tt = new S2G(1.0,0,1.0,7.0);
+//        tt.setDescription("DHBW");
+//        try {
+//            tt.serialize(dbCon);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
         H2 h2 = new H2();
         h2.setName(h2Name);
         h2.setP(h2Threshold);
@@ -165,7 +182,7 @@ public class TutorBean {
         r2s.addImpact(impact2Name, impact2);
         r2s.addImpact(impact3Name, impact3);
 
-        long templateID = dbCon.addTemplate("test", h2, r2s, s2g);
+        long templateID = dbCon.addTemplate(templateName, h2, r2s, s2g);
 
         if (templateID != -1)
             return "success";

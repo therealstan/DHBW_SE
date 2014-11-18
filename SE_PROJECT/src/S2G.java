@@ -10,11 +10,12 @@ import java.sql.SQLException;
  */
 public class S2G implements Serializable{
 
+    public boolean isSerialized = false;
     private double curvature;
     private double polarity;
     private double gMin;
     private double gMax;
-
+    private long id;
     private String description;
 
     public S2G(double curvature, double polarity, double gMin, double gMax) {
@@ -48,6 +49,40 @@ public class S2G implements Serializable{
             sqle.printStackTrace();
         }
         return id;
+    }
+
+    public long getID() {
+        return id;
+    }
+
+    private long previousID(DatabaseCon dbCon) {
+        long id = 0;
+        PreparedStatement ps;
+        Connection con = null;
+        try {
+            con = dbCon.getDs().getConnection();
+            if (con != null) {
+                String sql = "SELECT id FROM data WHERE id=(SELECT max(id) FROM data)";
+                ps = con.prepareStatement(sql);
+
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    id = rs.getInt(1);
+                }
+            }
+        } catch (SQLException sqle) {
+            System.out.println("Kann mich nicht verbinden");
+            sqle.printStackTrace();
+        }
+        return id;
+    }
+
+    public void serialize(DatabaseCon dbCon) throws Exception {
+        isSerialized = true;
+        this.id = previousID(dbCon) + 1;
+        if (id == 0)
+            throw new Exception("Error");
+        dbCon.serializeObject(this);
     }
 
     public String getDescription() {

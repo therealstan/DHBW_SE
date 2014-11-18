@@ -20,8 +20,7 @@ public class Bewerten {
 //        H2 h2 = new H2();
 //        h2.setP(0.9);
 //
-//        S2G s2g = new S2G(1.0,0,1.0,7.0);
-//        s2g.setDescription("DHBW");
+//
 //
 //        R2S r2s = new R2S();
 //        r2sN.addImpact(0.5);
