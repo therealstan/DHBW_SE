@@ -5,7 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:o="http://openfaces.org/">
-<head>
+<h:head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <style type="text/css">
         .container{
@@ -26,32 +26,32 @@
             text-decoration-color: white;
         }
     </style>
-</head>
+</h:head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1 class="h1">Notenübersicht für <h:outputText value="#{user.firstName}"/></h1>
+    <div class="container">
+        <div class="header">
+            <h1 class="h1">Notenübersicht für <h:outputText value="#{user.firstName}"/> <h:outputText value="#{user.lastName}"/> </h1>
+        </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="table">
-        <o:dataTable var="Leistung" value="#{student}" style="border:1px dotted gray;">
-            <o:column id="fachColumn">
-                <f:facet name="header">
-                    <h:outputText value="Fach"/>
-                </f:facet>
-                <h:outputText value="#{student.getFach(user)}"/>
-            </o:column>
-            <o:column id="noteColumn">
-                <f:facet name="header">
-                    <h:outputText value="Note"/>
-                </f:facet>
-                <h:outputText value="#{student.getGrades(user)}"/>
-            </o:column>
-        </o:dataTable>
+    <div class = "container">
+        <div class="table">
+            <o:dataTable var="Leistung" value="#{student}" style="border:1px dotted gray;">
+                <o:column id ="fachColumn">
+                    <f:facet name="header">
+                        <h:outputText value="Fach" />
+                    </f:facet>
+                    <h:outputText value="#{student.getFach(user)}"/>
+                </o:column>
+                <o:column id = "noteColumn">
+                    <f:facet name="header">
+                        <h:outputText value="Note" />
+                    </f:facet>
+                    <h:outputText value="#{student.getGrades(user)}"/>
+                </o:column>
+            </o:dataTable>
+        </div>
     </div>
-</div>
 </body>
 
 </html>
