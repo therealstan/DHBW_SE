@@ -28,30 +28,30 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1 class="h1">Notenübersicht für <h:outputText value="#{user.name}" /> </h1>
-        </div>
+<div class="container">
+    <div class="header">
+        <h1 class="h1">Notenübersicht für <h:outputText value="#{user.firstName}"/></h1>
     </div>
+</div>
 
-    <div class = "container">
-        <div class="table">
-            <o:dataTable var="Leistung" value="#{student}" style="border:1px dotted gray;">
-                <o:column id ="fachColumn">
-                    <f:facet name="header">
-                        <h:outputText value="Fach" />
-                    </f:facet>
-                    <h:outputText value="#{student.getFach(user)}"/>
-                </o:column>
-                <o:column id = "noteColumn">
-                    <f:facet name="header">
-                        <h:outputText value="Note" />
-                    </f:facet>
-                    <h:outputText value="#{student.getGrades(user)}"/>
-                </o:column>
-            </o:dataTable>
-        </div>
+<div class="container">
+    <div class="table">
+        <o:dataTable var="Leistung" value="#{student}" style="border:1px dotted gray;">
+            <o:column id="fachColumn">
+                <f:facet name="header">
+                    <h:outputText value="Fach"/>
+                </f:facet>
+                <h:outputText value="#{student.getFach(user)}"/>
+            </o:column>
+            <o:column id="noteColumn">
+                <f:facet name="header">
+                    <h:outputText value="Note"/>
+                </f:facet>
+                <h:outputText value="#{student.getGrades(user)}"/>
+            </o:column>
+        </o:dataTable>
     </div>
+</div>
 </body>
 
 </html>

@@ -18,11 +18,16 @@ public class DatabaseCon {
 
     DataSource ds;
 
+    private Connection con;
+
     public DatabaseCon() {
         try {
             Context ctx = new InitialContext();
             ds = (DataSource) ctx.lookup("java:comp/env/jdbc/database");
+            con = ds.getConnection();
         } catch (NamingException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -34,10 +39,8 @@ public class DatabaseCon {
     public void setGrade(long courseID, long studentID, double grade) {
         if (getUserRole(studentID) == userRole.STUDENT) {
             PreparedStatement ps = null;
-            Connection con = null;
             try {
                 if (ds != null) {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "INSERT INTO grade(courseID, userID, grade) VALUES (?,?,?)";
                         ps = con.prepareStatement(sql);
@@ -51,9 +54,6 @@ public class DatabaseCon {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (con != null) {
-                        con.close();
-                    }
                     if (ps != null) {
                         ps.close();
                     }
@@ -68,10 +68,8 @@ public class DatabaseCon {
         List<Double> list = new ArrayList<Double>();
         if (getUserRole(studentID) == userRole.STUDENT) {
             PreparedStatement ps = null;
-            Connection con = null;
             try {
                 if (ds != null) {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "SELECT grade FROM grade WHERE userID = (?)";
                         ps = con.prepareStatement(sql);
@@ -86,9 +84,6 @@ public class DatabaseCon {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (con != null) {
-                        con.close();
-                    }
                     if (ps != null) {
                         ps.close();
                     }
@@ -104,10 +99,8 @@ public class DatabaseCon {
         List<String> list = new ArrayList<String>();
         if (getUserRole(studentID) == userRole.STUDENT) {
             PreparedStatement ps = null;
-            Connection con = null;
             try {
                 if (ds != null) {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "SELECT courseID FROM grade WHERE userID = (?)";
                         ps = con.prepareStatement(sql);
@@ -134,9 +127,6 @@ public class DatabaseCon {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (con != null) {
-                        con.close();
-                    }
                     if (ps != null) {
                         ps.close();
                     }
@@ -153,10 +143,8 @@ public class DatabaseCon {
 
         if (h2 != null && r2s != null && s2g != null) {
             PreparedStatement ps = null;
-            Connection con = null;
             try {
                 if (ds != null) {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "INSERT INTO template(name, h2_ID, s2g_ID, r2s_ID) VALUES(?,?,?,?)";
                         ps = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
@@ -176,9 +164,6 @@ public class DatabaseCon {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (con != null) {
-                        con.close();
-                    }
                     if (ps != null) {
                         ps.close();
                     }
@@ -195,10 +180,8 @@ public class DatabaseCon {
 
         if (object != null) {
             PreparedStatement ps = null;
-            Connection con = null;
             try {
                 if (ds != null) {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "INSERT INTO data(name, object) VALUES(?,?)";
                         ps = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
@@ -216,9 +199,6 @@ public class DatabaseCon {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (con != null) {
-                        con.close();
-                    }
                     if (ps != null) {
                         ps.close();
                     }
@@ -234,10 +214,8 @@ public class DatabaseCon {
         Object object = new Object();
 
         PreparedStatement ps;
-        Connection con;
         ResultSet rs;
         try {
-            con = ds.getConnection();
             if (con != null) {
                 String sql = "SELECT object FROM data WHERE id = (?)";
                 ps = con.prepareStatement(sql);
@@ -266,26 +244,20 @@ public class DatabaseCon {
         int i = 0;
         if (name != null) {
             PreparedStatement ps = null;
-            Connection con = null;
             try {
                 if (ds != null) {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "INSERT INTO user(name, password) VALUES(?,?)";
                         ps = con.prepareStatement(sql);
                         ps.setString(1, name);
                         ps.setString(2, PasswordHash.createHash(password));
                         i = ps.executeUpdate();
-                        setUserRole(getUserID(name), userRole.DEFAULT);
                     }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (con != null) {
-                        con.close();
-                    }
                     if (ps != null) {
                         ps.close();
                     }
@@ -294,23 +266,20 @@ public class DatabaseCon {
                 }
             }
         }
+        setUserRole(getUserID(name), getRoleID(userRole.DEFAULT));
         return i > 0;
     }
 
     public long getRoleID(userRole role) {
         long roleID = 0;
-
         PreparedStatement ps;
-        Connection con;
         try {
-            con = ds.getConnection();
             if (con != null) {
                 String sql = "SELECT roleID FROM userRole WHERE roleName = (?)";
-                ps = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
-                ps.setString(1, role.toString());
-                ps.executeQuery();
+                ps = con.prepareStatement(sql);
+                ps.setString(1, role.toString().toLowerCase());
 
-                ResultSet rs = ps.getGeneratedKeys();
+                ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
                     roleID = rs.getInt(1);
                 }
@@ -322,17 +291,14 @@ public class DatabaseCon {
         return roleID;
     }
 
-    public void setUserRole(long userID, userRole role) {
+    public void setUserRole(long userID, long roleID) {
         if (userID != 0) {
             PreparedStatement ps = null;
-            Connection con = null;
             try {
                 if (ds != null) {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "INSERT INTO userUserRole(userID,roleID) VALUES (?,?)";
                         ps = con.prepareStatement(sql);
-                        long roleID = getRoleID(role);
                         ps.setLong(1, userID);
                         ps.setLong(2, roleID);
                         ps.executeUpdate();
@@ -342,9 +308,6 @@ public class DatabaseCon {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (con != null) {
-                        con.close();
-                    }
                     if (ps != null) {
                         ps.close();
                     }
@@ -358,10 +321,8 @@ public class DatabaseCon {
     public void changeUserRole(long userID, userRole role) {
         if (userID != 0) {
             PreparedStatement ps = null;
-            Connection con = null;
             try {
                 if (ds != null) {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "DELETE from userUserRole where userID = '" + userID + "'";
                         ps = con.prepareStatement(sql);
@@ -378,9 +339,6 @@ public class DatabaseCon {
                 e.printStackTrace();
             } finally {
                 try {
-                    if (con != null) {
-                        con.close();
-                    }
                     if (ps != null) {
                         ps.close();
                     }
@@ -395,10 +353,9 @@ public class DatabaseCon {
         userRole role = null;
 
         PreparedStatement ps;
-        Connection con;
+
         ResultSet rs;
         try {
-            con = ds.getConnection();
             if (con != null) {
                 String sql = "select roleID from userUserRole where userID = '"
                         + userID + "'";
@@ -429,10 +386,8 @@ public class DatabaseCon {
 
         if (name != null) {
             PreparedStatement ps;
-            Connection con;
             if (ds != null) {
                 try {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "select id from user where name = '"
                                 + name + "'";
@@ -455,11 +410,8 @@ public class DatabaseCon {
 
         if (userID != 0) {
             PreparedStatement ps;
-            Connection con;
-
             if (ds != null) {
                 try {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "select name from user where id = '"
                                 + userID + "'";
@@ -482,11 +434,8 @@ public class DatabaseCon {
 
         if (userID != 0) {
             PreparedStatement ps;
-            Connection con;
-
             if (ds != null) {
                 try {
-                    con = ds.getConnection();
                     if (con != null) {
                         String sql = "select password from user where id = '"
                                 + userID + "'";
@@ -502,6 +451,65 @@ public class DatabaseCon {
             }
         }
         return passwordHash;
+    }
+
+    public String getFirstName(long userID) {
+        String firstName = null;
+
+        PreparedStatement ps;
+
+        ResultSet rs;
+        try {
+            if (con != null) {
+                String sql = "SELECT firstname FROM user WHERE id = (?)";
+                ps = con.prepareStatement(sql);
+                ps.setLong(1, userID);
+                rs = ps.executeQuery();
+
+                if (rs.next()) {
+                    firstName = rs.getString(1);
+                }
+            }
+        } catch (SQLException sqle) {
+            System.out.println("Kann mich nicht verbinden");
+            sqle.printStackTrace();
+        }
+        return firstName;
+    }
+
+    public String getLastName(long userID) {
+        String lastName = null;
+
+        PreparedStatement ps;
+
+        ResultSet rs;
+        try {
+            if (con != null) {
+                String sql = "SELECT lastname FROM user WHERE id = (?)";
+                ps = con.prepareStatement(sql);
+                ps.setLong(1, userID);
+                rs = ps.executeQuery();
+
+                if (rs.next()) {
+                    lastName = rs.getString(1);
+                }
+            }
+        } catch (SQLException sqle) {
+            System.out.println("Kann mich nicht verbinden");
+            sqle.printStackTrace();
+        }
+        return lastName;
+    }
+
+    public void close() {
+        try {
+            if (con != null) {
+                con.close();
+            } else
+                throw new Exception("Error with Connection");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static enum userRole {

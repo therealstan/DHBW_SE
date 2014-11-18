@@ -13,6 +13,8 @@ public class User {
             .getViewId().lastIndexOf("login.xhtml") > -1);
     private String name;
     private String password;
+    private String firstName;
+    private String lastName;
     private long userID;
     private DatabaseCon.userRole role;
     private DatabaseCon dbCon;
@@ -20,6 +22,14 @@ public class User {
 
     public User() {
         dbCon = new DatabaseCon();
+    }
+
+    public String getFirstName() {
+        return dbCon.getFirstName(userID);
+    }
+
+    public String getLastName() {
+        return dbCon.getLastName(userID);
     }
 
     public long getUserID() {
@@ -94,6 +104,7 @@ public class User {
     }
 
     public void logout() {
+        dbCon.close();
         FacesContext.getCurrentInstance().getExternalContext()
                 .invalidateSession();
         FacesContext
