@@ -128,9 +128,9 @@
 
                                 <o:dropDownField id="s2gDropdown1"
                                                  style="background: yellow; border 2px solid cornflowerblue; "
-                                                 promptText="Chose S2G Scheme" value="#{accessor.selectedCourse}">
+                                                 promptText="Kurs wählen" value="#{accessor.selectedCourse}">
 
-                                    <o:dropDownItems value="#{accessor.getCourseNameList(user)}"/>
+                                <o:dropDownItems value="#{accessor.getCourseNameList(user)}"/>
                                 </o:dropDownField>
 
                         </div>
@@ -140,9 +140,9 @@
 
                                 <o:dropDownField id="s2gDropdown2"
                                                  style="background: yellow; border 2px solid cornflowerblue; "
-                                                 promptText="Chose S2G Scheme" value="#{accessor.selectedStudent}">
+                                                 promptText="Student wählen" value="#{accessor.selectedStudent}">
 
-                                    <o:dropDownItems value="#{accessor.getStudentList(user)}"/>
+                                <o:dropDownItems value="#{accessor.getStudentList(user)}"/>
                                 </o:dropDownField>
 
 
@@ -285,15 +285,20 @@
         <div class="row clearfix">
             <div class="column">
 
-                    <o:commandButton value="Bewerten" action="#{accessor.setGrade(user)}"/>
-
+                <o:commandButton value="Bewerten" action="#{accessor.setGrade()}"></o:commandButton>
 
             </div>
         </div>
         <div class="row clearfix"></div>
         <div class="row clearfix">
             <div class="column half"> Errechnete Note</div>
-            <div class="column half"><h:outputText value="#{user.dbCon.getGrade(user.userID)}"/></div>
+            <div class="column half"><h:outputText binding="#{accessor.gradeOutputText}" value="#{accessor.grade}"/>
+            </div>
+        </div>
+        <div class="column">
+
+            <o:commandButton value="Submit" action="#{accessor.submitGrade(user)}"></o:commandButton>
+
         </div>
 
     </div>

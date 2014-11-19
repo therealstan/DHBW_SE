@@ -1,5 +1,6 @@
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIOutput;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,12 +36,22 @@ public class AccessorBean {
     S2G s2g;
     R2S r2s;
     List<Long> studentID;
+    UIOutput gradeOutputText;
     private boolean h2Boolean;
     private String selectedCourse;
     private String selectedStudent;
+    private String grade;
 
     public AccessorBean() {
 
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 
     public boolean getH2Boolean() {
@@ -267,13 +278,19 @@ public class AccessorBean {
         return -1;
     }
 
-    public String setGrade(User user) {
-        DatabaseCon dbCon = user.getDbCon();
+    public UIOutput getGradeOutputText() {
+        return gradeOutputText;
+    }
+
+    public void setGradeOutputText(UIOutput gradeOutputText) {
+        this.gradeOutputText = gradeOutputText;
+    }
+
+    public void setGrade() {
 
         r2s.addRate(Double.parseDouble(rate1), 0);
         r2s.addRate(Double.parseDouble(rate2), 1);
         r2s.addRate(Double.parseDouble(rate3), 2);
-
 
         double score = 0;
         try {
@@ -281,9 +298,16 @@ public class AccessorBean {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        grade = String.valueOf(s2g.getGrade(score));
+        gradeOutputText.setValue(grade);
+    }
 
-        dbCon.setGrade(courseID, getStudentID(dbCon), s2g.getGrade(score));
-
-        return "success";
+    public String submitGrade(User user) {
+        if (grade != null) {
+            DatabaseCon dbCon = user.getDbCon();
+            dbCon.setGrade(courseID, getStudentID(dbCon), Double.parseDouble(grade));
+            return "success";
+        } else
+            return "error";
     }
 }
