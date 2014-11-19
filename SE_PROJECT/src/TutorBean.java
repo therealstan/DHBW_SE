@@ -153,8 +153,31 @@ public class TutorBean {
 
     //endregion
 
-    public String setValues(DatabaseCon dbCon) {
-        this.dbCon = dbCon;
+    private void updateTemplateID(DatabaseCon dbCon, long templateID, long accessorID) {
+        PreparedStatement ps;
+        Connection con;
+
+        DataSource ds = dbCon.getDs();
+
+        if (ds != null) {
+            try {
+                con = ds.getConnection();
+                if (con != null) {
+                    String sql = "UPDATE course SET templateID = (?) WHERE accessorID = (?)";
+                    ps = con.prepareStatement(sql);
+                    ps.setLong(1, templateID);
+                    ps.setLong(2, accessorID);
+                    ps.executeUpdate();
+                }
+            } catch (SQLException sqle) {
+                System.out.println("Kann mich nicht verbinden");
+                sqle.printStackTrace();
+            }
+        }
+    }
+
+    public String setValues(User user) {
+        this.dbCon = user.getDbCon();
 
 //        S2G tt = new S2G(1.0,0,1.0,7.0);
 //        tt.setDescription("DHBW");
@@ -183,6 +206,8 @@ public class TutorBean {
         r2s.addImpact(impact3Name, impact3);
 
         long templateID = dbCon.addTemplate(templateName, h2, r2s, s2g);
+
+        updateTemplateID(dbCon, templateID, 29);
 
         if (templateID != -1)
             return "success";
