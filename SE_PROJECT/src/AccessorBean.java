@@ -267,7 +267,7 @@ public class AccessorBean {
         return -1;
     }
 
-    public void setGrade(User user) {
+    public String setGrade(User user) {
         DatabaseCon dbCon = user.getDbCon();
 
         r2s.addRate(Double.parseDouble(rate1), 0);
@@ -283,5 +283,7 @@ public class AccessorBean {
         }
 
         dbCon.setGrade(courseID, getStudentID(dbCon), s2g.getGrade(score));
+
+        return "success";
     }
 }
