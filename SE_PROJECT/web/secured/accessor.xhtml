@@ -12,16 +12,22 @@
     <title>Login Page</title>
     <style type="text/css">
         /* Small screens (default) */
-        html { font-size: 100%; }
+        html {
+            font-size: 100%;
+        }
 
         /* Medium screens (640px) */
         @media (min-width: 40rem) {
-            html { font-size: 112%; }
+            html {
+                font-size: 112%;
+            }
         }
 
         /* Large screens (1024px) */
         @media (min-width: 64rem) {
-            html { font-size: 120%; }
+            html {
+                font-size: 120%;
+            }
         }
 
         *, *:before, *:after {
@@ -43,14 +49,32 @@
                 padding-right: 1rem;
             }
 
-            .column.full { width: 100%; }
-            .column.two-thirds { width: 66.7%; }
-            .column.half { width: 50%; }
-            .column.third { width: 33.3%; }
-            .column.fourth { width: 25%; }
-            .column.fourth.top{}
+            .column.full {
+                width: 100%;
+            }
 
-            .column.flow-opposite { float: right; }
+            .column.two-thirds {
+                width: 66.7%;
+            }
+
+            .column.half {
+                width: 50%;
+            }
+
+            .column.third {
+                width: 33.3%;
+            }
+
+            .column.fourth {
+                width: 25%;
+            }
+
+            .column.fourth.top {
+            }
+
+            .column.flow-opposite {
+                float: right;
+            }
         }
 
         .clearfix:before,
@@ -66,7 +90,6 @@
         .clearfix {
             *zoom: 1;
         }
-
 
 
     </style>
@@ -102,7 +125,8 @@
                     <div class="row clearfix">
                         <div class="column">
                             <h:form>
-                                <o:dropDownField id="s2gDropdown1" style="background: yellow; border 2px solid cornflowerblue; "
+                                <o:dropDownField id="s2gDropdown1"
+                                                 style="background: yellow; border 2px solid cornflowerblue; "
                                                  promptText="Chose S2G Scheme" value="#{accessor.selectedCourse}">
 
                                     <o:dropDownItems value="#{accessor.getCourseNameList(user)}"/>
@@ -113,7 +137,8 @@
                     <div class="row clearfix">
                         <div class="column">
                             <h:form>
-                                <o:dropDownField id="s2gDropdown2" style="background: yellow; border 2px solid cornflowerblue; "
+                                <o:dropDownField id="s2gDropdown2"
+                                                 style="background: yellow; border 2px solid cornflowerblue; "
                                                  promptText="Chose S2G Scheme" value="#{accessor.selectedStudent}">
 
                                     <o:dropDownItems value="#{accessor.getStudentList(user)}"/>
@@ -129,7 +154,7 @@
         </div>
 
         <div class="row clearfix">
-            <div class = "column">
+            <div class="column">
                 <div class="container">
                     <div class="column half">
                         Hollistische Bewertung
@@ -149,7 +174,7 @@
 
         </div>
         <div class="row clearfix">
-            <div class = "column fourth">
+            <div class="column fourth">
                 <div class="container">
                     <div class="row clearfix">
                         <div class="column">
@@ -173,7 +198,7 @@
                     </div>
                 </div>
             </div>
-            <div class = "column fourth">
+            <div class="column fourth">
                 <div class="container">
                     <div class="row clearfix">
                         <div class="column">
@@ -197,7 +222,7 @@
                     </div>
                 </div>
             </div>
-            <div class = "column fourth">
+            <div class="column fourth">
                 <div class="container">
                     <div class="row clearfix">
                         <div class="column">
@@ -249,8 +274,8 @@
         <div class="row clearfix">
             <div class="column">
                 <h:form>
-                    <o:commandButton value="Bewerten" action="#{bewerten.start(user.dbCon)}"/>
-                 </h:form>
+                    <o:commandButton value="Bewerten" action="#{accessor.setGrade(user)}"/>
+                </h:form>
 
             </div>
         </div>

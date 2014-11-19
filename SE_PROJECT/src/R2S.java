@@ -80,7 +80,7 @@ public class R2S implements Serializable {
 
             int i = 0;
             for (Double d : rate) {
-                if(impacts.get(i) != Double.NaN)
+                if (impacts.get(i) != Double.NaN && i < impacts.size())
                 {
                     score = (1-Math.pow((impacts.get(i)*(1-score)),d))/(1-impacts.get(i)*(1-score))*score;
                 }

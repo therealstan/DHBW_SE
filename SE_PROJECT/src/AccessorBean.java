@@ -270,9 +270,9 @@ public class AccessorBean {
     public void setGrade(User user) {
         DatabaseCon dbCon = user.getDbCon();
 
-        r2s.addRate(Double.parseDouble(rate1), 1);
-        r2s.addRate(Double.parseDouble(rate2), 2);
-        r2s.addRate(Double.parseDouble(rate3), 3);
+        r2s.addRate(Double.parseDouble(rate1), 0);
+        r2s.addRate(Double.parseDouble(rate2), 1);
+        r2s.addRate(Double.parseDouble(rate3), 2);
 
 
         double score = 0;
