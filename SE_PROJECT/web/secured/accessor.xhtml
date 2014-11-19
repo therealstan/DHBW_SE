@@ -4,6 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:o="http://openfaces.org/" xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+    <f:event type="preRenderView" listener="#{accessor.onPageLoaded(user)}"/>
+</f:metadata>
 <h:head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Login Page</title>
@@ -99,18 +102,18 @@
                     <div class="row clearfix">
                         <div class="column">
                             <o:dropDownField id="s2gDropdown1" style="background: yellow; border 2px solid cornflowerblue; "
-                                             promptText="Chose S2G Scheme" value="#{tutor.selectedS2G}">
+                                             promptText="Chose S2G Scheme" value="#{accessor.selectedCourse}">
 
-                                <o:dropDownItems value="#{tutor.getS2GStringList(user.dbCon)}"/>
+                                <o:dropDownItems value="#{accessor.getCourseNameList(user)}"/>
                             </o:dropDownField>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
                             <o:dropDownField id="s2gDropdown2" style="background: yellow; border 2px solid cornflowerblue; "
-                                             promptText="Chose S2G Scheme" value="#{tutor.selectedS2G}">
+                                             promptText="Chose S2G Scheme" value="#{accessor.selectedStudent}">
 
-                                <o:dropDownItems value="#{tutor.getS2GStringList(user.dbCon)}"/>
+                                <o:dropDownItems value="#{accessor.getStudentList(user)}"/>
                             </o:dropDownField>
                         </div>
                     </div>
@@ -127,8 +130,8 @@
                         Hollistische Bewertung
                     </div>
                     <div class="column third">
-                        <h:selectOneRadio id="radio1">
-                            <f:selectItem itemValue="P" itemLabel="P" />
+                        <h:selectOneRadio id="radio1" value="#{accessor.h2Boolean}">
+                        <f:selectItem itemValue="P" itemLabel="P" />
                             <f:selectItem itemValue="1-P" itemLabel="1-P"/>
                         </h:selectOneRadio>
 
@@ -148,17 +151,17 @@
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:outputText value="Name1"/>
+                            <h:outputText value="#{accessor.name1}"/>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:outputText value="Name2"/>
+                            <h:outputText value="#{accessor.name2}"/>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:outputText value="Name3"/>
+                            <h:outputText value="#{accessor.name3}"/>
                         </div>
                     </div>
                 </div>
@@ -172,17 +175,17 @@
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:outputText value="Rate1"/>
+                            <h:outputText value="#{accessor.rate1}"/>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:outputText value="Rate2"/>
+                            <h:outputText value="#{accessor.rate2}"/>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:outputText value="Rate3"/>
+                            <h:outputText value="#{accessor.rate3}"/>
                         </div>
                     </div>
                 </div>
