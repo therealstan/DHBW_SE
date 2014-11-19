@@ -101,20 +101,25 @@
                 <div class="container">
                     <div class="row clearfix">
                         <div class="column">
-                            <o:dropDownField id="s2gDropdown1" style="background: yellow; border 2px solid cornflowerblue; "
-                                             promptText="Chose S2G Scheme" value="#{accessor.selectedCourse}">
+                            <h:form>
+                                <o:dropDownField id="s2gDropdown1" style="background: yellow; border 2px solid cornflowerblue; "
+                                                 promptText="Chose S2G Scheme" value="#{accessor.selectedCourse}">
 
-                                <o:dropDownItems value="#{accessor.getCourseNameList(user)}"/>
-                            </o:dropDownField>
+                                    <o:dropDownItems value="#{accessor.getCourseNameList(user)}"/>
+                                </o:dropDownField>
+                            </h:form>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <o:dropDownField id="s2gDropdown2" style="background: yellow; border 2px solid cornflowerblue; "
-                                             promptText="Chose S2G Scheme" value="#{accessor.selectedStudent}">
+                            <h:form>
+                                <o:dropDownField id="s2gDropdown2" style="background: yellow; border 2px solid cornflowerblue; "
+                                                 promptText="Chose S2G Scheme" value="#{accessor.selectedStudent}">
 
-                                <o:dropDownItems value="#{accessor.getStudentList(user)}"/>
-                            </o:dropDownField>
+                                    <o:dropDownItems value="#{accessor.getStudentList(user)}"/>
+                                </o:dropDownField>
+                            </h:form>
+
                         </div>
                     </div>
 
@@ -236,7 +241,8 @@
             <div class="column">
                 <h:form>
                     <o:commandButton value="Bewerten" action="#{bewerten.start(user.dbCon)}"/>
-                </h:form>
+                 </h:form>
+
             </div>
         </div>
         <div class="row clearfix"></div>

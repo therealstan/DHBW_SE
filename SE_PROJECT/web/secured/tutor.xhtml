@@ -194,13 +194,13 @@
             Profil wählen
         </div>
         <div class="column two-thirds">
-
+        <h:form>
             <o:dropDownField id="s2gDropdown" style="background: yellow; border 2px solid cornflowerblue; "
                              promptText="Chose S2G Scheme" value="#{tutor.selectedS2G}">
 
                 <o:dropDownItems value="#{tutor.getS2GStringList(user.dbCon)}"/>
             </o:dropDownField>
-
+        </h:form>
         </div>
     </div>
     <div class="row clearfix">
