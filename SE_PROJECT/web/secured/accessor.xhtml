@@ -135,11 +135,13 @@
                         Hollistische Bewertung
                     </div>
                     <div class="column third">
-                        <h:selectOneRadio id="radio1" value="#{accessor.h2Boolean}">
-                            <f:selectItem itemValue="P" itemLabel="P"/>
-                            <f:selectItem itemValue="1-P" itemLabel="1-P"/>
-                        </h:selectOneRadio>
+                        <h:form>
+                            <h:selectOneRadio id="radio1" value="#{accessor.h2Boolean}">
+                                <f:selectItem itemValue="P" itemLabel="P"/>
+                                <f:selectItem itemValue="1-P" itemLabel="1-P"/>
+                            </h:selectOneRadio>
 
+                        </h:form>
                     </div>
                 </div>
             </div>
@@ -204,32 +206,39 @@
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <o:inputText id="rate1"
-                                         style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
-                                         promptText="Rate1"
-                                         promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
-                                         focusedStyle="border: 1px solid green;"
-                                         value="#{accessor.rate1}"/>
+                            <h:form>
+                                <o:inputText id="rate1"
+                                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+                                             promptText="Rate1"
+                                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                                             focusedStyle="border: 1px solid green;"
+                                             value="#{accessor.rate1}"/>
+                            </h:form>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <o:inputText id="rate2"
-                                         style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
-                                         promptText="Rate2"
-                                         promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
-                                         focusedStyle="border: 1px solid green;"
-                                         value="#{accessor.rate2}"/>
+                            <h:form>
+                                <o:inputText id="rate2"
+                                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+                                             promptText="Rate2"
+                                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                                             focusedStyle="border: 1px solid green;"
+                                             value="#{accessor.rate2}"/>
+                            </h:form>
+
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <o:inputText id="rate3"
-                                         style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
-                                         promptText="Rate3"
-                                         promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
-                                         focusedStyle="border: 1px solid green;"
-                                         value="#{accessor.rate3}"/>
+                            <h:form>
+                                <o:inputText id="rate3"
+                                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+                                             promptText="Rate3"
+                                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                                             focusedStyle="border: 1px solid green;"
+                                             value="#{accessor.rate3}"/>
+                            </h:form>
                         </div>
                     </div>
                 </div>
