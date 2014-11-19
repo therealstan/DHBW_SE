@@ -59,4 +59,24 @@
             <to-view-id>/unsuccess.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+
+    <navigation-rule>
+    <description>erfolgreich bewertet</description>
+    <from-view-id>/secured/accessor.xhtml</from-view-id>
+    <navigation-case>
+        <from-action>#{accessor.setGrade(user)}</from-action>
+        <from-outcome>success</from-outcome>
+        <to-view-id>/evaluationSuccess.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+    <navigation-rule>
+        <description>template angelegt</description>
+        <from-view-id>/secured/tutor.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{tutor.setValues(user)}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/templateSuccess.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
