@@ -11,8 +11,9 @@ import java.sql.SQLException;
 public class H2 implements Serializable {
 
     private double p;
+    private String name;
 
-    public static long getID(DatabaseCon dbCon, long templateID){
+    public static long getID(DatabaseCon dbCon, long templateID) {
         long id = -1;
 
         DataSource ds = dbCon.getDs();
@@ -23,7 +24,7 @@ public class H2 implements Serializable {
         try {
             con = ds.getConnection();
             if (con != null) {
-                String sql = "select h2_ID from template where id = (?)";
+                String sql = "SELECT h2_ID FROM template WHERE id = (?)";
                 ps = con.prepareStatement(sql);
                 ps.setLong(1, templateID);
                 rs = ps.executeQuery();
@@ -36,6 +37,14 @@ public class H2 implements Serializable {
             sqle.printStackTrace();
         }
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setP(double p) {

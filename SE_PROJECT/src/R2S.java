@@ -15,7 +15,15 @@ public class R2S implements Serializable {
     private List<Double> impacts;
     private List<Double> rate;
 
-    public static long getID(DatabaseCon dbCon, long templateID){
+    private List<String> name;
+
+    public R2S() {
+        this.impacts = new ArrayList<Double>();
+        this.rate = new ArrayList<Double>();
+        this.name = new ArrayList<String>();
+    }
+
+    public static long getID(DatabaseCon dbCon, long templateID) {
         long id = -1;
 
         DataSource ds = dbCon.getDs();
@@ -26,7 +34,7 @@ public class R2S implements Serializable {
         try {
             con = ds.getConnection();
             if (con != null) {
-                String sql = "select r2s_ID from template where id = (?)";
+                String sql = "SELECT r2s_ID FROM template WHERE id = (?)";
                 ps = con.prepareStatement(sql);
                 ps.setLong(1, templateID);
                 rs = ps.executeQuery();
@@ -41,19 +49,19 @@ public class R2S implements Serializable {
         return id;
     }
 
-    public R2S()
-    {
-        this.impacts = new ArrayList<Double>();
-        this.rate = new ArrayList<Double>();
-    }
-
-    public void addImpact(double impact){
-        if(impact >= 0 && impact <= 1)
+    public void addImpact(String name, double impact) {
+        if (impact >= 0 && impact <= 1) {
             this.impacts.add(impact);
+            this.name.add(name);
+        }
     }
 
     public List<Double> getImpacts() {
         return impacts;
+    }
+
+    public List<String> getName() {
+        return name;
     }
 
     public void addRate(double rate, int index){
@@ -69,10 +77,15 @@ public class R2S implements Serializable {
         double score = 0;
         if(!rate.isEmpty()){
             score = h2.boolToScore(b);
-            /*
-            ToDo:
-            Formel für Refinement
-             */
+
+            int i = 0;
+            for (Double d : rate) {
+                if (impacts.get(i) != Double.NaN && i < impacts.size())
+                {
+                    score = (1-Math.pow((impacts.get(i)*(1-score)),d))/(1-impacts.get(i)*(1-score))*score;
+                }
+                i++;
+            }
         }
         return score;
     }

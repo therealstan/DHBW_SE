@@ -10,15 +10,22 @@ import java.sql.SQLException;
  */
 public class S2G implements Serializable{
 
-    private int studID;
-    private int kursID;
-
+    public boolean isSerialized = false;
     private double curvature;
     private double polarity;
     private double gMin;
     private double gMax;
+    private long id;
+    private String description;
 
-    public static long getID(DatabaseCon dbCon, long templateID){
+    public S2G(double curvature, double polarity, double gMin, double gMax) {
+        this.curvature = curvature;
+        this.polarity = polarity;
+        this.gMin = gMin;
+        this.gMax = gMax;
+    }
+
+    public static long getID(DatabaseCon dbCon, long templateID) {
         long id = -1;
 
         DataSource ds = dbCon.getDs();
@@ -29,7 +36,7 @@ public class S2G implements Serializable{
         try {
             con = ds.getConnection();
             if (con != null) {
-                String sql = "select s2g_ID from template where id = (?)";
+                String sql = "SELECT s2g_ID FROM template WHERE id = (?)";
                 ps = con.prepareStatement(sql);
                 ps.setLong(1, templateID);
                 rs = ps.executeQuery();
@@ -44,28 +51,54 @@ public class S2G implements Serializable{
         return id;
     }
 
-
-    public S2G(double curvature, double polarity, double gMin, double gMax)
-    {
-        this.curvature = curvature;
-        this.polarity = polarity;
-        this.gMin = gMin;
-        this.gMax = gMax;
+    public long getID() {
+        return id;
     }
 
-    public void assignStudent(int studID, int kursID) {
-        this.studID = studID;
-        this.kursID = kursID;
-    }
+    private long previousID(DatabaseCon dbCon) {
+        long id = 0;
+        PreparedStatement ps;
+        Connection con = null;
+        try {
+            con = dbCon.getDs().getConnection();
+            if (con != null) {
+                String sql = "SELECT id FROM data WHERE id=(SELECT max(id) FROM data)";
+                ps = con.prepareStatement(sql);
 
-    public double getGrade(double score)
-    {
-        double grade = 0;
-
-        if(studID != 0 && kursID != 0) {
-            //DHBW
-            grade = Math.min(5, gMin + (gMax + gMin) * (1 - score));
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    id = rs.getInt(1);
+                }
+            }
+        } catch (SQLException sqle) {
+            System.out.println("Kann mich nicht verbinden");
+            sqle.printStackTrace();
         }
+        return id;
+    }
+
+    public void serialize(DatabaseCon dbCon) throws Exception {
+        isSerialized = true;
+        this.id = previousID(dbCon) + 1;
+        if (id == 0)
+            throw new Exception("Error");
+        dbCon.serializeObject(this);
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getGrade(double score) {
+        double grade;
+
+        //DHBW
+        grade = Math.min(5, gMin + (gMax + gMin) * (1 - score));
+
         return grade;
     }
 }

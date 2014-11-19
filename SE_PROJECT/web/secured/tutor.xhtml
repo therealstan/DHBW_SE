@@ -1,26 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:o="http://openfaces.org/">
 
 <h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Login Page</title>
-</h:head>
-<h:body>
-    <f:view>
-        <h:form id="test">
-            <table frame="box">
-                <tr>
-                    <th>Dozent</th>
-                </tr>
+    <style type="text/css">
+        /* Small screens (default) */
+        html { font-size: 100%; }
 
-                <tr>
-                    <td><h:commandButton value="Test" action="#{bewerten.start(user.dbCon)}"/></td>
-                </tr>
-            </table>
-        </h:form>
-    </f:view>
+        /* Medium screens (640px) */
+        @media (min-width: 40rem) {
+            html { font-size: 112%; }
+        }
+
+        /* Large screens (1024px) */
+        @media (min-width: 64rem) {
+            html { font-size: 120%; }
+        }
+
+        *, *:before, *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 48rem;
+            width: 90%;
+        }
+
+        @media (min-width: 40rem) {
+            .column {
+                float: left;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .column.full { width: 100%; }
+            .column.two-thirds { width: 66.7%; }
+            .column.half { width: 50%; }
+            .column.third { width: 33.3%; }
+            .column.fourth { width: 25%; }
+            .column.fourth.middle{vertical-align: middle;}
+
+            .column.flow-opposite { float: right; }
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+
+
+    </style>
+</h:head>
+
+<h:body>
+<h:form>
+<div class="container">
+  <div class="row clearfix">
+      <div class="column half">
+          <h1>Template konfigurator</h1>
+      </div>
+  </div>
+  <div class="row clearfix">
+           <div class="column fourth">
+            <h3>Template bennen:</h3>
+
+          </div>
+          <div class="column fourth middle" >
+              <o:inputText id="templateName"
+                           style="background: lightyellow; border: 2px solid green; width: 10rem; color: brown; font-weight: bold;"
+                           promptText="Template Name"
+                           promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                           focusedStyle="border: 1px solid green;"
+                           value="#{tutor.templateName}" />
+          </div>
+
+  </div>
+  <div class="row clearfix">
+      <div class="column third">
+          <h3>H2 Konfigurieren</h3>
+      </div>
+  </div>
+  <div class="row clearfix">
+        <div class="column third">
+            <o:inputText id="h2name"
+                             style="background: beige; border: 2px solid green; width: 80px; color: brown; font-weight: bold;"
+                             promptText="Name"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"
+                             value="#{tutor.h2Name}"/>
+        </div>
+        <div class="column two-thirds">
+            <o:inputTextarea id="h2threshold"
+                             style="background: beige; border: 2px solid pink; width: 80px; color: brown; font-weight: bold;"
+                             promptText="H2 threshold"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"
+                             value="#{tutor.h2Threshold}"/>
+        </div>
+  </div>
+    <div class="row clearfix">
+        <div class="column third">
+            <h3>R2S - Impacts festlegen</h3>
+        </div>
+    </div>
+    <!-- Impact Nummer 1 -->
+    <div class="row clearfix">
+        <div class="column third">
+            <o:inputTextarea id="impact1Name"
+                             style="background: white; border: 2px solid blue; width: 100px; color: brown; font-weight: bold;"
+                             promptText="Impact1 Name"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"
+                             value="#{tutor.impact1Name}"/>
+        </div>
+        <div class="column two-thirds">
+            <o:inputTextarea id="impact1Value"
+                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+                             promptText="Impact1"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"
+                             value="#{tutor.impact1}"/>
+        </div>
+
+    </div>
+    <!-- Impact Nummer 2 -->
+    <div class="row clearfix">
+        <div class="column third">
+
+            <o:inputTextarea id="impact2Name"
+                             style="background: white; border: 2px solid blue; width: 100px; color: brown; font-weight: bold;"
+                             promptText="Impact2 Name"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"
+                             value="#{tutor.impact2Name}"/>
+
+        </div>
+        <div class="column two-thirds">
+
+            <o:inputTextarea id="impact2Value"
+                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+                             promptText="Impact2"
+                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                             focusedStyle="border: 1px solid green;"
+                             value="#{tutor.impact2}"/>
+
+        </div>
+
+    </div>
+    <!-- Impact Nummer 3 -->
+    <div class="row clearfix">
+        <div class="column third">
+
+                <o:inputTextarea id="impact3Name"
+                                 style="background: white; border: 2px solid blue; width: 100px; color: brown; font-weight: bold;"
+                                 promptText="Impact2 Name"
+                                 promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                                 focusedStyle="border: 1px solid green;"
+                                 value="#{tutor.impact3Name}"/>
+
+        </div>
+        <div class="column two-thirds">
+
+                <o:inputTextarea id="impact3Value"
+                                 style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+                                 promptText="Impact3"
+                                 promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                                 focusedStyle="border: 1px solid green;"
+                                 value="#{tutor.impact3}"/>
+
+
+        </div>
+
+    </div>
+
+    <div class="row clearfix">
+        <div class="column third">
+            <h3>Notenkonvertierungsprofile:</h3>
+        </div>
+
+
+    </div>
+    <div class="row clearfix">
+        <div class="column third">
+            Profil wählen
+        </div>
+        <div class="column two-thirds">
+
+            <o:dropDownField id="s2gDropdown" style="background: yellow; border 2px solid cornflowerblue; "
+                             promptText="Chose S2G Scheme" value="#{tutor.selectedS2G}">
+
+                <o:dropDownItems value="#{tutor.getS2GStringList(user.dbCon)}"/>
+            </o:dropDownField>
+
+        </div>
+    </div>
+    <div class="row clearfix">
+    <div class="column fourth">
+
+        <o:commandButton value="Submit" action="#{tutor.setValues(user)}"/>
+
+    </div>
+    </div>
+</div>
+</h:form>
 </h:body>
 </html>

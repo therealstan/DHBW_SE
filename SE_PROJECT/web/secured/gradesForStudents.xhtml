@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:o="http://openfaces.org/">
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        .container{
+            margin-left: 6em;
+            height: 4em;
+            margin-right: 30em;
+        }
+
+        .header{
+
+            text-align: center;
+            vertical-align: middle;
+            height: 3em;
+            background-color: lightgrey;
+
+        }
+        .h1{
+            text-decoration-color: white;
+        }
+    </style>
+</h:head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="h1">Notenübersicht für <h:outputText value="#{user.firstName}"/> <h:outputText value="#{user.lastName}"/> </h1>
+        </div>
+    </div>
+
+    <div class = "container">
+        <div class="table">
+            <o:dataTable var="Leistung" value="#{student}" style="border:1px dotted gray;">
+                <o:column id ="fachColumn">
+                    <f:facet name="header">
+                        <h:outputText value="Fach" />
+                    </f:facet>
+                    <h:outputText value="#{student.getFach(user)}"/>
+                </o:column>
+                <o:column id = "noteColumn">
+                    <f:facet name="header">
+                        <h:outputText value="Note" />
+                    </f:facet>
+                    <h:outputText value="#{student.getGrades(user)}"/>
+                </o:column>
+            </o:dataTable>
+        </div>
+    </div>
+</body>
+
+</html>

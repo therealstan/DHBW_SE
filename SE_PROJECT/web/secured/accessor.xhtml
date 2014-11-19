@@ -3,9 +3,301 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Prüfer"/>
-</f:view>
+      xmlns:o="http://openfaces.org/" xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+    <f:event type="preRenderView" listener="#{accessor.onPageLoaded(user)}"/>
+</f:metadata>
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Login Page</title>
+    <style type="text/css">
+        /* Small screens (default) */
+        html {
+            font-size: 100%;
+        }
+
+        /* Medium screens (640px) */
+        @media (min-width: 40rem) {
+            html {
+                font-size: 112%;
+            }
+        }
+
+        /* Large screens (1024px) */
+        @media (min-width: 64rem) {
+            html {
+                font-size: 120%;
+            }
+        }
+
+        *, *:before, *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 48rem;
+            width: 90%;
+        }
+
+        @media (min-width: 40rem) {
+            .column {
+                float: left;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .column.full {
+                width: 100%;
+            }
+
+            .column.two-thirds {
+                width: 66.7%;
+            }
+
+            .column.half {
+                width: 50%;
+            }
+
+            .column.third {
+                width: 33.3%;
+            }
+
+            .column.fourth {
+                width: 25%;
+            }
+
+            .column.fourth.top {
+            }
+
+            .column.flow-opposite {
+                float: right;
+            }
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+
+
+    </style>
+</h:head>
+
+
+<h:body>
+<h:form>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="column">
+                <h1>Bewerten einer Prüfung</h1>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="column fourth">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="column">
+                            Kurs wählen
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+                            Student wählen
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="column fourth">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="column">
+
+                                <o:dropDownField id="s2gDropdown1"
+                                                 style="background: yellow; border 2px solid cornflowerblue; "
+                                                 promptText="Chose S2G Scheme" value="#{accessor.selectedCourse}">
+
+                                    <o:dropDownItems value="#{accessor.getCourseNameList(user)}"/>
+                                </o:dropDownField>
+
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+
+                                <o:dropDownField id="s2gDropdown2"
+                                                 style="background: yellow; border 2px solid cornflowerblue; "
+                                                 promptText="Chose S2G Scheme" value="#{accessor.selectedStudent}">
+
+                                    <o:dropDownItems value="#{accessor.getStudentList(user)}"/>
+                                </o:dropDownField>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="column">
+                <div class="container">
+                    <div class="column two-thirds">
+                        Hollistische Bewertung
+                    </div>
+                    <div class="column third">
+
+                            <h:selectOneRadio id="radio1" value="#{accessor.h2Boolean}">
+                                <f:selectItem itemValue="true" itemLabel="=)"/>
+                                <f:selectItem itemValue="false" itemLabel="=("/>
+                            </h:selectOneRadio>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row clearfix">
+            <div class="column fourth">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="column">
+                            Name
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+                            <h:outputText value="#{accessor.name1}"/>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+                            <h:outputText value="#{accessor.name2}"/>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+                            <h:outputText value="#{accessor.name3}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column fourth">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="column">
+                            Impacts
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+                            <h:outputText value="#{accessor.impact1}"/>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+                            <h:outputText value="#{accessor.impact2}"/>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+                            <h:outputText value="#{accessor.impact3}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column fourth">
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="column">
+                            Rates
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+
+
+
+                                <h:inputText id="rate1"
+
+                                             promptText="Rate1"
+                                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                                             focusedStyle="border: 1px solid green;"
+                                             immediate="true"
+                                             value="#{accessor.rate1}"/>
+
+
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+
+
+                                <h:inputText id="rate2"
+
+                                             promptText="Rate2"
+                                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                                             focusedStyle="border: 1px solid green;"
+                                             immediate="true"
+                                             value="#{accessor.rate2}"/>
+
+
+
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+
+
+                                <h:inputText id="rate3"
+
+                                             promptText="Rate3"
+                                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                                             focusedStyle="border: 1px solid green;"
+                                             immediate="true"
+                                             value="#{accessor.rate3}"/>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row clearfix">
+            <div class="column">
+
+                    <o:commandButton value="Bewerten" action="#{accessor.setGrade(user)}"/>
+
+
+            </div>
+        </div>
+        <div class="row clearfix"></div>
+        <div class="row clearfix">
+            <div class="column half"> Errechnete Note</div>
+            <div class="column half"><h:outputText value="#{user.dbCon.getGrade(user.userID)}"/></div>
+        </div>
+
+    </div>
+
+</h:form>
+</h:body>
 </html>

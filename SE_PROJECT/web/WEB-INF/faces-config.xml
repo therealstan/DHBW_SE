@@ -11,7 +11,7 @@
         <navigation-case>
             <from-action>#{user.login}</from-action>
             <from-outcome>student</from-outcome>
-            <to-view-id>/secured/student.xhtml</to-view-id>
+            <to-view-id>/secured/gradesForStudents.xhtml</to-view-id>
         </navigation-case>
 
         <navigation-case>
@@ -57,6 +57,26 @@
             <from-action>#{user.add}</from-action>
             <from-outcome>unsuccess</from-outcome>
             <to-view-id>/unsuccess.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+    <description>erfolgreich bewertet</description>
+    <from-view-id>/secured/accessor.xhtml</from-view-id>
+    <navigation-case>
+        <from-action>#{accessor.setGrade(user)}</from-action>
+        <from-outcome>success</from-outcome>
+        <to-view-id>/evaluationSuccess.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+    <navigation-rule>
+        <description>template angelegt</description>
+        <from-view-id>/secured/tutor.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{tutor.setValues(user)}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/templateSuccess.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

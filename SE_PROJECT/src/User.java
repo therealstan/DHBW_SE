@@ -1,39 +1,47 @@
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
 import javax.servlet.http.HttpSession;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
 @ManagedBean(name = "user")
 @SessionScoped
 public class User {
 
+    boolean isLoginPage = (FacesContext.getCurrentInstance().getViewRoot()
+            .getViewId().lastIndexOf("login.xhtml") > -1);
     private String name;
     private String password;
-    private int userID;
-
+    private String firstName;
+    private String lastName;
+    private long userID;
     private DatabaseCon.userRole role;
+    private DatabaseCon dbCon;
+    private boolean isLoggedIn = false;
+
+    public User() {
+        dbCon = new DatabaseCon();
+    }
+
+    public String getFirstName() {
+        return dbCon.getFirstName(userID);
+    }
+
+    public String getLastName() {
+        return dbCon.getLastName(userID);
+    }
+
+    public long getUserID() {
+        return userID;
+    }
 
     public DatabaseCon getDbCon() {
         return dbCon;
     }
 
-    private DatabaseCon dbCon;
-
-    boolean isLoginPage = (FacesContext.getCurrentInstance().getViewRoot()
-            .getViewId().lastIndexOf("login.xhtml") > -1);
-
-    private boolean isLoggedIn = false;
-
     public boolean isLoggedIn() {
         return isLoggedIn;
-    }
-
-    public User() {
-        dbCon = new DatabaseCon();
     }
 
     public String getName() {
@@ -53,7 +61,7 @@ public class User {
     }
 
     public String add() {
-        if (dbCon.addUser(name,password) > 0) {
+        if (dbCon.addUser(name, password)) {
             return "success";
         } else
             return "unsuccess";
@@ -65,7 +73,7 @@ public class User {
         String dbPasswordHash = dbCon.getPasswordHash(userID);
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
                 .getExternalContext().getSession(false);
-        if (isLoginPage && (name.equals(dbName) && PasswordHash.validatePassword(password,dbPasswordHash))) {
+        if (isLoginPage && (name.equals(dbName) && PasswordHash.validatePassword(password, dbPasswordHash))) {
             FacesContext.getCurrentInstance().getExternalContext()
                     .getSessionMap().put("username", name);
             if (session == null) {
@@ -96,6 +104,7 @@ public class User {
     }
 
     public void logout() {
+        dbCon.close();
         FacesContext.getCurrentInstance().getExternalContext()
                 .invalidateSession();
         FacesContext
