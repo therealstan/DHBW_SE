@@ -29,7 +29,7 @@
         <navigation-case>
             <from-action>#{user.login}</from-action>
             <from-outcome>tutor</from-outcome>
-            <to-view-id>/tutor.xhtml</to-view-id>
+            <to-view-id>/secured/tutor.xhtml</to-view-id>
         </navigation-case>
 
         <navigation-case>
