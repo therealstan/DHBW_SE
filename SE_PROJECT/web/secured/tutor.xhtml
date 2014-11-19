@@ -71,7 +71,7 @@
 </h:head>
 
 <h:body>
-
+<h:form>
 <div class="container">
   <div class="row clearfix">
       <div class="column half">
@@ -144,48 +144,48 @@
     <!-- Impact Nummer 2 -->
     <div class="row clearfix">
         <div class="column third">
-            <h:form>
+
             <o:inputTextarea id="impact2Name"
                              style="background: white; border: 2px solid blue; width: 100px; color: brown; font-weight: bold;"
                              promptText="Impact2 Name"
                              promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
                              focusedStyle="border: 1px solid green;"
                              value="#{tutor.impact2Name}"/>
-            </h:form>
+
         </div>
         <div class="column two-thirds">
-            <h:form>
+
             <o:inputTextarea id="impact2Value"
                              style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
                              promptText="Impact2"
                              promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
                              focusedStyle="border: 1px solid green;"
                              value="#{tutor.impact2}"/>
-            </h:form>
+
         </div>
 
     </div>
     <!-- Impact Nummer 3 -->
     <div class="row clearfix">
         <div class="column third">
-            <h:form>
+
                 <o:inputTextarea id="impact3Name"
                                  style="background: white; border: 2px solid blue; width: 100px; color: brown; font-weight: bold;"
                                  promptText="Impact2 Name"
                                  promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
                                  focusedStyle="border: 1px solid green;"
                                  value="#{tutor.impact3Name}"/>
-            </h:form>
+
         </div>
         <div class="column two-thirds">
-            <h:form>
+
                 <o:inputTextarea id="impact3Value"
                                  style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
                                  promptText="Impact3"
                                  promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
                                  focusedStyle="border: 1px solid green;"
                                  value="#{tutor.impact3}"/>
-            </h:form>
+
 
         </div>
 
@@ -203,25 +203,25 @@
             Profil wählen
         </div>
         <div class="column two-thirds">
-        <h:form>
+
             <o:dropDownField id="s2gDropdown" style="background: yellow; border 2px solid cornflowerblue; "
                              promptText="Chose S2G Scheme" value="#{tutor.selectedS2G}">
 
                 <o:dropDownItems value="#{tutor.getS2GStringList(user.dbCon)}"/>
             </o:dropDownField>
-        </h:form>
+
         </div>
     </div>
     <div class="row clearfix">
     <div class="column fourth">
-     <h:form>
+
         <o:commandButton  value="Submit"  action="#{tutor.setValues(user.dbCon)}"/>
-     </h:form>
+
 
 
     </div>
     </div>
 </div>
-
+</h:form>
 </h:body>
 </html>
