@@ -98,7 +98,7 @@
 
 
 <h:body>
-
+<h:form>
     <div class="container">
         <div class="row clearfix">
             <div class="column">
@@ -125,26 +125,26 @@
                 <div class="container">
                     <div class="row clearfix">
                         <div class="column">
-                            <h:form>
+
                                 <o:dropDownField id="s2gDropdown1"
                                                  style="background: yellow; border 2px solid cornflowerblue; "
                                                  promptText="Chose S2G Scheme" value="#{accessor.selectedCourse}">
 
                                     <o:dropDownItems value="#{accessor.getCourseNameList(user)}"/>
                                 </o:dropDownField>
-                            </h:form>
+
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:form>
+
                                 <o:dropDownField id="s2gDropdown2"
                                                  style="background: yellow; border 2px solid cornflowerblue; "
                                                  promptText="Chose S2G Scheme" value="#{accessor.selectedStudent}">
 
                                     <o:dropDownItems value="#{accessor.getStudentList(user)}"/>
                                 </o:dropDownField>
-                            </h:form>
+
 
                         </div>
                     </div>
@@ -161,13 +161,13 @@
                         Hollistische Bewertung
                     </div>
                     <div class="column third">
-                        <h:form>
+
                             <h:selectOneRadio id="radio1" value="#{accessor.h2Boolean}">
                                 <f:selectItem itemValue="P" itemLabel="P"/>
                                 <f:selectItem itemValue="1-P" itemLabel="1-P"/>
                             </h:selectOneRadio>
 
-                        </h:form>
+
                     </div>
                 </div>
             </div>
@@ -232,42 +232,49 @@
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:form>
-                                <o:inputText id="rate1"
-                                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+
+
+
+                                <h:inputText id="rate1"
+
                                              promptText="Rate1"
                                              promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
                                              focusedStyle="border: 1px solid green;"
                                              immediate="true"
                                              value="#{accessor.rate1}"/>
-                            </h:form>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <div class="column">
-                            <h:form>
-                                <o:inputText id="rate2"
-                                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
-                                             promptText="Rate2"
-                                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
-                                             focusedStyle="border: 1px solid green;"
-                                             immediate="true"
-                                             value="#{accessor.rate2}"/>
-                            </h:form>
+
 
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:form>
-                                <o:inputText id="rate3"
-                                             style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
+
+
+                                <h:inputText id="rate2"
+
+                                             promptText="Rate2"
+                                             promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
+                                             focusedStyle="border: 1px solid green;"
+                                             immediate="true"
+                                             value="#{accessor.rate2}"/>
+
+
+
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="column">
+
+
+                                <h:inputText id="rate3"
+
                                              promptText="Rate3"
                                              promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
                                              focusedStyle="border: 1px solid green;"
                                              immediate="true"
                                              value="#{accessor.rate3}"/>
-                            </h:form>
+
+
                         </div>
                     </div>
                 </div>
@@ -277,9 +284,9 @@
         </div>
         <div class="row clearfix">
             <div class="column">
-                <h:form>
+
                     <o:commandButton value="Bewerten" action="#{accessor.setGrade(user)}"/>
-                </h:form>
+
 
             </div>
         </div>
@@ -291,6 +298,6 @@
 
     </div>
 
-
+</h:form>
 </h:body>
 </html>
