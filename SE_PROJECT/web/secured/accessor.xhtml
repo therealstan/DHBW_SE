@@ -231,7 +231,10 @@
         </div>
         <div class="row clearfix">
             <div class="column">
-                <o:commandButton value="Bewerten" action="#{bewerten.start(user.dbCon)}"/>
+                <h:form>
+                    <o:commandButton value="Bewerten" action="#{bewerten.start(user.dbCon)}"/>
+                </h:form>
+
             </div>
         </div>
         <div class="row clearfix"></div>
