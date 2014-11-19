@@ -96,7 +96,7 @@
                     </div>
 
                 </div>
-               </div>
+            </div>
             <div class="column fourth">
                 <div class="container">
                     <div class="row clearfix">
@@ -131,7 +131,7 @@
                     </div>
                     <div class="column third">
                         <h:selectOneRadio id="radio1" value="#{accessor.h2Boolean}">
-                        <f:selectItem itemValue="P" itemLabel="P" />
+                            <f:selectItem itemValue="P" itemLabel="P"/>
                             <f:selectItem itemValue="1-P" itemLabel="1-P"/>
                         </h:selectOneRadio>
 
@@ -145,9 +145,9 @@
             <div class = "column fourth">
                 <div class="container">
                     <div class="row clearfix">
-                       <div class="column">
-                           Name
-                       </div>
+                        <div class="column">
+                            Name
+                        </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
@@ -170,22 +170,22 @@
                 <div class="container">
                     <div class="row clearfix">
                         <div class="column">
-                            Rates
+                            Impacts
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:outputText value="#{accessor.rate1}"/>
+                            <h:outputText value="#{accessor.impact1}"/>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:outputText value="#{accessor.rate2}"/>
+                            <h:outputText value="#{accessor.impact2}"/>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="column">
-                            <h:outputText value="#{accessor.rate3}"/>
+                            <h:outputText value="#{accessor.impact3}"/>
                         </div>
                     </div>
                 </div>
@@ -203,7 +203,8 @@
                                          style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
                                          promptText="Rate1"
                                          promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
-                                         focusedStyle="border: 1px solid green;"/>
+                                         focusedStyle="border: 1px solid green;"
+                                         value="#{accessor.rate1}"/>
                         </div>
                     </div>
                     <div class="row clearfix">
@@ -212,7 +213,8 @@
                                          style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
                                          promptText="Rate2"
                                          promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
-                                         focusedStyle="border: 1px solid green;"/>
+                                         focusedStyle="border: 1px solid green;"
+                                         value="#{accessor.rate2}"/>
                         </div>
                     </div>
                     <div class="row clearfix">
@@ -221,7 +223,8 @@
                                          style="background: white; border: 2px solid cornflowerblue; width: 80px; color: brown; font-weight: bold;"
                                          promptText="Rate3"
                                          promptTextStyle="background: none; font-style: italic; font-weight: lighter; color:#7e7e7e;"
-                                         focusedStyle="border: 1px solid green;"/>
+                                         focusedStyle="border: 1px solid green;"
+                                         value="#{accessor.rate3}"/>
                         </div>
                     </div>
                 </div>
@@ -234,7 +237,6 @@
                 <h:form>
                     <o:commandButton value="Bewerten" action="#{bewerten.start(user.dbCon)}"/>
                 </h:form>
-
             </div>
         </div>
         <div class="row clearfix"></div>

@@ -21,7 +21,6 @@ public class AccessorBean {
     Kurszuweisung
      */
     long courseID = 1;
-    List<Long> studentID;
     String name1;
     String name2;
     String name3;
@@ -35,9 +34,14 @@ public class AccessorBean {
     H2 h2;
     S2G s2g;
     R2S r2s;
+    List<Long> studentID;
     private boolean h2Boolean;
     private String selectedCourse;
     private String selectedStudent;
+
+    public AccessorBean() {
+
+    }
 
     public boolean getH2Boolean() {
         return h2Boolean;
@@ -96,6 +100,7 @@ public class AccessorBean {
         ToDO
          */
         List<String> list = new ArrayList<String>();
+        studentID = new ArrayList<Long>();
 
         PreparedStatement ps;
         Connection con;
@@ -234,7 +239,6 @@ public class AccessorBean {
             }
         }
     }
-
 
     public void onPageLoaded(User user) {
         DatabaseCon dbCon = user.getDbCon();
