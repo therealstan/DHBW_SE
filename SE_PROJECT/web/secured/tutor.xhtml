@@ -205,10 +205,9 @@
     </div>
     <div class="row clearfix">
     <div class="column fourth">
-
-        <o:commandButton id="submitButton"  styleClass="btn" type="button"  action="#{tutor.setValues(user.dbCon)}">
-            <img src="Button.gif" width="80" height="30" alt="Submit"/>
-        </o:commandButton>
+     <h:form>
+        <o:commandButton  value="Submit"  action="#{tutor.setValues(user.dbCon)}"/>
+     </h:form>
 
 
     </div>
