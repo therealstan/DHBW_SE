@@ -39,14 +39,14 @@
         .container {
             margin: 0 auto;
             max-width: 48rem;
-            width: 90%;
+            width: 100%;
         }
 
         @media (min-width: 40rem) {
             .column {
                 float: left;
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding-left: 0rem;
+                padding-right: 0rem;
             }
 
             .column.full {
@@ -155,9 +155,9 @@
         </div>
 
         <div class="row clearfix">
-            <div class="column">
-                <div class="container">
-                    <div class="column two-thirds">
+
+
+                    <div class="column third">
                         Hollistische Bewertung
                     </div>
                     <div class="column third">
@@ -168,8 +168,8 @@
                             </h:selectOneRadio>
 
 
-                    </div>
-                </div>
+
+
             </div>
 
 
@@ -279,6 +279,7 @@
                     </div>
                 </div>
             </div>
+            <div class="column fourth"></div>
 
 
         </div>
@@ -289,13 +290,13 @@
 
             </div>
         </div>
-        <div class="row clearfix"></div>
+        <div class="row clearfix"><div class="column"></div></div>
         <div class="row clearfix">
-            <div class="column half"> Errechnete Note</div>
-            <div class="column half"><h:outputText binding="#{accessor.gradeOutputText}" value="#{accessor.grade}"/>
+            <div class="column third"> Errechnete Note</div>
+            <div class="column fourth"><h:outputText binding="#{accessor.gradeOutputText}" value="#{accessor.grade}"/>
             </div>
         </div>
-        <div class="column">
+        <div class="column fourth">
 
             <o:commandButton value="Submit" action="#{accessor.submitGrade(user)}"></o:commandButton>
 
