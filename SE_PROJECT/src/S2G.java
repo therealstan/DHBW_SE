@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 /**
  * Created by Dom on 11.11.2014.
@@ -98,7 +100,10 @@ public class S2G implements Serializable{
 
         //DHBW
         grade = Math.min(5, gMin + (gMax + gMin) * (1 - score));
+        DecimalFormatSymbols dfs = DecimalFormatSymbols.getInstance();
+        dfs.setDecimalSeparator('.');
+        DecimalFormat newFormat = new DecimalFormat("#.##", dfs);
 
-        return grade;
+        return Double.valueOf(newFormat.format(grade));
     }
 }

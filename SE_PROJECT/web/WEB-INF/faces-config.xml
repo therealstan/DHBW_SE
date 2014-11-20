@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <faces-config
-        xmlns="http://java.sun.com/xml/ns/javaee"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://java.sun.com/xml/ns/javaee"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
         version="2.0">
     <navigation-rule>
@@ -64,7 +64,7 @@
     <description>erfolgreich bewertet</description>
     <from-view-id>/secured/accessor.xhtml</from-view-id>
     <navigation-case>
-        <from-action>#{accessor.setGrade(user)}</from-action>
+        <from-action>#{accessor.submitGrade(user)}</from-action>
         <from-outcome>success</from-outcome>
         <to-view-id>/evaluationSuccess.xhtml</to-view-id>
     </navigation-case>
