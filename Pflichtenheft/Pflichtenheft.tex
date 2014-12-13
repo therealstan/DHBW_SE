@@ -1,9 +1,19 @@
 \input{doc/header.tex}
 
 \begin{document}
+% Titelblatt
 	\input{doc/title.tex}
+% % % %
 	\tableofcontents
-	\newpage
+	
+% Versionshistorie	
+	
+	\begin{versionhistory}
+		\vhEntry{1.1}{25.09.2014}{\sA}{Formulierung Muss- /Wunschkriterien}
+		\vhEntry{1.2}{26.09.2014}{\sA}{Formulierung Musskriterien}
+	\end{versionhistory}
+	
+\clearpage
 
 	\section{Zielbestimmung}
 		\subsection{Musskriterien}			
@@ -35,7 +45,7 @@
 		\item[-]	Alle Zwischenbewertungen die zur Note führen werden dem Studenten angezeigt.
 		\item[-]	Profilverwaltung um standardisierte Bewertungen erzeugen zu können.
 		\end{itemize}
-		\clearpage
+		
 		\subsection{Abgrenzungskriterien}
 		\subsubsection*{Veranstaltungsplanung und Erstellung der Bewertungsroutine}
 		
@@ -47,7 +57,7 @@
 		
 		Die Anwendung unterstützt zunächst die Bewertung der Veranstaltungen die grundsätzlich mit einem bestanden / nicht bestanden, also 0 oder 1 bewertet werden können. Dies wird als Grundlage für alle weiteren Berechnungen als Grundlage genommen. Die Ermittlung einer Note kann sowohl für Einzelperson, als auch für die Mitglieder einer Gruppe durchgeführt werden. 
 
-		\subsection*{Veranstaltungsarten}
+		\subsubsection*{Veranstaltungsarten}
 		
 		Jede erstellte Veranstaltung beinhaltet genau ein Bewertungsschema (keine Konsolidierung mehrerer Veranstaltungen möglich) und führt somit zu einer Note. Die Erstellung einer Note aus der Kombination von verschiedenen Einzelnoten ist nicht möglich.
 

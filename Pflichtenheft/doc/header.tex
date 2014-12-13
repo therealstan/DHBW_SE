@@ -19,6 +19,29 @@
 \usepackage{textcomp}
 \usepackage{colortbl}
 \usepackage{extarrows}
+\usepackage{sets}
+% % % % % % % % % % % % % % % % % % % % % % %
+% Start: Versionshistorie + Optionsanpassungen
+\usepackage[tocentry]{vhistory}
+\renewcommand \vhAuthorColWidth{.8\hsize}
+\renewcommand \vhChangeColWidth{1.2\hsize}
+\newset{\sLong}{Stanislav Sokol (STS)|Dominik Zipperle (DOZ)|Louis Steinkamp (LOS)}
+\newcommand{\STS}{Stanislav Sokol}
+\newcommand{\DOZ}{Dominik Zipperle}
+\newcommand{\LOS}{Louis Steinkamp}
+\newset{\sA}{STS|DOZ|LOS}
+\newset{\sB}{STS|DOZ}
+\newset{\sC}{DOZ|LOS}
+\newset{\sD}{STS|LOS}
+\newset{\sE}{STS}
+\newset{\sF}{DOZ}
+\newset{\sG}{LOS}
+\newset{\sL}{}
+
+
+% Ende: Versionshistorie
+% % % % % % % % % % % % % % % % % % % % % % %
+
 
 \newcommand\abb[1]{\textbf{\underline{#1}}}
 % Startet neue Seite pro \section{} Befehl
@@ -113,3 +136,13 @@ bottom=30mm}
 \usetocstyle{allwithdot}
 
 \usepackage{float}
+
+% % % % % Header Sachen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+% % % Befüllung des Headers mit den Infos
+\rfoot{\thepage}
+\cfoot[]{}
+\lfoot {Version \vhCurrentVersion\hspace{0.1
+cm} vom \vhCurrentDate}
