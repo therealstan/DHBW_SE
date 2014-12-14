@@ -726,10 +726,45 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{./img/sd_login_process}
+		\includegraphics[width=0.8\textwidth]{./img/sd_login_process}
 		\caption{Strukturdiagramm eines Login-Ptozesses}
 		\label{fig:sd_login_process}
 	\end{figure}
+	
+	\subsubsection{Veranstaltung Planen}
+	Die Veranstaltungsplanung erfolgt in drei Schritten. Template wählen oder erstellen, Studenten (Kurs) hinzufügen und Veranstaltungsfreigabe. Templates können aus unterschiedlichen Modulen aufgebaut werden. Beispielhaft werde $H_2$, Items, $S_2G$ Module in der Abbildung~\ref{fig:sd_veranst_planen} dargestellt. 
+	
+	Nach der Festlegung des Templates werden die entsprechenden Teilnehmer hinzugefügt, also Studenten und die Prüfer. Nach diesem Schritt kann die Veranstaltung freigegeben werden. Mit der Freigabe erfolgt die Versendung der Email an die Studenten und die Prüfer über die bevorstehende Veranstaltung.
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{./img/sd_veranst_planen}
+			\caption{Strukturdiagramm eines Vorgangs der Veranstaltungsplanung}
+			\label{fig:sd_veranst_planen}
+		\end{figure}
+	
+	\subsubsection{Bewerten}
+	
+		Der Bewertungsvorgang besteht daraus, dass zunächst eine zu bewertende  Veranstaltung ausgewählt werden soll. Anschließend werden die Bewertungen für einen Teilnehmer dieser Veranstaltung eingetragen. Ist die Eingabe aller Daten erfolgreich, folgt die Notenkonvertierung und der Teilnehmer erhält seine Note. Diese wird Freigegeben und abgespeichert. Ab hier hat der Prüfer keinen Zugriff auf die Note mehr.
+	
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.7\textwidth]{./img/sd_bewerten}
+				\caption{Strukturdiagramm eines Vorgangs der Bewertung}
+				\label{fig:sd_bewerten}
+			\end{figure}
+	
+	\subsection{Noteneinsicht}
+	
+	Die Noteneinsicht für einen Studenten erfolgt automatisch nach der Anmeldung. Entsprechend der Studentenkennung werden die Daten geladen und eine Sicht der Noten und Nachrichten erzeugt. Mit der Erweiterung der Funktionalität kann sich dieses Diagramm entsprechend vergrößern.
+	
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.5\textwidth]{./img/sd_noten_einsicht}
+					\caption{Strukturdiagramm eines Vorgangs der Noteneinsicht}
+					\label{fig:sd_noten_einsicht}
+				\end{figure}
+	
 
 	
 	\subsection{Modularer Entwurf}

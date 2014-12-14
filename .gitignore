@@ -4,7 +4,7 @@ Pflichtenheft.pdf
 *.gz
 *.out
 *.log
-*.pdf
+
 *.aux
 *.toc
 *.~vsdx
