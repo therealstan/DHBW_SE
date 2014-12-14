@@ -718,7 +718,19 @@
     \clearpage
     
 	
-	\subsection{Strukturierter Entwurf}
+	\subsection{Strukturierter Entwurf} 
+	\subsubsection{Login}
+	Der Login-Prozess ist die erste Sicht die jeder Benutzer unabhängig vom Typ zu sehen bekommt. Die eingegebenen Daten werden gehashed und mit der Datenbank verglichen. Fehlen die Daten, werden dem Benutzer weitere Versuche gewährt. Nach einer festgelegten Anzahl der Versuche wird ggf. der Benutzername bis auf weiteres gesperrt.
+	
+	Im Falle der Fehler erhält der Benutzer die Auskunft über Fehlerspezifische Nachrichten.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./img/sd_login_process}
+		\caption{Strukturdiagramm eines Login-Ptozesses}
+		\label{fig:sd_login_process}
+	\end{figure}
+
 	
 	\subsection{Modularer Entwurf}
 	
