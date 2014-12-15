@@ -731,6 +731,7 @@
 		\label{fig:sd_login_process}
 	\end{figure}
 	
+	\clearpage
 	\subsubsection{Veranstaltung Planen}
 	Die Veranstaltungsplanung erfolgt in drei Schritten. Template wählen oder erstellen, Studenten (Kurs) hinzufügen und Veranstaltungsfreigabe. Templates können aus unterschiedlichen Modulen aufgebaut werden. Beispielhaft werde $H_2$, Items, $S_2G$ Module in der Abbildung~\ref{fig:sd_veranst_planen} dargestellt. 
 	
@@ -742,7 +743,7 @@
 			\caption{Strukturdiagramm eines Vorgangs der Veranstaltungsplanung}
 			\label{fig:sd_veranst_planen}
 		\end{figure}
-	
+	\clearpage
 	\subsubsection{Bewerten}
 	
 		Der Bewertungsvorgang besteht daraus, dass zunächst eine zu bewertende  Veranstaltung ausgewählt werden soll. Anschließend werden die Bewertungen für einen Teilnehmer dieser Veranstaltung eingetragen. Ist die Eingabe aller Daten erfolgreich, folgt die Notenkonvertierung und der Teilnehmer erhält seine Note. Diese wird Freigegeben und abgespeichert. Ab hier hat der Prüfer keinen Zugriff auf die Note mehr.
@@ -754,7 +755,7 @@
 				\label{fig:sd_bewerten}
 			\end{figure}
 	
-	\subsection{Noteneinsicht}
+	\subsubsection{Noteneinsicht}
 	
 	Die Noteneinsicht für einen Studenten erfolgt automatisch nach der Anmeldung. Entsprechend der Studentenkennung werden die Daten geladen und eine Sicht der Noten und Nachrichten erzeugt. Mit der Erweiterung der Funktionalität kann sich dieses Diagramm entsprechend vergrößern.
 	
@@ -765,10 +766,60 @@
 					\label{fig:sd_noten_einsicht}
 				\end{figure}
 	
-
+\clearpage
 	
 	\subsection{Modularer Entwurf}
 	
+
+	\subsubsection{Veranstaltung erstellen}
+		Das Modul \textbf{Veranstaltung erstellen} besteht aus drei Submodulen \textbf{Template erstellen}, \textbf{Studenten/Kurs}, \textbf{Prüfer}. 
+		
+		Für die Erklärung von \textbf{Template erstellen} siehe Kapitel~\ref{sec:Template}.
+		
+		Die Untermodule \textbf{Studenten/Kurs}, \textbf{Prüfer} greifen auf die Datenbank zu und holen die Daten für die entsprechende Personen oder Personengruppen. Die Verwaltung erfolgt von extern.
+		
+		
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{./img/MD_VeranstaltungPlanen_main}
+			\caption{Modulansicht von Modul Veranstaltung erstellen}
+			\label{fig:md_veranstaltung_planen}
+		\end{figure}
+	
+	\subsubsection{Template erstellen \label{sec:Template}}
+		  Das Modul  besteht\textbf{Template erstellen} aus zwei Submodulen \textbf{Bewertungsschemata} und \textbf{Bewertungsmodul}. Die beiden Submodule operieren auf komplexen Datentypen und sind skalierbar. Das bedeutet, dass im Rahmen der Template-Erstellung die Submodule geschachtelt werden können.  
+		
+		\textbf{Bewertungsschemata} Modul übernimmt die Verantwortung über die Verwaltung aller Umrechnungsroutinen, die aus einer Score eine Note generieren können.	
+		\textbf{Bewertungsmodul} Modul übernimmt die Verwaltung beliebiger Bewertungsmuster. Dieses Modul 	besteht aus Submodulen als Datentyp und kann in seiner Struktur aus der Abbildung~\ref{fig:sd_veranst_planen} nachvollzogen werden.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{./img/MD_VeranstaltungPlanen}
+			\caption{Modulansicht von Template erstellen}
+			\label{fig:md_template_erstellen}
+		\end{figure}
+		
+	\subsubsection{Bewerten}
+		Das Modul \textbf{Bewerten} besteht aus zwei Submodulen \textbf{Veranstaltung holen} und \textbf{Note zuweisen}.
+				
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{./img/MD_bewerten}
+			\caption{Modulansicht von Modul Bewerten}
+			\label{fig:md_bewerten}
+		\end{figure}
+		
+		
+	\subsubsection{Login}
+	Das Modul Login ist ein simples Modul ohne komplexe Abhängigkeiten und Submodule. Das übernimmt die Kommunikation mit der Datenbank und stellt die Richtigkeit der Anmeldedaten fest.
+	
+	\subsubsection{Noteneinsicht}
+	Das Modul Noteneinsicht  greift auf die Datenbank zu und zeigt einem Studenten seine Daten an. Sind die Noten vorhanden, so sieht er seine Leistungen.
+	
+	\subsubsection{Sichterstellung}
+	
+	Das Modul Sichterstellung überprüft den Benutzertyp und erstellt ein Typ-gebundene Ansicht der Gesamtapplikation.
+		
   \section{Qualitätsmerkmale\label{sec:quali}}
   \clearpage
   
