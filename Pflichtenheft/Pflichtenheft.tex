@@ -55,8 +55,8 @@
 		\subsection{Abgrenzungskriterien}
 		\subsubsection*{Veranstaltungsplanung und Erstellung der Bewertungsroutine}
 		
-		Ein Dozent bekommt mit dieser Anwendung ein  Baukasten zu Erstellung einer Bewertung zur Lehrveranstaltung. Die Anwendung stellt mehrere mögliche Bewertungsfunktionen, die kombiniert werden können. Durch das kombinieren der Funktionen können Bewertungen beinahe beliebiger Komplexität erstellt werden.
-		
+		Ein Dozent bekommt mit dieser Anwendung ein  Baukasten zu Erstellung einer Bewertung zur Lehrveranstaltung. Die Anwendung stellt mehrere mögliche Bewertungsfunktionen, die kombiniert werden können. Durch das kombinieren der Funktionen können Bewertungen beinahe beliebiger Komplexität erstellt werden.\\
+		\\		
 		Für die Simulationszwecke beschränkt sich der Prototyp auf die Module ($H_2$ , $R_2S$, $S_2G$)
 		
 		\subsubsection*{Bewertungslogik}
@@ -384,7 +384,7 @@
 	\section{Produktdaten}
 	
 		Die Größe der einzelnen Datenpunkte richtet sich variabel nach der letztendlichen Größe des Anwendungssystems. Die praktische Obergrenze wird durch die Hardware bzw. Datenbank festgelegt. 
-		
+		\\
 		Die unten aufgeführten Produktdaten in der Notation /Dxx/ beschreiben die Gesamtheit der Daten, welche die Anwendung benötigt oder erstellt. Das vorläufige Datenbankmodell ist in der Abbildung~\ref{fig:ERM} dargestellt, erst in dem ER-Modell werden die Trennungen in die Tabellen vorgenommen.
 		
 	 
@@ -565,14 +565,11 @@
 	In diesem Stadium werden alle Systemanpassungen durchgeführt und die Anwendung läuft fehlerfrei. Auf Anfrage können weitere Funktionen über den Erweiterten Simulationsprototypen eingebunden werden. Dadurch entstehen weitere Kosten.
 	
 	\subsection{Sicherheitskonzept}
-	Die Standards in Sicherheit der Verbindung und Datenübertragung werden in der Anwendung, als Grundfunktionalität vorgesehen und ist in den Entwicklungsprozess integriert.
-	
-
-	Die Ausarbeitung eines erweiterten Sicherheitskonzepts für die Daten und Zugriffe, sowie gegen Angriffe wird als Teilprodukt angeboten. Dabei stehen dem Kunden drei Optionen zur Auswahl: Schwach, Normal, Hoch. 
-	
-	Die Einstufung orientiert sich vor allem an der Komplexität des Konzeptes und dem Umfang der Tests. Daraus entstehen zusätzliche Arbeitspakete, welche separat abgerechnet werden. 
-	
-
+	Die Standards in Sicherheit der Verbindung und Datenübertragung werden in der Anwendung, als Grundfunktionalität vorgesehen und ist in den Entwicklungsprozess integriert.\\
+	\newline
+	Die Ausarbeitung eines erweiterten Sicherheitskonzepts für die Daten und Zugriffe, sowie gegen Angriffe wird als Teilprodukt angeboten. Dabei stehen dem Kunden drei Optionen zur Auswahl: Schwach, Normal, Hoch. \\
+	\newline
+	Die Einstufung orientiert sich vor allem an der Komplexität des Konzeptes und dem Umfang der Tests. Daraus entstehen zusätzliche Arbeitspakete, welche separat abgerechnet werden. \\
 	Die Ausarbeitung eines Sicherheitskonzepts für die Daten wird als Teilprodukt angeboten. Dabei stehen dem Kunden drei Optionen zur Auswahl: Schwach, Normal, Hoch. 
 	Die Einstufung orientiert sich vor allem an der Komplexität des Konzeptes und dem Umfang der Tests. \newline	
 	Unabhängig vom gewählten Modell werden  Grundsicherheitsstandards implementiert.
@@ -778,10 +775,8 @@
 	
 
 	\subsubsection{Veranstaltung erstellen}
-		Das Modul \textbf{Veranstaltung erstellen} besteht aus drei Submodulen \textbf{Template erstellen}, \textbf{Studenten/Kurs}, \textbf{Prüfer}. 
-		
-		Für die Erklärung von \textbf{Template erstellen} siehe Kapitel~\ref{sec:Template}.
-		
+		Das Modul \textbf{Veranstaltung erstellen} besteht aus drei Submodulen \textbf{Template erstellen}, \textbf{Studenten/Kurs}, \textbf{Prüfer}.\\		
+		Für die Erklärung von \textbf{Template erstellen} siehe Kapitel~\ref{sec:Template}.\\	
 		Die Untermodule \textbf{Studenten/Kurs}, \textbf{Prüfer} greifen auf die Datenbank zu und holen die Daten für die entsprechende Personen oder Personengruppen. Die Verwaltung erfolgt von extern.
 		
 		
@@ -794,8 +789,7 @@
 		\end{figure}
 	
 	\subsubsection{Template erstellen \label{sec:Template}}
-		  Das Modul  besteht\textbf{Template erstellen} aus zwei Submodulen \textbf{Bewertungsschemata} und \textbf{Bewertungsmodul}. Die beiden Submodule operieren auf komplexen Datentypen und sind skalierbar. Das bedeutet, dass im Rahmen der Template-Erstellung die Submodule geschachtelt werden können.  
-		
+		  Das Modul  besteht\textbf{Template erstellen} aus zwei Submodulen \textbf{Bewertungsschemata} und \textbf{Bewertungsmodul}. Die beiden Submodule operieren auf komplexen Datentypen und sind skalierbar. Das bedeutet, dass im Rahmen der Template-Erstellung die Submodule geschachtelt werden können.\\
 		\textbf{Bewertungsschemata} Modul übernimmt die Verantwortung über die Verwaltung aller Umrechnungsroutinen, die aus einer Score eine Note generieren können.	
 		\textbf{Bewertungsmodul} Modul übernimmt die Verwaltung beliebiger Bewertungsmuster. Dieses Modul 	besteht aus Submodulen als Datentyp und kann in seiner Struktur aus der Abbildung~\ref{fig:sd_veranst_planen} nachvollzogen werden.
 		\begin{figure}[H]
